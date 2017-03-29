@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.slideGroup{ width:716px; padding-top:17px;   }
+.slideGroup .parHd{ width:716px; height:46px; line-height:46px; background:url(images/slideGroupHd.gif) center no-repeat;  position:relative; z-index:0;  }
+.slideGroup .parHd ul{ float:left; position:absolute; left:25px;  height:46px;   }
+.slideGroup .parHd ul li{ float:left; width:86px; cursor:pointer; text-align:center; font: 14px/46px '微软雅黑'; color:#7d7d7d;  }
+.slideGroup .parHd ul li.on{ font-size:16px; color:#303030;    }
+.slideGroup .slideBox{  zoom:1;  position:relative; height:200px; background:url(images/boxBg.gif) bottom center repeat-x;  }
+.slideGroup .sPrev,.slideGroup .sNext{ position:absolute; z-index:999; right:40px; top:-35px; display:block; width:24px; height:24px; background:url(images/sliGouBtnL.gif) center center no-repeat; }
+.slideGroup .sNext{ left:auto; right:10px; background:url(images/sliGouBtnR.gif) center center no-repeat ;  }
+.slideGroup .slideBox .sgBox{ width:715px; margin:0 auto; overflow:hidden; padding-top:18px;}
+.slideGroup .parBd{ position:relative; z-index:1;}
+.slideGroup .parBd ul{ overflow:hidden; zoom:1;   }
+.slideGroup .parBd ul li{ padding-right:14px;  float:left; _display:inline; overflow:hidden; text-align:center;  }
+.slideGroup .parBd ul li .pic{ text-align:center; }
+.slideGroup .parBd ul li .pic img{ width:164px; height:115px; display:block;  border:2px solid #e4e4e4; }
+.slideGroup .parBd ul li .pic a:hover img{ border-color:#999;  }
+.slideGroup .parBd ul li .title{ padding:10px 0px;   }
+.slideGroup .parBd ul li .title a{color:#515151;}
+.otherMore{ display:block; width:63px; height:25px; background:url(images/otherMore.gif) center no-repeat; line-height:25px; text-align:center; position:absolute; bottom:0px; right:15px; color:#56a646;}
+
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+
+<div class="slideGroup" style="margin:0 auto">
+  <div class="parHd">
+    <ul>
+      <li>学校案例</li>
+      <li>企业案列</li>
+      <li>政府案例</li>
+      <li>聚德基地</li>
+    </ul>
+  </div>
+  <div class="parBd">
+    <div class="slideBox"> <a class="sPrev" href="javascript:void(0)"></a> <a class="sNext" href="javascript:void(0)"></a>
+	<div class="sgBox">
+      <ul>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic1.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic1.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic1.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic1.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+      </ul>
+	 </div>
+	  <a href="#" class="otherMore">MORE</a>
+    </div>
+    <!-- slideBox End -->
+    
+    <div class="slideBox"> <a class="sPrev" href="javascript:void(0)"></a> <a class="sNext" href="javascript:void(0)"></a>
+	<div class="sgBox">
+      <ul>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic2.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic2.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic2.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic2.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+      </ul>
+	 </div>
+	  <a href="#" class="otherMore">MORE</a>
+    </div>
+    <!-- slideBox End -->
+    
+    <div class="slideBox"> <a class="sPrev" href="javascript:void(0)"></a> <a class="sNext" href="javascript:void(0)"></a>
+	<div class="sgBox">
+      <ul>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic3.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic3.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic3.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic3.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+      </ul>
+	 </div>
+	  <a href="#" class="otherMore">MORE</a>
+    </div>
+    <!-- slideBox End --> 
+	
+	    <div class="slideBox"> <a class="sPrev" href="javascript:void(0)"></a> <a class="sNext" href="javascript:void(0)"></a>
+	<div class="sgBox">
+      <ul>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic4.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic4.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic4.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+        <li>
+          <div class="pic"><a href="#"><img src="images/pic4.jpg" /></a></div>
+          <div class="title"><a href="#">聚德李阳英语培训案例</a></div>
+        </li>
+      </ul>
+	 </div>
+	  <a href="#" class="otherMore">MORE</a>
+    </div>
+    <!-- slideBox End -->
+    
+  </div>
+  <!-- parBd End --> 
+</div>
+<script type="text/javascript">
+	jQuery(".slideGroup .slideBox").slide({ mainCell:"ul",vis:4,prevCell:".sPrev",nextCell:".sNext",effect:"leftLoop"});
+	jQuery(".slideGroup").slide({titCell:".parHd li",mainCell:".parBd"});
+</script>
+				
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

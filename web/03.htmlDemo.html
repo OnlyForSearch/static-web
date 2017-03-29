@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+
+        /****************背景颜色*****************/
+        #id1 {
+            background-color: #5b8a00; /* 设置页面背景颜色 */
+            margin: 0px;
+            padding: 0px;
+            color: #c4f762; /* 设置页面文字颜色 */
+        }
+
+      #id1  p {
+            font-size: 15px; /* 正文文字大小 */
+            padding-left: 10px;
+            padding-top: 8px;
+            line-height: 120%;
+        }
+
+      #id1  span { /* 首字放大 */
+            font-size: 80px;
+            font-family: 黑体;
+            float: left;
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 8px;
+        }
+
+        /****************利用背景颜色分块*****************/
+
+        #id2 {
+            padding: 0px;
+            margin: 0px;
+            background-color: #ffebe5; /* 页面背景色 */
+        }
+
+        #id2 .topbanner {
+            background-color: #fbc9ba; /* 顶端banner的背景色 */
+        }
+
+        #id2 .leftbanner {
+            width: 22%; height: 330px;
+            vertical-align: top;
+            background-color: #6d1700; /* 左侧导航条的背景色 */
+            color: #FFFFFF;
+            text-align: left;
+            padding-left: 40px;
+            font-size: 14px;
+        }
+
+        #id2  .mainpart {
+            text-align: center;
+        }
+        /****************背景图片*****************/
+        #id3 {
+            background-image: url(03.jpg); /* 页面背景图片 */
+        }
+
+
+        /****************背景图片、背景颜色同时*****************/
+        #id4 {
+            background-image: url(03.gif); /* 页面背景图片 */
+            background-color: #FFFF00; /* 页面背景颜色 */
+        }
+        /****************背景重复*****************/
+        #id5 {
+            padding: 0px;
+            margin: 0px;
+            background-image: url(bg1.jpg); /* 背景图片 */
+            background-repeat: repeat-y; /* 垂直方向重复 */
+            background-color: #0066FF; /* 背景颜色 */
+        }
+        /****************背景水平重复*****************/
+        #id6{
+            padding: 0px;
+            margin: 0px;
+        }
+        #id6 .topbanner {
+            background-image: url(bg2.jpg); /* 背景图片 */
+            background-repeat: repeat-x; /* 水平方向重复 */
+        }
+
+        -->
+
+        /****************背景不重复*****************/
+        #id7 {
+            padding: 0px;
+            margin: 0px;
+            background-image: url(bg3.jpg); /* 背景图片 */
+            background-repeat: no-repeat; /* 不重复 */
+        }
+        /****************背景的位置*****************/
+
+        #id8 {
+            padding: 0px;
+            margin: 0px;
+            background-image: url(bg4.jpg); /* 背景图片 */
+            background-repeat: no-repeat; /* 不重复 */
+            background-position: bottom right; /* 背景位置，右下 */
+            background-color: #eeeee8;
+        }
+
+        #id8  span { /* 首字放大 */
+            font-size: 70px;
+            float: left;
+            font-family: 黑体;
+            font-weight: bold;
+        }
+
+        #id8 p {
+            margin: 0px; font-size: 14px;
+            padding-top: 10px;
+            padding-left: 6px; padding-right: 8px;
+        }
+
+        /****************背景的位置*****************/
+        #id9  {
+            padding: 0px; margin: 0px;
+            background-image: url(bg5.jpg); /* 背景图片 */
+            background-repeat: no-repeat; /* 不重复 */
+            /*background-position:30% 70%;		/* 背景位置，百分比 */
+            background-position: 300px 25px; /* 背景位置，具体数值 */
+        }
+
+        #id9 p {
+            padding: 10px; margin: 5px;
+            line-height: 1.5em;
+        }
+
+        /****************固定背景图片*****************/
+
+        #id10 {
+            padding: 0px; margin: 0px;
+            background-image: url(bg6.jpg); /* 背景图片 */
+            background-repeat: no-repeat; /* 不重复 */
+            background-attachment: fixed; /* 固定背景图片 */
+        }
+
+        #id10 p {
+            padding: 10px; margin: 5px;
+            line-height: 1.5em;
+            color: #FFFFFF; font-size: 22px;
+        }
+        /****************多个背景图片*****************/
+
+        #id11 {
+            background-image: url(bg7.jpg); /* 页面大背景 */
+            background-repeat: no-repeat;
+            padding: 0px; margin: 0px;
+            background-attachment: fixed;
+        }
+
+        #id11 div {
+            background-image: url(bg8.gif); /* 左侧小图标背景 */
+            background-repeat: repeat-y; /* 竖直方向重复 */
+            background-position: 5px 0px;
+            padding-left: 110px; padding-top: 10px;
+            padding-right: 10px; padding-bottom: 15px;
+        }
+
+        #id11 h1 {
+            font-family: 黑体;
+            text-decoration: underline;
+        }
+        /****************个人主页*****************/
+        #id12 {
+            background: url(bg9.gif); /* 页面背景图片 */
+            margin: 0px; padding: 0px;
+        }
+
+        #id12 .chara1 {
+            font-size: 12px;
+            background-color: #90bcff; /* 导航条的背景颜色 */
+        }
+
+        #id12 .chara1 td {
+            text-align: center;
+        }
+
+        #id12 .chara2 {
+            background-color: #d2e7ff;
+            text-align: center;
+            font-size: 12px;
+            vertical-align: top;
+        }
+
+        #id12 .chara3 {
+            /* 主题部分的背景图片 */
+            background: #e9fbff url(self.jpg) no-repeat bottom right;
+            vertical-align: top;
+            padding-top: 15px; padding-left: 30px;
+            font-size: 12px; padding-right: 15px;
+        }
+
+        .pic1 {
+            border: 1px solid #00406c;
+        }
+
+        #id12 p.leftcontent {
+            padding-left: 15px;
+            padding-right: 10px;
+            text-align: left;
+            color: #001671;
+        }
+
+        #id12 h4 {
+            text-decoration: underline;
+            color: #0078aa;
+            padding-top: 15px;
+        }
+
+        /****************念奴娇 赤壁怀古*****************/
+
+        #id13 {
+            background: url(bg9.jpg) no-repeat center top; /* 页面背景 */
+            margin: 0px; padding: 0px;
+            text-align: center;
+        }
+
+        #id13.content {
+            height: 260px;
+            writing-mode: lr-tb; /* 竖排版文字 */
+            width: 620px;
+            text-align: left;
+            border: 3px solid #666666;
+            line-height: 30px;
+            padding-top: 15px; padding-right: 8px;
+            background: url(bg10.jpg) no-repeat; /* 文字部分背景 */
+        }
+        /****************背景颜色*****************/
+        /****************背景颜色*****************/
+        /****************背景颜色*****************/
+        /****************背景颜色*****************/
+        /****************背景颜色*****************/
+
+
+    </style>
+
+</head>
+<body>
+<div style="border:1px solid gray" id="id1">
+
+    <img src="mainroad.jpg" style="float:right;">
+    <span>春</span>
+
+    <p>季，地球的北半球开始倾向太阳，受到越来越多的太阳光直射，因而气温开始升高。随着冰雪消融，河流水位上涨。春季植物开始发芽生长，许多鲜花开放。冬眠的动物苏醒，许多以卵过冬的动物孵化，鸟类开始迁徙，离开越冬地向繁殖地进发。许多动物在这段时间里发情，因此中国也将春季称为“万物复苏”的季节。春季气温和生物界的变化对人的心理和生理也有影响。</p>
+
+    <p>对农民来说，春季是播种许多农作物的季节。在春季，地球的北半球开始倾向太阳，受到越来越多的太阳光直射，因而气温开始升高。随着冰雪消融，河流水位上涨。春季植物开始发芽生长，许多鲜花开放。冬眠的动物苏醒，许多以卵过冬的动物孵化，鸟类开始迁徙，离开越冬地向繁殖地进发。许多动物在这段时间里发情，因此中国也将春季称为“万物复苏”的季节。</p>
+
+
+</div>
+<div style="border:1px solid gray" id="id2">
+
+    <table border="0" cellpadding="0" cellspacing="1" width="100%">
+        <tbody>
+        <tr>
+            <td colspan="2" class="topbanner"><img src="banner1.jpg" border="0"></td>
+        </tr>
+        <tr>
+            <td class="leftbanner">
+                <br><br>首页<br><br>分类讨论
+                <br><br>谈天说地<br><br>精华区
+                <br><br>我的信箱<br><br>休闲娱乐
+                <br><br>立即注册<br><br>离开本站
+            </td>
+            <td class="mainpart">正文内容...</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div style="border:1px solid gray;height:280px" id="id3"></div>
+<div style="border:1px solid gray;height:280px" id="id4"></div>
+<div style="border:1px solid gray;height:280px" id="id5"></div>
+<div style="border:1px solid gray" id="id6">
+
+    <table border="0" cellpadding="0" cellspacing="1" width="100%">
+        <tbody>
+        <tr>
+            <td class="topbanner"><img src="banner2.jpg" border="0"></td>
+            <!-- 配上banner图片 -->
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div style="border:1px solid gray;height:280px" id="id7">
+
+    <div style="padding-left:60px; padding-top:100px;">
+        小兔子
+    </div>
+
+
+</div>
+<div style="border:1px solid gray" id="id8">
+
+    <p><span>雪</span>是大气固态降水中的一种最广泛、最普遍、最主要的形式。大气固态降水是多种多样的，除了美丽的雪花以外，还包括能造成很大危害的冰雹，还有我们不经常见到的雪霰和冰粒。</p>
+
+    <p>
+        由于天空中气象条件和生长环境的差异，造成了形形色色的大气固态降水。这些大气固态降水的叫法因地而异，因人而异，名目繁多，极不统一。为了方便起见，国际水文协会所属的国际雪冰委员会，在征求各国专家意见的基础上，于1949年召开了一个专门性的国际会议，会上通过了关于大气固态降水简明分类的提案。这个简明分类，把大气固态降水分为十种：雪片、星形雪花、柱状雪晶、针状雪晶、多枝状雪晶、轴状雪晶、不规则雪晶、霰、冰粒和雹。前面的七种统称为雪。</p>
+
+    <p>
+        立冬 太阳位于黄经225°，11月7～8日交节<br>
+        小雪 太阳位于黄经240°，11月22～23日交节<br>
+        大雪 太阳位于黄经255°，12月6～8日交节<br>
+        冬至 太阳位于黄经270°，12月21～23日交节<br>
+        小寒 太阳位于黄经285°，1月5～7日交节<br>
+        大寒 太阳位于黄经300°，1月20～21日交节</p>
+
+
+</div>
+<div style="border:1px solid gray" id="id9">
+
+    <p>CSS（Cascading Style
+        Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。CSS是1996年由W3C审核通过，并且推荐使用的。简单的说CSS的引入就是为了使得HTML能够更好的适应页面的美工设计。它以HTML为基础，提供了丰富的格式化功能，如字体、颜色、背景、整体排版等等，并且网页设计者可以针对各种可视化浏览器设置不同的样式风格，包括显示器、打印机、打字机、投影仪、PDA等等。CSS的引入随即引发了网页设计的一个又一个新高潮，使用CSS设计的优秀页面层出不穷。</p>
+
+
+</div>
+<div style="border:1px solid gray" id="id10">
+
+    <p>对于一个网页设计者来说，HTML语言一定不会感到陌生，因为它是所有网页制作的基础。但是如果希望网页能够美观、大方，并且升级方便，维护轻松，那么仅仅HTML是不够的，CSS在这中间扮演着重要的角色。本章从CSS的基本概念出发，介绍CSS语言的特点，以及如何在网页中引入CSS，并对CSS进行初步的体验。</p>
+
+    <p>CSS（Cascading Style
+        Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。CSS是1996年由W3C审核通过，并且推荐使用的。简单的说CSS的引入就是为了使得HTML能够更好的适应页面的美工设计。它以HTML为基础，提供了丰富的格式化功能，如字体、颜色、背景、整体排版等等，并且网页设计者可以针对各种可视化浏览器设置不同的样式风格，包括显示器、打印机、打字机、投影仪、PDA等等。CSS的引入随即引发了网页设计的一个又一个新高潮，使用CSS设计的优秀页面层出不穷。</p>
+
+
+</div>
+<div style="border:1px solid gray" id="id11">
+
+    <div>
+        <h1>银杏的优点</h1>
+        1. 叶色秀雅，花色清淡。<br>
+        2. 树体高大，寿命绵长，树粗可达4米，寿命可达3000年之多。固长与古老寺庙相配伍，以名山大川、风景名胜为伴。<br>
+        3. 树干光洁，愈伤力强，轻微的损伤很快便可愈合。<br>
+        4. 发芽晚落叶早，有利于早春和晚秋树下能及时得到和暧的阳光。<br>
+        5. 银杏冠大荫浓，具有降温作用；直射阳光下，气温高达40.20c，银杏树下的气温仅为35.30c。降温4.90c，优于其它树种。<br>
+        6. 萌蘖力强、耐修剪。根际萌蘖旺盛，可以形成五代同堂”，怀中抱孙”等自然风景。<br>
+        7. 银杏绝少病虫害，不污染环境，是著名的无公害树种。<br>
+        8. 抗旱力较强。<br>
+        9. 抗烟尘、抗火灾、抗有毒气体（如二氧化硫、氨气、臭氧等），抗辐射能力也强。
+    </div>
+
+
+</div>
+<div style="border:1px solid gray" id="id12">
+
+    <table align="center" cellpadding="1" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><img src="banner3.jpg" border="0"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="chara1" align="center" cellpadding="2" cellspacing="2" width="600px">
+        <tbody>
+        <tr>
+            <td>首页</td>
+            <td>心情日记</td>
+            <td>Free</td>
+            <td>一起走到</td>
+            <td>从明天起</td>
+            <td>纸飞机</td>
+            <td>下一站</td>
+        </tr>
+        </tbody>
+    </table>
+    <table align="center" cellpadding="0" cellspacing="1" width="600px">
+        <tbody>
+        <tr>
+            <td class="chara2" width="150px">
+                <br>
+
+                <p><img src="selfpic.jpg" class="pic1">
+                    <br>我的日记本</p>
+
+                <p class="leftcontent">他们彼此深信，是瞬间迸发的热情让他们相遇。这样的确定是美丽的，但变幻无常更为美丽。</p>
+
+                <p><img src="selfpic2.jpg" class="pic1">
+                    <br>心情轨迹</p>
+
+                <p class="leftcontent">董事长的一切都让人既羡慕又忌妒，但更让人受不了的是，有一天，上苍忽然赐给他一个神奇的礼物………</p>
+            </td>
+            <td class="chara3">
+                <h4>介绍</h4>
+
+                <p>我努力的抓紧世界，最后却仍被世界淘汰，如果一开始就松手，我会不那么伤心吗？你说，亲爱的孩子，世事难料，随它去吧！</p>
+                <h4>照相本子</h4>
+
+                <p>关于童年，你记住了什么？ <br>
+                    两岁时，我拥有一只巨大的粉红猪，它总在我嚎啕大哭时逗我笑。<br>
+                    三岁时，我骑着小木马一路摇到外婆家，它不喝水也不吃草。<br>
+                    四岁时，我离家出走，在公车上睡着了，最后是太空超人送我回家。<br>
+                    我真的没骗你，我通通都记得，还有照片为证。
+                </p>
+                <h4>地下铁</h4>
+
+                <p>天使在地下铁的入口，<br>
+                    和我说再见的那一年，<br>
+                    我渐渐看不见了。<br>
+                    十五岁生日的那年秋天早晨，<br>
+                    窗外下着毛毛雨，<br>
+                    我喂好我的猫。<br>
+                    六点零五分，<br>
+                    我走进地下铁。</p>
+                <h4>向左走向右走</h4>
+
+                <p>They're both convinced<br>
+                    that a sudden passion joined them.<br>
+                    Such certainth is beautiful,<br>
+                    but uncertainty is more beautiful still.</p>
+                <br>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div style="border:1px solid gray" id="id13">
+
+    <div style="height:90px;"></div>
+    <div class="content">
+        大江东去<br>浪淘尽<br>千古风流人物<br>
+        故垒西边人道是<br>三国周郎赤壁<br>
+        乱石穿空<br>惊涛拍岸<br>卷起千堆雪<br>
+        江山如画<br>一时多少豪杰<br>
+        遥想公谨当年<br>小乔初嫁了<br>雄姿英发<br>
+        羽扇纶巾谈笑间<br>强虏灰飞烟灭<br>
+        故国神游<br>多情应笑<br>我早生华发<br>
+        人生如梦<br>一尊还酹江月<br>
+    </div>
+
+
+</div>
+<div style="border:1px solid gray" id="id14"></div>
+<div style="border:1px solid gray" id="id15"></div>
+<div style="border:1px solid gray" id="id16"></div>
+
+</body>
+</html>

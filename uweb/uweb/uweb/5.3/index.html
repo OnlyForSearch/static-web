@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.layB{width:360px;padding:0px 15px;}
+.layB .tbC{ width:336px; padding:10px 12px; position:relative;    }
+.layB .prev,.layB .next{ background:url(images/icon.png) no-repeat; width:15px; height:276px; position:absolute; left:-7px; top:10px; background-position:-520px 0; }
+.layB .next{ left:auto; right:-15px; background-position:-560px 0; }
+.layB .prev:hover{ background-position:-540px 0; }
+.layB .next:hover{ background-position:-580px 0; }
+.layB .slide{ width:342px; overflow:hidden;    }
+.layB ul{ overflow:hidden; zoom:1; }
+.layB li{ width:102px; margin:0 5px 4px 5px; display:inline; float:left; line-height:20px;   }
+.layB li img{ display:block; border:1px solid #e6e6e6;  }
+.layB li a:hover img{ border-color:#888;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="layB" style="margin:0 auto">
+  <div class="tbC"> <a href="javascript:void(0)" class="prev"></a>
+    <div class="slide">
+      <ul>
+        <li><a href="#"><img src="images/1.jpg" /></a></li>
+        <li><a href="#"><img src="images/2.jpg" /></a></li>
+        <li><a href="#"><img src="images/3.jpg" /></a></li>
+        <li><a href="#"><img src="images/4.jpg" /></a></li>
+        <li><a href="#"><img src="images/5.jpg" /></a></li>
+        <li><a href="#"><img src="images/6.jpg" /></a></li>
+      </ul>
+      <ul>
+        <li><a href="#"><img src="images/7.jpg" /></a></li>
+        <li><a href="#"><img src="images/8.jpg" /></a></li>
+        <li><a href="#"><img src="images/9.jpg" /></a></li>
+        <li><a href="#"><img src="images/10.jpg" /></a></li>
+        <li><a href="#"><img src="images/11.jpg" /></a></li>
+        <li><a href="#"><img src="images/12.jpg" /></a></li>
+      </ul>
+    </div>
+    <a href="javascript:void(0)" class="next"></a> </div>
+</div>
+<script type="text/javascript">
+	jQuery(".layB").slide({ mainCell:".slide",effect:"leftMarquee",interTime:30,autoPlay:true });
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

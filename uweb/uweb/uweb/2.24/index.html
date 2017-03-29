@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.slider{ width:960px; margin:0 auto;  position:relative; overflow:hidden;   height:336px;; background:#000;  }
+.slider .bd{ position:relative; z-index:0;  }
+.slider .bd li{ height:336px; overflow:hidden; }
+.slider .bd li img{ display:block;  }
+.slider .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; }
+.slider .hd ul{ text-align:center;  }
+.slider .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:9px; height:9px; margin:0 4px; background:url(images/dot.png) 0 -16px;overflow:hidden;  filter:alpha(opacity=70);opacity:0.7;  vertical-align:top; line-height:9999px; }
+.slider .hd ul .on{ background-position:0 0;  }
+.slider .timer{ position:absolute; z-index:1; left:0; bottom:0; height:4px; width:0; background:#000; filter:alpha(opacity=40);opacity:0.4; font-size:0; overflow:hidden;}
+
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="slider">
+  <div class="bd">
+    <ul>
+      <li><a href="#"><img src="images/1.jpg" /></a></li>
+      <li><a href="#"><img src="images/2.jpg" /></a></li>
+      <li><a href="#"><img src="images/3.jpg" /></a></li>
+      <li><a href="#"><img src="images/4.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="hd">
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="timer"></div>
+  <!-- 进度条 --> 
+</div>
+<script type="text/javascript">
+	
+		jQuery(".slider").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click",
+			mouseOverStop:false,/* 鼠标移到容器层继续播放*/
+			/* 控制进度条 */
+			startFun:function(){
+				var timer = jQuery(".slider .timer");
+				timer.stop(true,true).animate({ "width":"0%" },0).animate({ "width":"100%" },2500);
+			}
+		});
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

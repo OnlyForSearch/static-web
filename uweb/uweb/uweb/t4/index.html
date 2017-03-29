@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/imagesview.css" />
+<script type="text/javascript" src="js/imagesview.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+#content { padding:30px 0px; }
+.cbox { width:910px; margin:0 auto; }
+.viewPic { width:900px; margin:0 auto; }
+.viewPic img { width:900px; height:510px; }
+.viewPic .btnn { width:330px; padding:20px 0px; margin:0 auto; }
+.viewPic .btnn .btn1 { float:left; display:block; width:149px; height:33px; background:url(images/floorDown.gif) center no-repeat; }
+.viewPic .btnn .btn2 { float:left; margin-right:20px; display:block; width:149px; height:33px; background:url(images/floorClick.gif) center no-repeat; }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ <strong style=" text-align:center;">此效果ie支持较好</strong>
+  <div id="content">
+    <div class="cbox fixed">
+      <div class="viewPic"> <a href="images/floorPic1.jpg" class="imagesview" title=""><img src="images/floorPic1.jpg" /></a>
+        <div class="btnn"><a href="images/floorPic1.jpg" class="btn2 imagesview" ></a><a href="#" class="btn1"></a></div>
+      </div>
+    </div>
+  </div>
+  
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

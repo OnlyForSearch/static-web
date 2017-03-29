@@ -1,0 +1,19 @@
+
+var phonecatApp = angular.module('phonecatApp',[]);
+phonecatApp.controller('PhoneListCtrl',function($scope){
+    $scope.phones=[{
+        'name': 'Nexus S',
+        'snippet': 'Fast just got faster with Nexus S.'
+    },
+        {
+            'name': 'Motorola XOOM? with Wi-Fi',
+            'snippet': 'The Next, Next Generation tablet.'
+        },
+        {
+            'name': 'MOTOROLA XOOM?',
+            'snippet': 'The Next, Next Generation tablet.'
+        }];
+    $scope.hello = 'hello,World!';
+    /**“Newest”在下拉菜单中被选中。这是因为我们在控制器中把orderProp设置成了‘age’*/
+    $scope.orderProp = 'age';
+});

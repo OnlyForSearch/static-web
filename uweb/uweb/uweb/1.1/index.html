@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.pageADslide{ width:221px; border:1px solid #e6e6e6; border-top:2px solid #cc9859; text-align:left;  margin-top:50px; margin-bottom:50px; }
+.pageADslide .hd{ height:38px; line-height:38px; border-bottom:1px solid #ddd;  position:relative; }
+.pageADslide .hd ul{  height:38px;   }
+.pageADslide .hd ul li{ float:left; padding:0 15px; cursor:pointer; font-size:14px; font-weight:bold; color:#555555;  }
+.pageADslide .hd ul li.on{ height:38px; color:#cd710c;}
+.pageADslide .bd ul{ width:177px; margin:0 auto; zoom:1;  }
+.pageADslide .bd ul .noBorder{border:none;}
+.pageADslide .bd li{padding:15px 0px 10px 0px; border-bottom:1px dashed #d0d0d0;   }
+.pageADslide .bd li p{ text-align:center; line-height:24px; color:#555555;}
+.pageADslide .bd li .date{ float:right; color:#999;  }
+.pageLine{ width:1px; height:38px; background:url(images/pageLine1.gif) center no-repeat; position:absolute; left:60px; top:0px;}
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="pageADslide" style="margin:0 auto;">
+  <div class="hd">
+    <div class="pageLine"></div>
+    <ul>
+      <li>衣柜</li>
+      <li>橱柜</li>
+    </ul>
+  </div>
+  <div class="bd">
+    <ul>
+      <li> <a href="#"> <img src="images/pagePic1.jpg"/>
+        <p>欧式简约衣柜</p>
+        </a> </li>
+      <li class="noBorder"> <a href="#"> <img src="images/pagePic1.jpg"/>
+        <p>欧式简约衣柜</p>
+        </a> </li>
+    </ul>
+    <ul>
+      <li> <a href="#"> <img src="images/pagePic2.jpg"/>
+        <p>欧式简约衣柜2</p>
+        </a> </li>
+      <li class="noBorder"> <a href="#"> <img src="images/pagePic2.jpg"/>
+        <p>欧式简约衣柜2</p>
+        </a> </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">jQuery(".pageADslide").slide();</script>
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/> <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>【 此框架 > 查看框架源代码(FF)】 <br/> 【不推荐使用ie浏览器】 </b>  </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

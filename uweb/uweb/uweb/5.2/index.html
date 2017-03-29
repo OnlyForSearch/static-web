@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.group_buying{ width:258px;  border: solid 1px #DDD; font-family:Arial; }
+.group_buying h3 { background:url(images/index_bg.png) 0 -255px; height: 31px; line-height: 31px; border-bottom: solid 1px #ccc; padding-left: 10px; color: #333 }
+.group_buying h3 em {  background:url(images/index_bg.png) 0 -586px; font-style:normal; padding-left: 18px; font-family: "微软雅黑"; color: #333; font-weight: bold; font-size: 14px }
+.group_buying ul { margin: 0 10px 0; zoom:1; }
+.group_buying ul li { border-bottom:1px dotted #ccc;  position: relative; height: 36px; line-height:36px }
+.group_buying ul li img { width: 120px; height: 90px; vertical-align:middle; }
+.group_buying .pic_r { position: absolute; left: 130px; top: 0; line-height: 24px }
+.group_buying .pic_r em { color: #c00; display: block; font-style:normal; }
+.group_buying .pic_r i { font-style: normal; display: block }
+.group_buying ul li p { clear: both; height: 30px; overflow: hidden }
+.group_buying .dis_pi { display: none }
+.group_buying ul .last { border-bottom:0;  }
+.group_buying .on { height: 125px; position: relative; width: 240px; line-height: 30px; margin-top: 10px }
+.group_buying .on .dis_pi { display: block }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="group_buying" style="margin:0 auto">
+  <h3><em>团购精品</em></h3>
+  <ul>
+    <li>
+      <div class="dis_pi"><a href="#"><img src="images/1.jpg"></a> <span class="pic_r"><em><strong>2.8</strong>折</em> <i>原价：<del>￥350.00</del> </i> 现价：￥99.00 </span> </div>
+      <p><a href="#">【全国包邮】专供五星级酒店,冬季性价比最好的滋补品</a></p>
+    </li>
+    <li>
+      <div class="dis_pi"><a href="#"><img src="images/2.jpg"></a> <span class="pic_r"><em><strong>3.0</strong>折</em> <i>原价：<del>￥168.00</del> </i> 现价：￥49.80 </span> </div>
+      <p><a href="#">【全国包邮】专供五星级酒店,冬季性价比最好的滋补品</a></p>
+    </li>
+    <li>
+      <div class="dis_pi"><a href="#"><img src="images/3.jpg"></a> <span class="pic_r"><em><strong>3.0</strong>折</em> <i>原价：<del>￥168.00</del> </i> 现价：￥49.80 </span> </div>
+      <p><a href="#">专供五星级酒店 冬季性价比最好的滋补品 香港加港特</a></p>
+    </li>
+    <li>
+      <div class="dis_pi"><a href="#"><img src="images/4.jpg"></a> <span class="pic_r"><em><strong>6.8</strong>折</em> <i>原价：<del>￥19.00</del> </i> 现价：￥13.00 </span> </div>
+      <p><a href="#">仅售13元/袋，享原价19元/袋陕西特产</a></p>
+    </li>
+    <li class="last">
+      <div class="dis_pi"><a href="#"><img src="images/5.jpg"></a> <span class="pic_r"><em><strong>4.0</strong>折</em> <i>原价：<del>￥98.00</del> </i> 现价：￥39.00 </span> </div>
+      <p><a href="#">【2条起售】仅39元/条！抢购原价98元/条【大手</a></p>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript">
+	jQuery(".group_buying").slide({ titCell:"li",triggerTime:0 });
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

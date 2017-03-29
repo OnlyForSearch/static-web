@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        p b { /* 嵌套声明 */
+            color: maroon; /* 颜色 */
+            text-decoration: underline; /* 下划线 */
+        }
+
+        div#id2 h1 {
+            color: red; /* 颜色 */
+            text-decoration: underline; /* 下划线 */
+        }
+
+        div#id2 h1 em { /* 嵌套选择器 */
+            color: #004400; /* 颜色 */
+            font-size: 40px; /* 字体大小 */
+        }
+
+        /*父子关系*/
+        .li1 {
+            color: red;
+        }
+
+        .li2 {
+            color: blue;
+        }
+
+        .li1 ol li { /* 利用CSS继承关系 */
+            font-weight: bold; /* 粗体 */
+            text-decoration: underline; /* 下划线 */
+        }
+
+        /*文字字体*/
+        div#id4 h2 {
+            font-family: 黑体, 幼圆;
+        }
+
+        div#id4 p {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#id4 p.kaiti {
+            font-family: 楷体_GB2312, "Times New Roman";
+        }
+
+        /*文字大小*/
+        div#id5 p.inch { font-size: 0.5in; }
+
+        div#id5 p.cm { font-size: 0.5cm; }
+
+        div#id5 p.mm { font-size: 4mm; }
+
+        div#id5 p.pt { font-size: 12pt; }
+
+        div#id5 p.pc { font-size: 2pc; }
+
+        div#id6 p.one { font-size: xx-small; }
+
+        div#id6 p.two { font-size: x-small; }
+
+        div#id6 p.three { font-size: small; }
+
+        div#id6 p.four { font-size: medium; }
+
+        div#id6 p.five { font-size: large; }
+
+        div#id6 p.six { font-size: x-large; }
+
+        div#id6 p.seven { font-size: xx-large; }
+
+        /*文字大小_相对值*/
+        div#id7 p.one {
+            font-size: 15px; /* 象素，因此实际显示大小与分辨率有关，很常用的方式 */
+        }
+
+        div#id7 p.one span {
+            font-size: 200%; /* 在父标记的基础上200% */
+        }
+
+        div#id7 p.two {
+            font-size: 30px;
+        }
+
+        div#id7 p.two span {
+            font-size: 0.5em; /* 在父标记的基础上×0.5 */
+        }
+
+        /*文字的颜色*/
+
+        div#id8 h2 { color: rgb(0%, 0%, 80%); }
+
+        div#id8 p {
+            color: #333333;
+            font-size: 13px;
+        }
+
+        div#id8 p span { color: blue; }
+
+        /*文字粗体*/
+
+        div#id9 h1 span { font-weight: lighter; }
+
+        div#id9 span { font-size: 28px; }
+
+        div#id9 span.one { font-weight: 100; }
+
+        div#id9 span.two { font-weight: 200; }
+
+        div#id9 span.three { font-weight: 300; }
+
+        div#id9 span.four { font-weight: 400; }
+
+        div#id9 span.five { font-weight: 500; }
+
+        div#id9 span.six { font-weight: 600; }
+
+        div#id9 span.seven { font-weight: 700; }
+
+        div#id9 span.eight { font-weight: 800; }
+
+        div#id9 span.nine { font-weight: 900; }
+
+        div#id9 span.ten { font-weight: bold; }
+
+        div#id9 span.eleven { font-weight: normal; }
+
+        /*文字斜体*/
+        div#id10 h1 { font-style: italic; }
+
+        /* 设置斜体 */
+        div#id10 h1 span { font-style: normal; }
+
+        /* 设置为标准风格 */
+        div#id10 p { font-size: 18px; }
+
+        div#id10 p.one { font-style: italic; }
+
+        div#id10 p.two { font-style: oblique; }
+
+        /*文字下划线、顶划线、删除线*/
+        div#id11 p.one { text-decoration: underline; }
+
+        /* 下划线 */
+        div#id11 p.two { text-decoration: overline; }
+
+        /* 顶划线 */
+        div#id11 p.three { text-decoration: line-through; }
+
+        /* 删除线 */
+        div#id11 p.four { text-decoration: blink; }
+
+        /* 闪烁 */
+
+        /*文字下划线、顶划线、删除线*/
+        div#id12 p.one { text-decoration: underline overline; }
+
+        /* 下划线+顶划线 */
+        div#id12 p.two { text-decoration: underline line-through; }
+
+        /* 下划线+删除线 */
+        div#id12 p.three { text-decoration: overline line-through; }
+
+        /* 顶划线+删除线 */
+        div#id12 p.four { text-decoration: underline overline line-through; }
+
+        /* 三种同时 */
+
+        /*英文字母大小写*/
+        div#id13 p { font-size: 17px; }
+
+        div#id13 p.one { text-transform: capitalize; }
+
+        /* 单词首字大写 */
+        div#id13 p.two { text-transform: uppercase; }
+
+        /* 全部大写 */
+        div#id13 p.three { text-transform: lowercase; }
+
+        /* 全部小写 */
+
+        div#id14 p {
+            font-size: 80px;
+            letter-spacing: -2px; /* 字母间距 */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#id14 .g1, .g2 { color: #184dc6; }
+
+        div#id14 .o1, .e { color: #c61800; }
+
+        div#id14 .o2 { color: #efba00; }
+
+        div#id14 .l { color: #42c34a; }
+
+        div#id15 {
+            background-color: #000000;
+        }
+
+        div#id15 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            color: #369;
+        }
+
+        div#id15 h1 img {
+            background: #f22; /* gif背景色 */
+            vertical-align: middle;
+        }
+
+        /*水平对齐*/
+       div#id16 p { font-size: 12px; }
+       div#id16 p.left { text-align: left; } /* 左对齐 */
+       div#id16 p.right { text-align: right; } /* 右对齐 */
+       div#id16 p.center { text-align: center; } /* 居中对齐 */
+       div#id16 p.justify { text-align: justify; } /* 两端对齐 */
+
+
+
+      div#id17  td.top { vertical-align: top; } /* 顶端对齐 */
+      div#id17  td.bottom { vertical-align: bottom; } /* 底端对齐 */
+      div#id17  td.middle { vertical-align: middle; } /* 中间对齐 */
+
+        /*垂直对齐*/
+       div#id18 span.zs { vertical-align: 10px; }
+
+       div#id18 span.fs { vertical-align: -10px; }
+
+
+        /*行间距*/
+
+       div#id19 p.one {
+            font-size: 10pt;
+            line-height: 8pt; /* 行间距，绝对数值，行间距小于字体大小 */
+        }
+
+       div#id19 p.second { font-size: 18px; }
+
+       div#id19 p.third { font-size: 10px; }
+
+       div#id19 p.second, p.third {
+            line-height: 1.5em; /* 行间距，相对数值 */
+        }
+
+
+
+        /**********字间距*/
+
+       div#id20 p.one {
+            font-size: 10pt;
+            letter-spacing: -2pt; /* 字间距，绝对数值，负数 */
+        }
+
+       div#id20 p.second { font-size: 18px; }
+
+       div#id20 p.third { font-size: 11px; }
+
+       div#id20 p.second, p.third {
+            letter-spacing: .5em; /* 字间距，相对数值 */
+        }
+
+        /*********首字放大*/
+
+        div#id21 {
+            background-color: black; /* 背景色 */
+        }
+
+      div#id21  p {
+            font-size: 15px; /* 文字大小 */
+            color: white; /* 文字颜色 */
+        }
+
+     div#id21   p span {
+            font-size: 60px; /* 首字大小 */
+            float: left; /* 首字下沉 */
+            padding-right: 5px; /* 与右边的间隔 */
+            font-weight: bold; /* 粗体字 */
+            font-family: 黑体; /* 黑体字 */
+            color: yellow; /* 字体颜色 */
+        }
+
+        /*
+       div#id21 p:first-letter{
+            font-size:60px;
+            float:left;
+            padding-right:5px;
+            font-weight:bold;
+            font-family:黑体;
+            color:yellow;
+        }
+       div#id21 p:first-line{
+            text-decoration:underline;
+        }*/
+
+
+
+
+
+        /*****************段落实例:Baidu搜索********************/
+        div#id22 p {
+            margin: 0px;
+            font-family: Arial; /* 定义所有字体 */
+        }
+
+      div#id22 p.title {
+            padding-bottom: 0px;
+            font-size: 16px;
+        }
+
+       div#id22 p.content {
+            padding-top: 3px; /* 标题与内容的距离 */
+            font-size: 13px; /* 内容的字体大小 */
+            line-height: 18px;
+        }
+
+       div#id22 p.link {
+            font-size: 13px;
+            color: #008000; /* 网址颜色 */
+            padding-bottom: 25px;
+        }
+
+       div#id22 span.search {
+            color: #c60a00; /* 关键字颜色 */
+        }
+
+       div#id22 span.quick {
+            color: #666666; /* 快照颜色 */
+            text-decoration: underline; /* 快照下划线 */
+        }
+
+       div#id22 p.title span.search {
+            text-decoration: underline; /* 标题处关键字的下划线 */
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<p>嵌套使<b>用CSS</b>标记的方法</p>
+
+<div id="id2" style="border:1px solid gray">
+
+    <h1>祖国的首都<em>北京</em></h1>
+
+    <p>欢迎来到祖国的首都<em>北京</em>，这里是全国<strong>政治、<a href="economic.html"><em>经济</em></a>、文化</strong>的中心</p>
+    <ul>
+        <li>在这里，你可以：
+            <ul>
+                <li>感受大自然的美丽</li>
+                <li>体验生活的节奏</li>
+                <li>领略首都的激情与活力</li>
+            </ul>
+        </li>
+        <li>你还可以：
+            <ol>
+                <li>去八达岭爬长城</li>
+                <li>去香山看红叶</li>
+                <li>去王府井逛夜市</li>
+            </ol>
+        </li>
+    </ul>
+    <p>如果您有任何问题，欢迎<a href="contactus">联系我们</a></p>
+
+
+</div>
+<div id="id3" style="border:1px solid gray">
+    <ul>
+        <li class="li1">关系1
+            <ul>
+                <li>页面父子关系复杂时</li>
+                <li>页面父子关系复杂时</li>
+                <li>这里省略20个嵌套...</li>
+            </ul>
+            <ol>
+                <li>页面父子关系复杂时</li>
+                <li>页面父子关系复杂时</li>
+                <li>这里省略20个嵌套...</li>
+            </ol>
+        </li>
+        <li class="li2">关系2
+            <ul>
+                <li>页面父子关系复杂时</li>
+                <li>页面父子关系复杂时</li>
+                <li>这里省略20个嵌套...</li>
+            </ul>
+            <ol>
+                <li>页面父子关系复杂时</li>
+                <li>页面父子关系复杂时</li>
+                <li>这里省略20个嵌套...</li>
+            </ol>
+        </li>
+    </ul>
+
+</div>
+<div id="id4" style="border:1px solid gray">
+
+    <h2>立 春</h2>
+
+    <p>自秦代以来，我国就一直以立春作为春季的开始。立春是从天文上来划分的，而在自然界、在人们的心目中，春是温暖，鸟语花香；春是生长，耕耘播种。在气候学中，春季是指候（5天为一候）平均气温10℃至22℃的时段。</p>
+
+    <p class="kaiti">作者: isaac</p>
+
+
+</div>
+<div id="id5" style="border:1px solid gray">
+
+    <p class="inch">文字大小，0.5in</p>
+
+    <p class="cm">文字大小，0.5cm</p>
+
+    <p class="mm">文字大小，4mm</p>
+
+    <p class="pt">文字大小，12pt</p>
+
+    <p class="pc">文字大小，2pc</p>
+
+
+</div>
+<div id="id6" style="border:1px solid gray">
+
+    <p class="one">文字大小，xx-small</p>
+
+    <p class="two">文字大小，x-small</p>
+
+    <p class="three">文字大小，small</p>
+
+    <p class="four">文字大小，medium</p>
+
+    <p class="five">文字大小，large</p>
+
+    <p class="six">文字大小，x-large</p>
+
+    <p class="seven">文字大小，xx-large</p>
+
+
+</div>
+
+<diV id="id7" style="border:1px solid gray">
+    <p class="one">文字大小<span>相对值</span>，15px。</p>
+
+    <p class="two">文字大小<span>相对值</span>，30px。</p>
+
+</diV>
+<diV id="id8" style="border:1px solid gray">
+
+    <h2>冬至的由来</h2>
+
+    <p><span>冬至</span>过节源于汉代，盛于唐宋，相沿至今。《清嘉录》甚至有“<span>冬至</span>大如年”之说。这表明古人对<span>冬至</span>十分重视。人们认为<span>冬至</span>是阴阳二气的自然转化，是上天赐予的福气。汉朝以<span>冬至</span>为“冬节”，官府要举行祝贺仪式称为“贺冬”，例行放假。《后汉书》中有这样的记载：“<span>冬至</span>前后，君子安身静体，百官绝事，不听政，择吉辰而后省事。”所以这天朝庭上下要放假休息，军队待命，边塞闭关，商旅停业，亲朋各以美食相赠，相互拜访，欢乐地过一个“安身静体”的节日。
+    </p>
+
+    <p>唐、宋时期，<span>冬至</span>是祭天祭祀祖的日子，皇帝在这天要到郊外举行祭天大典，百姓在这一天要向父母尊长祭拜，现在仍有一些地方在<span>冬至</span>这天过节庆贺。</p>
+
+
+</diV>
+
+
+<diV id="id9" style="border:1px solid gray">
+
+    <h1>文字<span>粗</span>体</h1>
+    <span class="one">文字粗细:100</span>
+    <span class="two">文字粗细:200</span>
+    <span class="three">文字粗细:300</span>
+    <span class="four">文字粗细:400</span>
+    <span class="five">文字粗细:500</span>
+    <span class="six">文字粗细:600</span>
+    <span class="seven">文字粗细:700</span>
+    <span class="eight">文字粗细:800</span>
+    <span class="nine">文字粗细:900</span>
+    <span class="ten">文字粗细:bold</span>
+    <span class="eleven">文字粗细:normal</span>
+
+</diV>
+<diV id="id10" style="border:1px solid gray">
+
+    <h1>文字<span>斜</span>体</h1>
+
+    <p class="one">文字斜体</p>
+
+    <p class="two">文字斜体</p>
+
+
+</diV>
+<diV id="id11" style="border:1px solid gray">
+    <p class="one">下划线文字，下划线文字</p>
+
+    <p class="two">顶划线文字，顶划线文字</p>
+
+    <p class="three">删除线文字，删除线文字</p>
+
+    <p class="four">文字闪烁</p>
+
+    <p>正常文字对比</p>
+</diV>
+<diV id="id12" style="border:1px solid gray">
+    <p>正常文字对比</p>
+
+    <p class="one">下划线文字，顶划线文字</p>
+
+    <p class="two">下划线文字，删除线文字</p>
+
+    <p class="three">顶划线文字，删除线文字</p>
+
+    <p class="four">三种效果同时</p>
+
+</diV>
+
+<diV id="id13" style="border:1px solid gray">
+
+    <p class="one">quick brown fox jumps over the lazy dog.</p>
+
+    <p class="two">quick brown fox jumps over the lazy dog.</p>
+
+    <p class="three">QUICK Brown Fox JUMPS OVER THE LAZY DOG.</p>
+
+
+</diV>
+<diV id="id14" style="border:1px solid gray">
+
+    <p><span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span></p>
+
+
+</diV>
+<diV id="id15" style="border:1px solid gray">
+
+    <h1><img src="bg.gif" border="0"> Super Title CSS</h1>
+
+
+</diV>
+
+
+
+<diV id="id16" style="border:1px solid gray">
+
+    <p class="left">
+        这个段落采用左对齐的方式，text-align:left，因此文字都采用左对齐。<br>
+        床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。<br>李白
+    </p>
+
+    <p class="right">
+        这个段落采用右对齐的方式，text-align:right，因此文字都采用右对齐。<br>
+        床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。<br>李白
+    </p>
+
+    <p class="center">
+        这个段落采用居中对齐的方式，text-align:center，因此文字都采用居中对齐。<br>
+        床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。<br>李白
+    </p>
+
+    <p class="justify">
+        这个段落采用左对齐的方式，text-align:justify，因此文字都采用左对齐。床前明月光，疑是地上霜。举头望明月，低头思故乡。<br>李白
+    </p>
+
+
+</diV>
+
+<diV id="id17" style="border:1px solid gray">
+
+    <table border="1" cellpadding="2" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><img src="02.jpg" border="0"></td>
+            <td class="top">垂直对齐方式，top</td>
+        </tr>
+        <tr>
+            <td><img src="02.jpg" border="0"></td>
+            <td class="bottom">垂直对齐方式，bottom</td>
+        </tr>
+        <tr>
+            <td><img src="02.jpg" border="0"></td>
+            <td class="middle">垂直对齐方式，middle</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</diV>
+
+
+<diV id="id18" style="border:1px solid gray">
+    <p>给对齐属性设置具体<span class="zs">数值</span>，正数</p>
+    <p>给对齐属性设置<span class="fs">具体</span>数值，负数</p>
+</diV>
+
+
+<diV id="id19" style="border:1px solid gray">
+    <p class="one">秋分，我国古籍《春秋繁露、阴阳出入上下篇》中说：“秋分者，阴阳相半也，故昼夜均而寒暑平。”“秋分”的意思有二：一是太阳在这时到达黄径180。一天24小时昼夜均分，各12小时；二是按我国古代以立春、立夏、立秋、立冬为四季开始的季节划分法，秋分日居秋季90天之中，平分了秋季。</p>
+    <p class="second">秋分时节，我国长江流域及其以北的广大地区，均先后进入了秋季，日平均气温都降到了22℃以下。北方冷气团开始具有一定的势力，大部分地区雨季刚刚结束，凉风习习，碧空万里，风和日丽，秋高气爽，丹桂飘香，蟹肥菊黄，秋分是美好宜人的时节。</p>
+    <p class="third">秋季降温快的特点，使得秋收、秋耕、秋种的“三秋”大忙显得格外紧张。秋分棉花吐絮，烟叶也由绿变黄，正是收获的大好时机。华北地区已开始播种冬麦，长江流域及南部广大地区正忙着晚稻的收割，抢晴耕翻土地，准备油菜播种。</p>
+</diV>
+<diV id="id20" style="border:1px solid gray">
+
+    <p class="one">文字间距1，负数</p>
+
+    <p class="second">文字间距2，相对数值</p>
+
+    <p class="third">文字间距3，相对数值</p>
+
+
+</diV>
+
+
+<div id="id21" style="border:1px solid gray">
+
+    <p><span>中</span>秋节是远古天象崇拜——敬月习俗的遗痕。据《周礼·春官》记载，周代已有“中秋夜迎寒”、“中秋献良裘”、“秋分夕月（拜月）”的活动；汉代，又在中秋或立秋之日敬老、养老，赐以雄粗饼。晋时亦有中秋赏月之举，不过不太普遍；直到唐代将中秋与储娥奔月、吴刚伐桂、玉兔捣药、杨贵妃变月神、唐明皇游月宫等神话故事结合起，使之充满浪漫色彩，玩月之风方才大兴。
+    </p>
+
+    <p>
+        北宋，正式定八月十五为中秋节，并出现“小饼如嚼月，中有酥和饴”的节令食品。孟元老《东京梦华录》说：“中秋夜，贵家结饰台榭，民间争占酒楼玩月”；而且“弦重鼎沸，近内延居民，深夜逢闻笙芋之声，宛如云外。间里儿童，连宵婚戏；夜市骈阗，至于通晓。”吴自牧《梦梁录》说：“此际金凤荐爽，玉露生凉，丹桂香飘，银蟾光满。王孙公子，富家巨室，莫不登危楼，临轩玩月，或开广榭，玳筵罗列，琴瑟铿锵，酌酒高歌，以卜竟夕之欢。</p>
+
+
+</div>
+<div id="id22" style="border:1px solid gray">
+
+    <p class="title"><a href="#">中国<span class="search">春节</span>网</a></p>
+
+    <p class="content">欢迎光临中国<span class="search">春节</span>网,您现在的位置是中国<span class="search">春节</span>网首页! "年"兽的传说 熬年的传说 万年创建历法说 中国古代历法发展 <span class="search">春节</span>:传统和现代
+        元宵灯节源于何时? 猜灯谜的来由 十二生肖的源流、排列与信仰 祭灶 扫尘 贴春联 年画 倒贴福字 除夕夜 ...</p>
+
+    <p class="link">www.chunjie.net.cn/ 46K 2006-12-18 - <span class="quick">百度快照</span></p>
+
+    <p class="title"><a href="#">喜迎2004<span class="search">春节</span>_TOM新闻</a></p>
+
+    <p class="content">·<span class="search">春节</span>流行三类“拜年短信”:猴、祝福、个性 ·<span class="search">春节</span>期间电视节目早知道(1月19日-1月25日) ·猴年贺岁:短信 彩信...·TOM游戏与大家同过快乐<span
+            class="search">春节</span> 一起来玩免费网游! ·“对对联 贺新春” 玩乐吧强档推荐 许个愿吧 ·<span class="search">春节</span>听觉搜爆-...</p>
+
+    <p class="link">news.tom.com/hot/2004year/ 82K 2004-1-25 - <span class="quick">百度快照</span></p>
+
+    <p class="title"><a href="#"><span class="search">春节</span> 我把money献给你_阿里巴巴</a></p>
+
+    <p class="content">编者按:新年、<span class="search">春节</span>、情人节,一年中时尚男女血拼的最佳时节。商家借节造势,推出的揽客“花招”也是层出不穷…… 新春最受欢迎的开...·<span class="search">春节</span>期间:这些生意好赚钱(一)(图)01/20
+        ·鼎大祥“红腰带吉祥裤”销售红火01/18 <span class="search">春节</span> 这些生意好...</p>
+
+    <p class="link">info.china.alibaba.com/news/subject/v3000 ... 33K 2006-12-10 - <span class="quick">百度快照</span></p>
+
+
+</div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+<div style="border:1px solid gray"></div>
+
+</body>
+</html>

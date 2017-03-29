@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.ladyScroll{width:680px;height:484px;margin:15px auto;border:#ddd 1px solid;position:relative;}
+.ladyScroll .prev,.ladyScroll .next{width:51px;height:45px;position:absolute;top:210px;left:0;z-index:100; cursor:pointer; background:url(images/btns.png) no-repeat;}
+.ladyScroll .next{ left:auto; right:0; background-position:0 -90px;}
+.ladyScroll .prev:hover{ background-position:0 -45px; }
+.ladyScroll .next:hover{ background-position:0 -135px; }
+.ladyScroll .scrollWrap{width:616px;margin-left:31px;padding-top:15px;overflow:hidden;position:absolute;}
+.ladyScroll dl{float:left;width:308px;text-align:center;position:relative;}
+.ladyScroll span{display:block;width:298px;height:53px;position:absolute;left:5px;bottom:0;background:#5f626b;filter:alpha(opacity=80);opacity:0.80;}
+.ladyScroll dt{margin:0 auto;width:298px;overflow:hidden;}
+.ladyScroll img{display:block;width:298px;height:450px;}
+.ladyScroll dd{width:298px;height:40px;line-height:28px;font-size:20px;color:#fff;text-align:center;overflow:hidden;position:absolute;left:5px;bottom:0;}
+.ladyScroll dd a{ color:#fff;  }
+.ladyScroll dd a:hover{ text-decoration:none;  }
+.ladyScroll dl:hover span{ background:#B52153;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="ladyScroll"> <a class="prev" href="javascript:void(0)"></a>
+  <div class="scrollWrap">
+    <div class="dlList">
+      <dl>
+        <dt><a href="#"><img src="images/1.jpg"></a><span></span></dt>
+        <dd><a href="#">甜美展现得淋漓尽致</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/2.jpg"></a><span></span></dt>
+        <dd><a href="#">回眸一笑让人着迷</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/3.jpg"></a><span></span></dt>
+        <dd><a href="#">阔腿裤遮住小象腿</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/4.jpg"></a><span></span></dt>
+        <dd><a href="#">小礼服可爱小女人</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/5.jpg"></a><span></span></dt>
+        <dd><a href="#">帅气鞋和包很相搭</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/6.jpg"></a><span></span></dt>
+        <dd><a href="#">超级经典短打装扮</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/7.jpg"></a><span></span></dt>
+        <dd><a href="#">小西服配上工装裤</a></dd>
+      </dl>
+      <dl>
+        <dt><a href="#"><img src="images/8.jpg"></a><span></span></dt>
+        <dd><a href="#">甜蜜蜜的公主打扮</a></dd>
+      </dl>
+    </div>
+  </div>
+  <a class="next" href="javascript:void(0)"></a> </div>
+<script type="text/javascript">
+	jQuery(".ladyScroll").slide({ mainCell:".dlList", effect:"leftLoop",vis:2, autoPlay:true});
+	</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

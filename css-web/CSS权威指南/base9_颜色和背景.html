@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style></style>
+
+    <style>
+        /*垂直重复图片*/
+
+        div.back1 {
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-repeat: repeat-y;
+        }
+
+        div.back2 {
+            /*水平重复图片*/
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-repeat: repeat-x;
+        }
+
+        div.back3 {
+            /*不重复图片*/
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-repeat: no-repeat;
+        }
+
+        /************背景定位************/
+        div.back-pos {
+            /*背景定位*/
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+        div.back-pos2 {
+            /*背景定位*/
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-position: top right;
+            background-repeat: no-repeat;
+
+        }
+
+        div.back-pos3 {
+            /*b定位百分数*/
+            width: 250px;
+            height: 50px;
+            background-image: url("img/love_b_100.png");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+        }
+
+        /*居中图像并重复*/
+        p.backpos4 {
+            width: 300px;
+            height: 300px;
+            background-image: url("img/love_g_100.png");
+            background-position: center;
+            border: 1px dotted gray;
+        }
+
+        p.c1 {
+            background-repeat: repeat-x;
+        }
+
+        p.c2 {
+            background-repeat: repeat-y;
+        }
+
+    </style>
+</head>
+<body>
+<div class="back1">
+    /*垂直重复图片*/
+</div>
+<div class="back2">水平重复图片</div>
+<div class="back3">/*不重复图片*/</div>
+<div class="back-pos">背景定位:背景图片居中</div>
+<div class="back-pos2">背景定位:背景图片放置在右上角</div>
+<div class="back-pos">b定位百分数</div>
+<div class="back-pos">背景定位:背景图片居中;背景定位:背景图片居中背景定位:背景图片居中;背景定位:背景图片居中背景定位:背景图片居中;背景定位:背景图片居中背景定位:背景图片居中;背景定位:背景图片居中</div>
+
+<p class="backpos4 c1">
+    居中图像并重复
+</p>
+
+<p class="backpos4 c2">
+    居中图像并重复
+</p>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*可以外部样式表使用,需要使用其他外部样式表中的样式的时候,@import非常有用*/
+@import url("sheet2.css");
+@import url("http://example.org/library/layout.css");
+@import url("printer.css") print;
+
+body{
+    color: red;
+    background: yellow;
+}
+h1{
+    color:blue;
+}
+/*@Import 用于指示web浏览器加载一个外部样式表

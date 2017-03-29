@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        #id1 {
+            caption-side: bottom;
+        }
+
+
+        /**************************/
+        #id2 {
+            background-color: #ebf5ff; /* 页面背景色 */
+            margin: 0px; padding: 4px;
+            text-align: center; /* 居中对齐（IE有效） */
+        }
+
+        #id2  .datalist {
+            color: #0046a6; /* 表格文字颜色 */
+            background-color: #d2e8ff; /* 表格背景色 */
+            font-family: Arial; /* 表格字体 */
+        }
+
+        #id2 .datalist caption {
+            font-size: 18px; /* 标题文字大小 */
+            font-weight: bold; /* 标题文字粗体 */
+        }
+
+        #id2 .datalist th {
+            color: #003e7e; /* 行、列名称颜色 */
+            background-color: #7bb3ff; /* 行、列名称的背景色 */
+        }
+
+        /**************************/
+        #id3 .datalist {
+            border: 1px solid #429fff; /* 表格边框 */
+            font-family: Arial;
+            border-collapse: collapse; /* 边框重叠 */
+        }
+
+        #id3 .datalist caption {
+            padding-top: 3px;
+            padding-bottom: 2px;
+            font: bold 1.1em;
+            background-color: #f0f7ff;
+            border: 1px solid #429fff; /* 表格标题边框 */
+        }
+
+        #id3 .datalist th {
+            border: 1px solid #429fff; /* 行、列名称边框 */
+            background-color: #d2e8ff;
+            font-weight: bold;
+            padding-top: 4px; padding-bottom: 4px;
+            padding-left: 10px; padding-right: 10px;
+            text-align: center;
+        }
+
+        #id3 .datalist td {
+            border: 1px solid #429fff; /* 单元格边框 */
+            text-align: right;
+            padding: 4px;
+        }
+
+        /**************************/
+        #id4 .datalist {
+            border: 1px solid #0058a3; /* 表格边框 */
+            font-family: Arial;
+            border-collapse: collapse; /* 边框重叠 */
+            background-color: #eaf5ff; /* 表格背景色 */
+            font-size: 14px;
+        }
+
+        #id4 .datalist caption {
+            padding-bottom: 5px;
+            font: bold 1.4em;
+            text-align: left;
+        }
+
+        #id4 .datalist th {
+            border: 1px solid #0058a3; /* 行名称边框 */
+            background-color: #4bacff; /* 行名称背景色 */
+            color: #FFFFFF; /* 行名称颜色 */
+            font-weight: bold;
+            padding-top: 4px; padding-bottom: 4px;
+            padding-left: 12px; padding-right: 12px;
+            text-align: center;
+        }
+
+        #id4 .datalist td {
+            border: 1px solid #0058a3; /* 单元格边框 */
+            text-align: left;
+            padding-top: 4px; padding-bottom: 4px;
+            padding-left: 10px; padding-right: 10px;
+        }
+
+        #id4 .datalist tr.altrow {
+            background-color: #c7e5ff; /* 隔行变色 */
+        }
+
+
+        /**************************/
+
+        #id5 .datalist {
+            border: 1px solid #0058a3; /* 表格边框 */
+            font-family: Arial;
+            border-collapse: collapse; /* 边框重叠 */
+            background-color: #eaf5ff; /* 表格背景色 */
+            font-size: 14px;
+        }
+
+        #id5 .datalist caption {
+            padding-bottom: 5px;
+            font: bold 1.4em;
+            text-align: left;
+        }
+
+        #id5 .datalist th {
+            border: 1px solid #0058a3; /* 行名称边框 */
+            background-color: #4bacff; /* 行名称背景色 */
+            color: #FFFFFF; /* 行名称颜色 */
+            font-weight: bold;
+            padding-top: 4px; padding-bottom: 4px;
+            padding-left: 12px; padding-right: 12px;
+            text-align: center;
+        }
+
+        #id5 .datalist td {
+            border: 1px solid #0058a3; /* 单元格边框 */
+            text-align: left;
+            padding-top: 4px; padding-bottom: 4px;
+            padding-left: 10px; padding-right: 10px;
+        }
+
+        #id5 .datalist tr:hover, .datalist tr.altrow {
+            background-color: #c4e4ff; /* 动态变色 */
+        }
+
+        /************Calendar**************/
+        #id6 .clmonth {
+            border-collapse: collapse;
+            width: 780px;
+        }
+
+        #id6 .clmonth caption {
+            text-align: left;
+            font: bold 130% Georgia, "Times New Roman";
+            padding-bottom: 6px;
+        }
+
+        #id6 .clmonth th {
+            border: 1px solid #999999;
+            border-bottom: none;
+            padding: 2px 8px 2px 8px;
+            background-color: #D3D2A0;
+            color: #2F2F2F;
+            font: 80% Verdana, Geneva, Arial, Helvetica, sans-serif;
+            width: 110px;
+        }
+
+        #id6  .clmonth td {
+            border: 1px solid #AFAFAF;
+            font: 80% Verdana, Geneva, Arial, Helvetica, sans-serif;
+            padding: 2px 4px 2px 4px;
+            vertical-align: top;
+        }
+
+        #id6  .clmonth td.previous, .clmonth td.next {
+            background-color: #F5F4E6;
+            color: #A6A6A6;
+        }
+
+        #id6 .clmonth td.active {
+            background-color: #B1CBE1;
+            color: #2B5070;
+            border: 2px solid #4682B4;
+        }
+
+        #id6 .clmonth ul {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 12px;
+            padding-right: 6px;
+        }
+
+        #id6 .clmonth li {
+            margin-bottom: 8px;
+        }
+
+        /***********表单***************/
+
+        #id7  form {
+            border: 1px dotted #AAAAAA;
+            padding: 3px 6px 3px 6px;
+            margin: 0px;
+            font: 14px Arial;
+        }
+
+        #id7  input {
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px solid #00008B;
+        }
+
+        #id7 select {
+            width: 80px;
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px solid #00008B;
+        }
+
+        #id7  textarea {
+            width: 200px;
+            height: 40px;
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px solid #00008B;
+        }
+        /************表单**************/
+
+        #id8  form {
+            border: 1px dotted #AAAAAA;
+            padding: 1px 6px 1px 6px;
+            margin: 0px;
+            font: 14px Arial;
+        }
+
+        #id8 input { /* 所有input标记 */
+            color: #00008B;
+        }
+
+        #id8  input.txt { /* 文本框单独设置 */
+            border: 1px inset #00008B;
+            background-color: #ADD8E6;
+        }
+
+        #id8  input.btn { /* 按钮单独设置 */
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px outset #00008B;
+            padding: 1px 2px 1px 2px;
+        }
+
+        #id8   select {
+            width: 80px;
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px solid #00008B;
+        }
+
+        #id8  textarea {
+            width: 200px;
+            height: 40px;
+            color: #00008B;
+            background-color: #ADD8E6;
+            border: 1px inset #00008B;
+        }
+
+        /************像文字一样的按钮**************/
+        #id9 {
+            background-color: #daeeff; /* 页面背景色 */
+        }
+
+        #id9 form {
+            margin: 0px; padding: 0px;
+            font: 14px;
+        }
+
+        #id9 input {
+            font: 14px Arial;
+        }
+
+        #id9 .txt {
+            border-bottom: 1px solid #005aa7; /* 下划线效果 */
+            color: #005aa7;
+            border-top: 0px; border-left: 0px;
+            border-right: 0px;
+            background-color: transparent; /* 背景色透明 */
+        }
+
+        #id9 .btn {
+            background-color: transparent; /* 背景色透明 */
+            border: 0px; /* 边框取消 */
+        }
+
+        /***********七彩的下拉菜单***************/
+        #id10  .blue {
+            background-color: #7598FB;
+            color: #000000;
+        }
+
+        #id10  .red {
+            background-color: #E20A0A;
+            color: #ffffff;
+        }
+
+        #id10  .green {
+            background-color: #3CB371;
+            color: #ffffff;
+        }
+
+        #id10 .yellow {
+            background-color: #FFFF6F;
+            color: #000000;
+        }
+
+        #id10 .cyan {
+            background-color: 00 FFFF;
+            color: #000000;
+        }
+
+        #id10 .purple {
+            background-color: 800080;
+            color: #FFFFFF;
+        }
+
+
+        /************直接输入的Excel表格**************/
+
+        #id11  table.formdata {
+            border: 1px solid #5F6F7E;
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+
+        #id11  table.formdata caption {
+            text-align: left;
+            padding-bottom: 6px;
+        }
+
+        #id11  table.formdata th {
+            border: 1px solid #5F6F7E;
+            background-color: #E2E2E2;
+            color: #000000px;
+            text-align: left;
+            font-weight: normal;
+            padding: 2px 8px 2px 6px;
+            margin: 0px;
+        }
+
+        #id11  table.formdata td {
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid #ABABAB; /* 单元格边框 */
+        }
+
+        #id11  table.formdata input {
+            width: 100px;
+            padding: 1px 3px 1px 3px;
+            margin: 0px;
+            border: none; /* 输入框不要边框 */
+            font-family: Arial;
+        }
+
+        #id11 .btn {
+            border: 1px solid #0083f2;
+            font-family: Arial;
+        }
+
+        /*************Sina调查问卷*************/
+
+        #id12 table.outside { /* 外层表格 */
+            background: url(bg1.jpg);
+            font-size: 12px;
+            padding: 0px;
+        }
+
+        #id12 td.title { /* 表格标题 */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 3px;
+            padding-bottom: 0px;
+        }
+
+        #id12  td.tdoutside {
+            padding: 0px 1px 4px 1px;
+        }
+
+        #id12 table.inside { /* 内层表格 */
+            width: 269px;
+            font-size: 12px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #id12  td.tdinside {
+            padding: 7px 0px 7px 10px;
+            background-color: #FFD455;
+        }
+
+        #id12 form {
+            margin: 0px; padding: 0px;
+        }
+
+        #id12 input {
+            font-size: 12px;
+        }
+
+        #id12  a {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        /**************************/
+        /**************************/
+        /**************************/
+        /**************************/
+        /**************************/
+        /**************************/
+        /**************************/
+        /**************************/
+
+
+
+    </style>
+
+</head>
+<body>
+<div id="id1">
+
+    <table summary="This table shows the yearly income for years 2004 through 2007" border="1">
+        <caption>年度收入 2004 - 2007</caption>
+        <tbody>
+        <tr>
+            <th></th>
+            <th scope="col">2004</th>
+            <th scope="col">2005</th>
+            <th scope="col">2006</th>
+            <th scope="col">2007</th>
+        </tr>
+        <tr>
+            <th scope="row">拨款</th>
+            <td>11,980</td>
+            <td>12,650</td>
+            <td>9,700</td>
+            <td>10,600</td>
+        </tr>
+        <tr>
+            <th scope="row">捐款</th>
+            <td>4,780</td>
+            <td>4,989</td>
+            <td>6,700</td>
+            <td>6,590</td>
+        </tr>
+        <tr>
+            <th scope="row">投资</th>
+            <td>8,000</td>
+            <td>8,100</td>
+            <td>8,760</td>
+            <td>8,490</td>
+        </tr>
+        <tr>
+            <th scope="row">募捐</th>
+            <td>3,200</td>
+            <td>3,120</td>
+            <td>3,700</td>
+            <td>4,210</td>
+        </tr>
+        <tr>
+            <th scope="row">销售</th>
+            <td>28,400</td>
+            <td>27,100</td>
+            <td>27,950</td>
+            <td>29,050</td>
+        </tr>
+        <tr>
+            <th scope="row">杂费</th>
+            <td>2,100</td>
+            <td>1,900</td>
+            <td>1,300</td>
+            <td>1,760</td>
+        </tr>
+        <tr>
+            <th scope="row">总计</th>
+            <td>58,460</td>
+            <td>57,859</td>
+            <td>58,110</td>
+            <td>60,700</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div id="id2">
+
+    <table summary="This table shows the yearly income for years 2004 through 2007" class="datalist" border="1">
+        <caption>年度收入 2004 - 2007</caption>
+        <tbody>
+        <tr>
+            <th></th>
+            <th scope="col">2004</th>
+            <th scope="col">2005</th>
+            <th scope="col">2006</th>
+            <th scope="col">2007</th>
+        </tr>
+        <tr>
+            <th scope="row">拨款</th>
+            <td>11,980</td>
+            <td>12,650</td>
+            <td>9,700</td>
+            <td>10,600</td>
+        </tr>
+        <tr>
+            <th scope="row">捐款</th>
+            <td>4,780</td>
+            <td>4,989</td>
+            <td>6,700</td>
+            <td>6,590</td>
+        </tr>
+        <tr>
+            <th scope="row">投资</th>
+            <td>8,000</td>
+            <td>8,100</td>
+            <td>8,760</td>
+            <td>8,490</td>
+        </tr>
+        <tr>
+            <th scope="row">募捐</th>
+            <td>3,200</td>
+            <td>3,120</td>
+            <td>3,700</td>
+            <td>4,210</td>
+        </tr>
+        <tr>
+            <th scope="row">销售</th>
+            <td>28,400</td>
+            <td>27,100</td>
+            <td>27,950</td>
+            <td>29,050</td>
+        </tr>
+        <tr>
+            <th scope="row">杂费</th>
+            <td>2,100</td>
+            <td>1,900</td>
+            <td>1,300</td>
+            <td>1,760</td>
+        </tr>
+        <tr>
+            <th scope="row">总计</th>
+            <td>58,460</td>
+            <td>57,859</td>
+            <td>58,110</td>
+            <td>60,700</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div id="id3">
+
+    <table class="datalist">
+        <caption>年度收入 2004 - 2007</caption>
+        <tbody>
+        <tr>
+            <th></th>
+            <th scope="col">2004</th>
+            <th scope="col">2005</th>
+            <th scope="col">2006</th>
+            <th scope="col">2007</th>
+        </tr>
+        <tr>
+            <th scope="row">拨款</th>
+            <td>11,980</td>
+            <td>12,650</td>
+            <td>9,700</td>
+            <td>10,600</td>
+        </tr>
+        <tr>
+            <th scope="row">捐款</th>
+            <td>4,780</td>
+            <td>4,989</td>
+            <td>6,700</td>
+            <td>6,590</td>
+        </tr>
+        <tr>
+            <th scope="row">投资</th>
+            <td>8,000</td>
+            <td>8,100</td>
+            <td>8,760</td>
+            <td>8,490</td>
+        </tr>
+        <tr>
+            <th scope="row">募捐</th>
+            <td>3,200</td>
+            <td>3,120</td>
+            <td>3,700</td>
+            <td>4,210</td>
+        </tr>
+        <tr>
+            <th scope="row">销售</th>
+            <td>28,400</td>
+            <td>27,100</td>
+            <td>27,950</td>
+            <td>29,050</td>
+        </tr>
+        <tr>
+            <th scope="row">杂费</th>
+            <td>2,100</td>
+            <td>1,900</td>
+            <td>1,300</td>
+            <td>1,760</td>
+        </tr>
+        <tr>
+            <th scope="row">总计</th>
+            <td>58,460</td>
+            <td>57,859</td>
+            <td>58,110</td>
+            <td>60,700</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div id="id4">
+
+    <table class="datalist" summary="list of members in EE Studay">
+        <caption>Member List</caption>
+        <tbody>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Constellation</th>
+            <th scope="col">Mobile</th>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>isaac</td>
+            <td>W13</td>
+            <td>Jun 24th</td>
+            <td>Cancer</td>
+            <td>1118159</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>girlwing</td>
+            <td>W210</td>
+            <td>Sep 16th</td>
+            <td>Virgo</td>
+            <td>1307994</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>tastestory</td>
+            <td>W15</td>
+            <td>Nov 29th</td>
+            <td>Sagittarius</td>
+            <td>1095245</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>lovehate</td>
+            <td>W47</td>
+            <td>Sep 5th</td>
+            <td>Virgo</td>
+            <td>6098017</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>slepox</td>
+            <td>W19</td>
+            <td>Nov 18th</td>
+            <td>Scorpio</td>
+            <td>0658635</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>smartlau</td>
+            <td>W19</td>
+            <td>Dec 30th</td>
+            <td>Capricorn</td>
+            <td>0006621</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>whaler</td>
+            <td>W19</td>
+            <td>Jan 18th</td>
+            <td>Capricorn</td>
+            <td>1851918</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>shenhuanyan</td>
+            <td>W25</td>
+            <td>Jan 31th</td>
+            <td>Aquarius</td>
+            <td>0621827</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>tuonene</td>
+            <td>W210</td>
+            <td>Nov 26th</td>
+            <td>Sagittarius</td>
+            <td>0091704</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>ArthurRivers</td>
+            <td>W91</td>
+            <td>Feb 26th</td>
+            <td>Pisces</td>
+            <td>0468357</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>reconzansp</td>
+            <td>W09</td>
+            <td>Oct 13th</td>
+            <td>Libra</td>
+            <td>3643041</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>linear</td>
+            <td>W86</td>
+            <td>Aug 18th</td>
+            <td>Leo</td>
+            <td>6398341</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>laopiao</td>
+            <td>W41</td>
+            <td>May 17th</td>
+            <td>Taurus</td>
+            <td>1254004</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>dovecho</td>
+            <td>W19</td>
+            <td>Dec 9th</td>
+            <td>Sagittarius</td>
+            <td>1892013</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>shanghen</td>
+            <td>W42</td>
+            <td>May 24th</td>
+            <td>Gemini</td>
+            <td>1544254</td>
+        </tr>
+        <tr class="altrow">        <!-- 偶数行 -->
+            <td>venessawj</td>
+            <td>W45</td>
+            <td>Apr 1st</td>
+            <td>Aries</td>
+            <td>1523753</td>
+        </tr>
+        <tr>                    <!-- 奇数行 -->
+            <td>lightyear</td>
+            <td>W311</td>
+            <td>Mar 23th</td>
+            <td>Aries</td>
+            <td>1002908</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div id="id5">
+
+    <table class="datalist" summary="list of members in EE Studay">
+        <caption>Member List</caption>
+        <tbody>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Constellation</th>
+            <th scope="col">Mobile</th>
+        </tr>
+        <tr>
+            <td>isaac</td>
+            <td>W13</td>
+            <td>Jun 24th</td>
+            <td>Cancer</td>
+            <td>1118159</td>
+        </tr>
+        <tr>
+            <td>girlwing</td>
+            <td>W210</td>
+            <td>Sep 16th</td>
+            <td>Virgo</td>
+            <td>1307994</td>
+        </tr>
+        <tr>
+            <td>tastestory</td>
+            <td>W15</td>
+            <td>Nov 29th</td>
+            <td>Sagittarius</td>
+            <td>1095245</td>
+        </tr>
+        <tr>
+            <td>lovehate</td>
+            <td>W47</td>
+            <td>Sep 5th</td>
+            <td>Virgo</td>
+            <td>6098017</td>
+        </tr>
+        <tr>
+            <td>slepox</td>
+            <td>W19</td>
+            <td>Nov 18th</td>
+            <td>Scorpio</td>
+            <td>0658635</td>
+        </tr>
+        <tr>
+            <td>smartlau</td>
+            <td>W19</td>
+            <td>Dec 30th</td>
+            <td>Capricorn</td>
+            <td>0006621</td>
+        </tr>
+        <tr>
+            <td>whaler</td>
+            <td>W19</td>
+            <td>Jan 18th</td>
+            <td>Capricorn</td>
+            <td>1851918</td>
+        </tr>
+        <tr>
+            <td>shenhuanyan</td>
+            <td>W25</td>
+            <td>Jan 31th</td>
+            <td>Aquarius</td>
+            <td>0621827</td>
+        </tr>
+        <tr>
+            <td>tuonene</td>
+            <td>W210</td>
+            <td>Nov 26th</td>
+            <td>Sagittarius</td>
+            <td>0091704</td>
+        </tr>
+        <tr>
+            <td>ArthurRivers</td>
+            <td>W91</td>
+            <td>Feb 26th</td>
+            <td>Pisces</td>
+            <td>0468357</td>
+        </tr>
+        <tr>
+            <td>reconzansp</td>
+            <td>W09</td>
+            <td>Oct 13th</td>
+            <td>Libra</td>
+            <td>3643041</td>
+        </tr>
+        <tr>
+            <td>linear</td>
+            <td>W86</td>
+            <td>Aug 18th</td>
+            <td>Leo</td>
+            <td>6398341</td>
+        </tr>
+        <tr>
+            <td>laopiao</td>
+            <td>W41</td>
+            <td>May 17th</td>
+            <td>Taurus</td>
+            <td>1254004</td>
+        </tr>
+        <tr>
+            <td>dovecho</td>
+            <td>W19</td>
+            <td>Dec 9th</td>
+            <td>Sagittarius</td>
+            <td>1892013</td>
+        </tr>
+        <tr>
+            <td>shanghen</td>
+            <td>W42</td>
+            <td>May 24th</td>
+            <td>Gemini</td>
+            <td>1544254</td>
+        </tr>
+        <tr>
+            <td>venessawj</td>
+            <td>W45</td>
+            <td>Apr 1st</td>
+            <td>Aries</td>
+            <td>1523753</td>
+        </tr>
+        <tr>
+            <td>lightyear</td>
+            <td>W311</td>
+            <td>Mar 23th</td>
+            <td>Aries</td>
+            <td>1002908</td>
+        </tr>
+        </tbody>
+    </table>
+    <script language="javascript">
+        var rows = document.getElementsByTagName('tr');
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].onmouseover = function () {		//鼠标在行上面的时候
+                this.className += 'altrow';
+            }
+            rows[i].onmouseout = function () {		//鼠标离开时
+                this.className = this.className.replace('altrow', '');
+            }
+        }
+    </script>
+
+
+</div>
+<div id="id6">
+
+    <table class="clmonth" summary="Calendar for January 2007">
+        <caption>January 2007</caption>
+        <tbody>
+        <tr>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
+            <th scope="col">Sunday</th>
+        </tr>
+        <tr>
+            <td class="previous">31</td>
+            <td class="active">1
+                <ul>
+                    <li>五棵松摄影城买镜头</li>
+                    <li>完成微积分作业</li>
+                </ul>
+            </td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td class="active">7
+                <ul>
+                    <li>6A309 线性代数</li>
+                    <li>陪同学逛校园</li>
+                </ul>
+            </td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td class="active">13
+                <ul>
+                    <li>土狼的课交大作业</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td class="active">17
+                <ul>
+                    <li>美术作品赏析交大作业</li>
+                </ul>
+            </td>
+            <td class="active">18
+                <ul>
+                    <li>摄影作品赏析交论文</li>
+                    <li>思修交大小论文</li>
+                </ul>
+            </td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td class="active">24
+                <ul>
+                    <li>中关村买书</li>
+                </ul>
+            </td>
+            <td>25</td>
+            <td>26</td>
+            <td class="active">27
+                <ul>
+                    <li>西单图书大厦买书</li>
+                    <li>西单逛街买礼物给父母</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>29</td>
+            <td class="active">30
+                <ul>
+                    <li>买水果</li>
+                    <li>北京西客站回家过年</li>
+                </ul>
+            </td>
+            <td>31</td>
+            <td class="next">1</td>
+            <td class="next">2</td>
+            <td class="next">3</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div id="id7">
+
+    <form method="post">
+        <p>请输入您的姓名:<br><input name="name" id="name" type="text"></p>
+
+        <p>请选择你最喜欢的颜色:<br>
+            <select name="color" id="color">
+                <option value="red">红</option>
+                <option value="green">绿</option>
+                <option value="blue">蓝</option>
+                <option value="yellow">黄</option>
+                <option value="cyan">青</option>
+                <option value="purple">紫</option>
+            </select></p>
+        <p>请问你的性别:<br>
+            <input name="sex" id="male" value="male" type="radio">男<br>
+            <input name="sex" id="female" value="female" type="radio">女</p>
+
+        <p>你喜欢做些什么:<br>
+            <input name="hobby" id="book" value="book" type="checkbox">看书
+            <input name="hobby" id="net" value="net" type="checkbox">上网
+            <input name="hobby" id="sleep" value="sleep" type="checkbox">睡觉</p>
+
+        <p>我要留言:<br><textarea name="comments" id="comments" cols="30" rows="4"></textarea></p>
+
+        <p><input name="btnSubmit" id="btnSubmit" value="Submit" type="submit"></p>
+    </form>
+
+
+</div>
+<div id="id8">
+
+    <form method="post">
+        <p>请输入您的姓名:<br><input name="name" id="name" class="txt" type="text"></p>
+
+        <p>请选择你最喜欢的颜色:<br>
+            <select name="color" id="color">
+                <option value="red">红</option>
+                <option value="green">绿</option>
+                <option value="blue">蓝</option>
+                <option value="yellow">黄</option>
+                <option value="cyan">青</option>
+                <option value="purple">紫</option>
+            </select></p>
+        <p>请问你的性别:<br>
+            <input name="sex" id="male" value="male" class="rad" type="radio">男<br>
+            <input name="sex" id="female" value="female" class="rad" type="radio">女</p>
+
+        <p>你喜欢做些什么:<br>
+            <input name="hobby" id="book" value="book" class="check" type="checkbox">看书
+            <input name="hobby" id="net" value="net" class="check" type="checkbox">上网
+            <input name="hobby" id="sleep" value="sleep" class="check" type="checkbox">睡觉</p>
+
+        <p>我要留言:<br><textarea name="comments" id="comments" cols="30" rows="4" class="txtarea"></textarea></p>
+
+        <p><input name="btnSubmit" id="btnSubmit" value="Submit" class="btn" type="submit"></p>
+    </form>
+
+
+</div>
+<div id="id9">
+
+    <form method="post">
+        请输入您的信息: <input name="name2" id="name2" class="txt" type="text">
+        <input name="btnSubmit2" id="btnSubmit2" value="Submit>>" class="btn" type="submit">
+    </form>
+
+
+</div>
+<div id="id10">
+
+    <form method="post">
+        <p><label for="color">Select your favorite color:</label>
+            <select name="color" id="color">
+                <option value="">Select One</option>
+                <option value="blue" class="blue">blue</option>
+                <option value="red" class="red">red</option>
+                <option value="green" class="green">green</option>
+                <option value="yellow" class="yellow">yellow</option>
+                <option value="cyan" class="cyan">cyan</option>
+                <option value="purple" class="purple">purple</option>
+            </select></p>
+        <p><input name="btnSubmit" id="btnSubmit" value="Send!" type="submit"></p>
+    </form>
+
+
+</div>
+<div id="id11">
+
+    <form method="post">
+        <table class="formdata">
+            <caption>公司销售统计表 2004～2007</caption>
+            <tbody>
+            <tr>
+                <th></th>
+                <th scope="col">2004</th>
+                <th scope="col">2005</th>
+                <th scope="col">2006</th>
+                <th scope="col">2007</th>
+            </tr>
+            <tr>
+                <th scope="row">硬盘(Hard Disk)</th>
+                <td><input name="harddisk2004" id="harddisk2004" type="text"></td>
+                <td><input name="harddisk2005" id="harddisk2005" type="text"></td>
+                <td><input name="harddisk2006" id="harddisk2006" type="text"></td>
+                <td><input name="harddisk2007" id="harddisk2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">主板(Mainboard)</th>
+                <td><input name="mainboard2004" id="mainboard2004" type="text"></td>
+                <td><input name="mainboard2005" id="mainboard2005" type="text"></td>
+                <td><input name="mainboard2006" id="mainboard2006" type="text"></td>
+                <td><input name="mainboard2007" id="mainboard2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">内存条(Memory Disk)</th>
+                <td><input name="memory2004" id="memory2004" type="text"></td>
+                <td><input name="memory2005" id="memory2005" type="text"></td>
+                <td><input name="memory2006" id="memory2006" type="text"></td>
+                <td><input name="memory2007" id="memory2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">机箱(Case)</th>
+                <td><input name="case2004" id="case2004" type="text"></td>
+                <td><input name="case2005" id="case2005" type="text"></td>
+                <td><input name="case2006" id="case2006" type="text"></td>
+                <td><input name="case2007" id="case2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">电源(Power)</th>
+                <td><input name="power2004" id="power2004" type="text"></td>
+                <td><input name="power2005" id="power2005" type="text"></td>
+                <td><input name="power2006" id="power2006" type="text"></td>
+                <td><input name="power2007" id="power2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">CPU风扇(CPU Fan)</th>
+                <td><input name="cpufan2004" id="cpufan2004" type="text"></td>
+                <td><input name="cpufan2005" id="cpufan2005" type="text"></td>
+                <td><input name="cpufan2006" id="cpufan2006" type="text"></td>
+                <td><input name="cpufan2007" id="cpufan2007" type="text"></td>
+            </tr>
+            <tr>
+                <th scope="row">总计(Total)</th>
+                <td><input name="total2004" id="total2004" type="text"></td>
+                <td><input name="total2005" id="total2005" type="text"></td>
+                <td><input name="total2006" id="total2006" type="text"></td>
+                <td><input name="total2007" id="total2007" type="text"></td>
+            </tr>
+            </tbody>
+        </table>
+        <p><input name="btnSubmit" id="btnSubmit" value="Add Data" class="btn" type="submit">
+            <input value="Reset All" class="btn" type="reset"></p>
+    </form>
+
+
+</div>
+<div id="id12">
+
+    <table class="outside">
+        <tbody>
+        <tr>
+            <td class="title">热点调查</td>
+        </tr>
+        <tr>
+            <td class="tdoutside">
+                <form method="post">
+                    <table class="inside" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td class="tdinside">
+                                在姚明缺阵麦蒂领军的情况下，火箭队的胜率是<br>
+                                <input name="q_498" value="2749" type="radio">超过60％<br>
+                                <input name="q_498" value="2750" type="radio">50％到60％<br>
+                                <input name="q_498" value="2751" type="radio">40％到50％<br>
+                                <input name="q_498" value="2752" type="radio">40％到50％
+                                <input name="q_498" value="2753" type="radio">30％以下<br>
+                                <input value="提交" type="submit">
+                                <input name="viewresult" value="查看" type="button"> <a href="#">新浪-篮球先锋报联合评选</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+</body>
+</html>

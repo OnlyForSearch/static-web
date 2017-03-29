@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Title</title>
+
+    <style></style>
+</head>
+<body>
+<hr>
+<h1>非替换元素的水平格式化</h1>
+<div style="width: 500px;background-color: chartreuse">
+    <p style="width: 200px;padding: 10px;margin: 20px;background-color: chocolate">元素框的真正宽度
+        20+10+200+10+20=260
+    </p>
+</div>
+
+
+<div style="width: 700px;background-color: chartreuse">
+    <h2>覆盖margin-right设置1</h2>
+    <p style="margin-left: 100px;margin-right: 100px;width: 300px;background-color: crimson">
+        margin-left: 100px;margin-right: 100px;width: 100px <br>
+        宽度不等于包含块的width,margin-right将会重新根据实际情况计算,被重置为auto
+    </p>
+</div>
+
+<div style="width: 700px;background-color: chartreuse">
+    <h2>自动宽度</h2>
+    <p style="margin-left: 100px;margin-right: 100px;width: auto;background-color: crimson">
+        margin-left: 100px;margin-right: 100px;width: auto;
+    </p>
+</div>
+
+<div style="width: 700px;background-color: chartreuse">
+    <h2>显式设置width</h2>
+    <p style="margin-left: auto;margin-right: auto;width: 300px;background-color: crimson">
+        margin-left: auto;margin-right: auto;width: 100px;
+    </p>
+</div>
+<div style="width: 700px;background-color: chartreuse">
+    <h2>margin-left:auto 为0</h2>
+    <p style="margin-left: auto;margin-right: 100px;width: auto;background-color:coral">
+        margin-left: auto;margin-right: 100px;width: 100px;
+    </p>
+</div>
+<div style="width: 700px;background-color: chartreuse">
+    <h2>margin-left:auto 为0</h2>
+    <p style="margin-left: auto;margin-right: auto;width: auto;background-color:coral">
+        margin-left: auto;margin-right: auto;width: auto; </p>
+</div>
+
+<div style="width: 700px;background-color: skyblue;padding: 30px">
+    <h2>父元素的外边距和内边距带来的隐式偏移</h2>
+    <p style="margin: 20px;padding: 0;background: antiquewhite;">
+        margin: 20px;padding: 0;background: antiquewhite; </p>
+    <p style="margin: 20px;padding: 0;background: antiquewhite;">
+        margin: 20px;padding: 0;background: antiquewhite; </p>
+</div>
+
+
+<div style="width: 600px;border: 3px solid black;">
+    <h1>通过指定复数外边距得到更宽的子元素</h1>
+    <p style="margin-left: 10px;width: auto;margin-right: -50px;border: 1px solid #2a788e;">margin-left: 10px;width: auto;margin-right: -50px</p>
+    <p style="border: 1px solid #2a788e;">10px +0+0+640px+0+0-50px=600</p>
+
+</div>
+
+<div style="width: 400px;border: 3px solid black;">
+    <h1>auto右外边距计算为负值</h1>
+    <p style="margin-left: 10px;width: 500px;margin-right: auto;border: 1px solid #2a788e;">margin-left: 10px;width: 500px;margin-right: auto;border: 1px solid #2a788e;
+    10px+1px +0+500px+0+1px-112px=400px
+    </p>
+    <p style="margin-left: 10px;width: 500px;margin-right: 21px;border: 1px solid #2a788e;">margin-left: 10px;width: 500px;margin-right: 21px;
+    10px+1px +0+500px+0+1px-112px=400px
+    </p>
+
+</div>
+
+<div style="width: 400px;border: 3px solid black;margin-left: 90px">
+    <h1>设置一个左外负边距</h1>
+    <p style="margin-left: -50px;width: auto;margin-right: 10px;border: 1px solid #2a788e;">margin-left: -50px;width: auto;margin-right: 10px;border: 1px solid #2a788e;</p>
+    <p style="border: 1px solid #2a788e;">border: 1px solid #2a788e</p>
+
+</div>
+
+<hr>
+    <h1>替换元素的水平格式化</h1>
+<hr>
+    <h1>垂直格式化</h1>
+
+        <p style="height:14px ;width: 300px">
+            高度与元素的内容不匹配的时候;
+            高度与元素的内容不匹配的时候;
+
+        </p>
+
+<hr>
+        <div style="height: 6em; background: #2a788e;">
+            <p style="height: 50%;background: greenyellow;">百分数高度height: 50%;</p>
+        </div>
+
+<div style="height: auto;background: bisque;">
+    <p style="height: 50%;background: aquamarine">将包含块的height为auto</p>
+</div>
+
+
+    <div style="height: auto;background: orange;">
+        <p style="margin-top: 2em;margin-bottom: 2em;">A paragraph(有块级子元素且元素高度为auto):height: auto;background: orange;</p>
+
+    </div>
+
+<div style="height: auto;border-top: 1px solid;border-bottom: 1px solid;background: silver">
+        <p style="margin-top: 2em;margin-bottom: 2em;">Another paragraph(有块级子元素且元素高度为auto):块级元素有上下内边距或上下边框的:height: auto;border-top: 1px solid;border-bottom: 1px solid;background: silver</p>
+
+</div>
+
+<div style="background: aquamarine">
+
+    <ul style="/*background: blue*/">
+        <li style="margin-top: 10px;margin-bottom: 15px;background: chartreuse">垂直外边距的合并</li>
+        <li style="margin-top: 10px;margin-bottom: 15px;background: chartreuse">垂直外边距的合并</li>
+        <li style="margin-top: 10px;margin-bottom: 15px;background: chartreuse">垂直外边距的合并</li>
+        <li style="margin-top: 10px;margin-bottom: 15px;background: chartreuse">垂直外边距的合并</li>
+        <li style="margin-top: 10px;margin-bottom: 15px;background: chartreuse">垂直外边距的合并</li>
+    </ul>
+
+</div>
+
+    <div style="background: silver">
+        <ul style="margin-bottom: 15px;border: 1px solid;">
+            <li style="margin-top: 10px;margin-bottom: 20px;background: azure">增加边框后的合并</li>
+            <li style="margin-top: 10px;margin-bottom: 20px;background: azure">增加边框后的合并</li>
+        </ul>
+
+        <h1 style="margin-top: 28px;background: aquamarine">增加边框后的合并</h1>
+    </div>
+
+
+<div style="border: 1px solid;/*background: silver*/">
+
+    <div style="width: 420px;background: greenyellow;padding: 10px;margin-top: 50px;border: 1px solid ;">
+    <p style="margin-top: -50px;margin-right: 10px;margin-left: 10px;margin-bottom: 0px;border: 3px solid gray"> 负上外边距的效果,margin-top: -50px;</p>A div
+    </div>
+</div>
+<div style="border: 1px solid;/*background: silver*/">
+
+    <div style="width: 420px;background: greenyellow;padding: 10px;margin-top: 50px;border: 1px solid ;">
+    <p style="margin-top: 0px;margin-right: 10px;margin-left: 10px;margin-bottom: -50px;border: 3px solid gray"> margin-bottom: -50px;,margin-top: -50px;</p>
+    </div>
+
+    <p>THe next paragraph</p>
+</div>
+<hr>
+    <h1>行内元素</h1>
+    <span style="border:1px  dashed black;">
+       单行行内元素: This is text content with a SPAN which is
+            unside  containning element(a paragraph in this case) The border shows bounds
+
+        of the
+    </span>
+        <p style="width:200px;">    <span style="border:1px  dashed black;">
+        多行行内元素:This is text content with a SPAN which is
+            unside  containning element(a paragraph in this case) The border shows bounds
+
+        of the
+    </span>
+        </p>
+
+
+
+<p style="line-height: 0.25em">line-height 对于块级元素影响不大,不直接影响</p>
+<p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is </em>
+    plus<br/>
+    which is <strong style="font-size: 24px;background: aqua">strongl y  emphas</strong> largerthan sthe <br/>larger than the surrounding text(段落中的行框)
+</p><p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is </em>
+    plus<br/>
+    which is <strong style="font-size: 24px;">strongl y  emphas</strong> largerthan sthe <br/>larger than the surrounding text(没有背景色的)
+</p>
+<p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is em</em>
+    plus<br/>
+    which is <strong style="font-size: 24px;background: aqua;vertical-align: 4px">strongl y  emphas</strong> largerthan sthe <br/>larger than the surrounding text(垂直对齐影响行框的高度)
+</p>
+<p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is em</em>
+    plus<br/>
+    which is <strong style="font-size: 24px;background: aqua;">strongl y emphas</strong> largerthan <span style="vertical-align: top;background: #3D9EE9;">tall  vertical-align: top</span>
+    sthe <br/>larger than the surrounding text(行内元素与行框对齐)
+</p>
+<p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is em</em>
+    plus<br/>
+    which is <strong style="font-size: 24px;background: aqua;">strongl y emphas</strong> largerthan <span style="vertical-align: top;line-height:4px;background: #3D9EE9;">tall  vertical-align: top</span>
+    sthe <br/>larger than the surrounding text(文本再一次超出行框)
+</p>
+<p style="font-size: 12px;line-height: 12px;background: antiquewhite">
+    This is text<em>some of which is em</em>
+    plus<br/>
+    which is <strong style="font-size: 24px;background: aqua;">strongl y emphas</strong> largerthan <span style="vertical-align: top;line-height:18px;background: #3D9EE9;">tall  vertical-align: top</span>
+    sthe <br/>larger than the surrounding text(文本再一次超出行框)
+</p>
+<hr>
+
+        <p style="font-size: 14px;line-height: 1em;background: chocolate">font-size: 14px;line-height: 1em;
+            <big style="font-size: 250%;line-height: 1em">
+                font-size: 250%;line-height: 1em
+            </big>
+            background: chocolate
+        </p>
+
+<style>
+    #rollcall li {
+        display: inline;border-right: 1px solid;
+        padding: 0px 0.33em;
+    }
+    #rollcall li:first-child {
+        border-left: 1px solid;
+    }
+</style>
+    <ul id="rollcall">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+    </ul>
+
+</body>
+</html>

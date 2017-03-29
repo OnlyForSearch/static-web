@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        /**********position属性*********/
+
+        #id1 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id1   #father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #id1 #block {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute; /* absolute绝对定位 */
+            left: 20px; /* 块的左边框离页面左边界20px */
+            top: 40px; /* 块的上边框离页面上边界40px */
+        }
+
+        /**********position属性*********/
+        #id2 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id2 #father2 {
+            background-color: #004400;
+            border: 1px dashed #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #id2 #block2 {
+            background-color: #A62020;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute; /* absolute绝对定位 */
+            right: 75%; /* 块的右边框离页面右边界70% */
+            bottom: 10%; /* 块的下边框离页面下边界10% */
+        }
+
+        /**********position属性*********/
+        #id3 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id3  #father3 {
+            background-color: #42c34a;
+            border: 1px dashed #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #id3 #block3 {
+            background-color: #999999;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute; /* absolute绝对定位 */
+            right: 20px; left: 30px; /* 同时设置4个位置 */
+            bottom: 10%; top: 10%;
+        }
+
+        /**********position属性*********/
+        #id4 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id4 .father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+        }
+
+        #id4  .block1 {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute; /* absolute绝对定位 */
+            left: 30px;
+            top: 35px;
+        }
+
+        #id4  .block2 {
+            background-color: #ffbd76;
+            border: 1px dashed #000000;
+            padding: 10px;
+        }
+
+        /**********position属性*********/
+        #id5 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id5 .father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%; height: 100%;
+            padding: 5px;
+        }
+
+        #id5 .block1 {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: relative; /* relative相对定位 */
+            left: 15px; /* 子块的左边框距离它原来的位置15px */
+            top: 10%;
+        }
+
+        /**********position属性*********/
+        #id6 body {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id6 .father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%; height: 100%;
+            padding: 5px;
+        }
+
+        #id6 .block1 {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: relative; /* relative相对定位 */
+            left: 15px; /* 子块的左边框距离它原来的位置15px */
+            top: 10%;
+        }
+
+        #id6 .block2 {
+            background-color: #ffc24c;
+            border: 1px dashed #000000;
+            padding: 10px;
+        }
+        
+        /**********position属性*********/
+        #id7 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id7 .father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%; height: 100%;
+            padding: 5px;
+        }
+
+        #id7 .block1 {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: relative; /* relative相对定位 */
+            left: 15px; /* 子块1的左边框距离它原来的位置15px */
+            top: 30px; /* 子块1的左边框距离它原来的位置30px */
+        }
+
+        #id7 .block2 {
+            background-color: #ffc24c;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: relative; /* relative相对定位 */
+            left: 10px; /* 子块2的左边框距离它原来的位置10px */
+            top: 20px; /* 子块2的上边框距离它原来的位置15px */
+        }
+
+        /**********position属性*********/
+
+        #id8 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id8 .block1 {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            z-index: 1; /* 高低值1 */
+        }
+
+        #id8 .block2 {
+            background-color: #ffc24c;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute;
+            left: 40px;
+            top: 50px;
+            z-index: 0; /* 高低值0 */
+        }
+
+        #id8 .block3 {
+            background-color: #c7ff9d;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute;
+            left: 60px;
+            top: 70px;
+            z-index: -1; /* 高低值-1 */
+        }
+
+        /**********轻轻松松给图片签名*********/
+
+        #id9 {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        #id9 .block1 {
+            padding: 10px; /* 给图片加框 */
+            border: 1px solid #000000;
+            float: left;
+        }
+
+        #id9 .block2 {
+            color: white;
+            padding: 10px;
+            position: absolute;
+            left: 255px; /* 移动到图片上 */
+            top: 205px;
+        }
+        /**********position属性*********/
+        /**********position属性*********/
+        /**********position属性*********/
+        /**********position属性*********/
+        /**********position属性*********/
+        /**********position属性*********/
+
+    </style>
+
+</head>
+<body>
+<div style="border:1px solid gray" id="id1">
+    <div id="father">
+        <div id="block">absolute</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id2">
+    <div id="father2">
+        <div id="block2">absolute</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id3">
+    <div id="father3">
+        <div id="block3">absolute</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id4">
+    <div class="father">
+        <div class="block1">absolute</div>
+        <div class="block2">block2</div>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id5">
+    <div class="father">
+        <div class="block1">relative</div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id6">
+    <div class="father">
+        <div class="block1">relative</div>
+        <div class="block2">block2</div>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id7">
+    <div class="father">
+        <div class="block1">relative</div>
+        <div class="block2">block2</div>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id8">
+    <div class="block1">AAAAAAAA</div>
+    <div class="block2">BBBBBBBB</div>
+    <div class="block3">CCCCCCCC</div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id9">
+    <div class="father">
+        <div class="block1"><img src="building4.jpg" border="0"></div>
+        <div class="block2">isaac photo</div>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id10"></div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id11"></div>
+        
+
+</body>
+</html>

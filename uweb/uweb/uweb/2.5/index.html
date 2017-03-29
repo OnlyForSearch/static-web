@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+	.www51buy{ width:805px;height:327px; position:relative; }
+	.www51buy .item_477_327{ width:477px; height:327px;   }
+	.www51buy .item_163_327{ width:163px; height:327px;   }
+	.www51buy .item_163_327 img{ width:163px; height:367px;   }
+	.www51buy .item_327_163{ width:327px; height:163px;   }
+	.www51buy .main_content{ position:absolute; z-index:0; zoom:1; }
+	.www51buy .main_content li{ width:807px; height:327px; overflow:hidden; vertical-align:middle; }
+	.www51buy .main_content li a{ overflow: hidden; float: left; display: block; position:relative; margin: 0 1px 1px 0; _margin:0;  }
+	.www51buy .main_content li a img{ display:block; left:0; top:0; position:relative;  }
+	.www51buy .bor_slide{ position:absolute; top:9px; right:0; width:22px;  }
+	.www51buy .bor_slide li { width: 22px; height: 50px; margin-bottom:2px; text-align:center;   cursor: pointer; font:normal 26px/50px Arial; color:#fff; background:#474E5D; }
+	.www51buy .bor_slide li.on{ background:#3382EF;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="www51buy" style="margin:0 auto">
+  <ul class="main_content">
+    <li> <a href="#"><img src="images/1.jpg"/></a> </li>
+    <li class="s"> <a href="#/" class="item_477_327"><img src="images/2.1.jpg"/></a> <a href="#/" class="item_163_327"><img src="images/2.2.jpg"/></a> <a href="#/" class="item_163_327"><img src="images/2.3.jpg"/></a> </li>
+    <li class="s"> <a href="#/" class="item_477_327"><img src="images/3.1.jpg"/></a> <a href="#/" class="item_327_163"><img src="images/3.2.jpg"/></a> <a href="#/" class="item_163_163"><img src="images/3.3.jpg"/></a> <a href="#/" class="item_163_163"><img src="images/3.4.jpg"/></a> </li>
+    <li> <a href="#"><img src="images/4.jpg"/></a> </li>
+    <li> <a href="#"><img src="images/5.jpg"/></a> </li>
+    <li> <a href="#"><img src="images/6.jpg"/></a> </li>
+  </ul>
+  <div class="bor_slide">
+    <ul class="ctrl">
+      <li class="item0">1</li>
+      <li class="item1">2</li>
+      <li class="item2">3</li>
+      <li class="item3">4</li>
+      <li class="item4">5</li>
+      <li class="item5">6</li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+	jQuery(".www51buy .s img").hover(function(){ $(this).animate({"top":-40},200) },function(){ $(this).animate({"top":0},200) } );//鼠标移到小图时上滚动
+	jQuery(".www51buy").slide({ titCell:".bor_slide li", mainCell:".main_content", effect:"top", autoPlay:true});
+	</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

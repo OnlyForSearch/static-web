@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>表单样式</title>
+
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <!--<link rel="stylesheet" href="../bootstrap-3.3.7/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../bootstrap-3.3.7/dist/css/bootstrap.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../bootstrap-3.3.7/dist/js/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="../bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+
+</head>
+<body style="background: #ccc;padding-top: 30px">
+
+<!--导航栏效果-->
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <!--导航栏头部信息-->
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="#">头部</a></div>
+        <p class="navbar-text">欢迎光临</p>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="#">起步</a></li>
+                <li><a href="#">CSS全局样式</a></li>
+                <li><a href="#">组件</a></li>
+                <li><a href="#">案例</a></li>
+                <li><a href="#">中国案例</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" placeholder="搜索">
+
+                    <button class="btn  btn-danger" type="button">搜索</button>
+                </div>
+            </form>
+
+
+        </div>
+
+
+    </div>
+    <!--导航条的主链接信息-->
+
+</nav>
+
+
+<div class="container" style="background: #fff; ">
+
+    <h2 class="page-header">缩略图</h2>
+    <div class="row">
+        <div class="col-md-4">
+
+            <a href="#" class="thumbnail"><img src="../../uweb/uweb/uweb/5.1/images/5.jpg" alt=""></a>
+            <div class="caption">
+                <h4>说明</h4>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <a href="#" class="thumbnail"><img src="../../uweb/uweb/uweb/5.1/images/5.jpg" alt=""></a>
+            <div class="caption">
+                <h4>说明</h4>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <a href="#" class="thumbnail"><img src="../../uweb/uweb/uweb/5.1/images/5.jpg" alt=""></a>
+            <div class="caption">
+                <h4>说明</h4>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <a href="#" class="thumbnail"><img src="../../uweb/uweb/uweb/5.1/images/5.jpg" alt=""></a>
+            <div class="caption">
+                <h4>说明</h4>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--分页-->
+    <h2 class="page-header"></h2>
+    <div class="text-center" style="border: 1px solid red">
+
+        <ul>
+            <ul class="pagination pagination-lg">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </ul>
+
+    </div>
+    <hr>
+
+
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+    </ol>
+
+    <!--标签页-->
+    <h2 class="page-header">标签页和选项卡效果</h2>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+    <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+
+    <!--
+            输入框组-->
+    <h2 class="page-header">输入框组</h2>
+    <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control">
+        <span class="input-group-addon">.00</span>
+    </div>
+
+    <!--单按钮的下拉菜单-->
+    <h2 class="page-header">按钮式的下拉菜单</h2>
+    <!--<div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+
+
+
+    </div>-->
+
+
+    <div class="btn-group">
+        <button class="btn btn-info " data-toggle="dropdown">
+            按钮 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">内容按钮1</a></li>
+            <li><a href="#">内容按钮2</a></li>
+            <li><a href="#">内容按钮3</a></li>
+            <li><a href="#">内容按钮4</a></li>
+
+        </ul>
+        <button type="button" class="btn btn-default ">
+            按钮
+        </button>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-info " data-toggle="dropdown">
+            按钮
+        </button>
+        <button class="btn btn-info " data-toggle="dropdown"><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">内容按钮1</a></li>
+            <li><a href="#">内容按钮2</a></li>
+            <li><a href="#">内容按钮3</a></li>
+            <li><a href="#">内容按钮4</a></li>
+
+        </ul>
+        <button type="button" class="btn btn-default ">
+            按钮
+        </button>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default ">
+            按钮
+        </button>
+    </div>
+
+
+    <!--按钮组的应用-->
+
+    <h2 class="page-header">按钮组的应用</h2>
+    <div class="btn-group">
+
+        <button class="btn btn-danger" type="button">左按钮</button>
+        <button class="btn btn-danger" type="button">中按钮</button>
+        <button class="btn btn-danger" type="button">右按钮</button>
+    </div>
+
+
+    <h2 class="page-header">工具栏按钮组的应用</h2>
+    <div class="btn-toolbar">
+        <div class="btn-group">
+
+            <button class="btn btn-success" type="button">1</button>
+            <button class="btn btn-success" type="button">2</button>
+            <button class="btn btn-success" type="button">3</button>
+        </div>
+        <div class="btn-group btn-group-lg">
+
+            <button class="btn btn-info" type="button">4</button>
+            <button class="btn btn-info" type="button">5</button>
+            <button class="btn btn-info" type="button">6</button>
+        </div>
+        <div class="btn-group btn-group-sm">
+
+            <button class="btn btn-warning" type="button">7</button>
+            <button class="btn btn-warning" type="button">8</button>
+            <button class="btn btn-warning" type="button">9</button>
+        </div>
+
+        <div class="btn-group btn-group-lg btn-group-vertical">
+
+            <button class="btn btn-warning" type="button">10</button>
+            <button class="btn btn-warning" type="button">11</button>
+            <button class="btn btn-warning" type="button">12</button>
+        </div>
+    </div>
+
+    <!--按钮工具栏-->
+
+
+    <!--下拉菜单的应用-->
+    <div class="dropdown">
+
+        <button class="btn btn-info" type="button" data-toggle="dropdown">Bootstrap课程
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">内容1</a></li>
+            <li><a href="#">内容2</a></li>
+            <li><a href="#">内容3</a></li>
+
+            <li class="divider"></li>
+            <li><a href="#">内容4</a></li>
+            <li><a href="#">内容4</a></li>
+            <li><a href="#">内容4</a></li>
+            <li><a href="#">内容4</a></li>
+            <li><a href="#">内容4</a></li>
+            <li><a href="#">内容4</a></li>
+        </ul>
+    </div>
+
+
+    <!--浮动和清除-->
+    <h2 class="page-header">浮动和清除 </h2>
+    <div class="clearfix bg-warning" style="border:1px solid red;width: 330px">
+        <ul class="list-unstyled ">
+            <li class="pull-left" style="padding: 10px">
+                <a href="#">
+                    <img src="../../css-web/超实用的css代码段/4/4.4/img/1.jpg" alt="" width="142" height="88">
+
+                </a><br>
+                <a href="#">追回国家三级文物汉代</a>
+            </li>
+            <li class="pull-left" style="padding: 10px">
+                <a href="#">
+                    <img src="../../css-web/超实用的css代码段/4/4.4/img/1.jpg" alt="" width="142" height="88">
+
+                </a><br>
+                <a href="#">追回国家三级文物汉代</a>
+            </li>
+            <li class="pull-left" style="padding: 10px">
+                <a href="#">
+                    <img src="../../css-web/超实用的css代码段/4/4.4/img/1.jpg" width="142" height="88">
+
+                </a><br>
+                <a href="#">追回国家三级文物汉代</a>
+            </li>
+            <li class="pull-left" style="padding: 10px">
+                <a href="#">
+                    <img src="../../css-web/超实用的css代码段/4/4.4/img/1.jpg" width="142" height="88">
+
+                </a><br>
+                <a href="#">追回国家三级文物汉代</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!--图片样式的应用-->
+    <h2 class="page-header">图片样式</h2>
+    <div>
+
+        <img class="img-responsive img-rounded img-thumbnail center-block" width="400"
+             src="../../css-web/超实用的css代码段/4/4.4/img/1.jpg" alt="">
+        <p>2016年11月06日 11:18 央广网
+
+            央广网重庆11月6日消息重庆忠县公安分局日前披露，近期捣毁一个专门盗掘三峡古墓葬群团伙，抓获犯罪嫌疑人11名，破获盗掘古墓葬案130起。追回国家三级文物汉代青铜镜1件，国家一般文物青铜带扣、残缺汉陶罐各1个。目前，李某等11名罪嫌已被移交检察院审查起诉。
+
+            警方介绍，2015年11月初，一男子匿名向忠县白公派出所反映，有一伙人夜间乘船，到白公街道银山村7组“刘大梁”（小地名）一带，沿长江边挖掘地下“宝物”。接到线索后，警方立即展开侦查。民警在“刘大梁”一带发现，位于三峡库区文物保护区内的一处古墓被盗挖，现场有文物被盗走的痕迹。</p>
+    </div>
+</div>
+
+
+</body>
+</html>

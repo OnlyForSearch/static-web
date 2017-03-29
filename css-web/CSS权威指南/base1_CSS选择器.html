@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+
+        h1 /*选择器*/
+        {
+            /*声明块*/
+            color: red; /*声明:属性:值*/
+            background: yellow;
+        }
+
+        /*元素选择器:大多数是HTML元素,也包含XML文档的样式*/
+        blockquote {
+            color: gray;
+            /*brain-size: 2cm;声明不正确的属性或者值将会被忽略*/
+            /*color:ultraviolet;声明不正确的属性或者值将会被忽略*/
+        }
+
+        h1 {
+            color: darkgray;
+        }
+
+        h2 {
+            color: silver;
+        }
+
+        p {
+            /*段落定义中等大小的Helvetica字体*/
+            font: medium Helvetica; /*使用空格隔离关键字*/
+        }
+
+        h3 {
+            /*只这一种情况下可以使用斜线(/)来分隔特定关键字*/
+            font: large/150% sans-serif;
+        }
+
+        /****************选择器分组**************************/
+        h4, h5 {
+            color: lawngreen;
+        }
+
+        /****************通配选择器**************************/
+        * {
+            /*等价于所有的元素的为*/
+            /*border: 1px solid red;*/
+        }
+
+        /****************类选择器**************************/
+        .warning {
+            font-weight: bold;
+        }
+
+        div.warning {
+            /*匹配所有的class属性包含warning的所有div元素*/
+            font-weight: bold;
+        }
+
+        .urgent {
+            font-style: italic;
+        }
+
+        /****************多类选择器**************************/
+        .warning.urgent {
+            /*class中同事包含warning 和urgent的所有元素*/
+            background: silver;
+        }
+
+        p.warning.help {
+            /**/
+            background: aqua;
+        }
+
+        /****************ID选择器**************************/
+        *#first-para {
+            /*id属性中包含值first-para的所有元素显示为粗文本*/
+            font-weight: bold;
+            color: lightcoral;
+        }
+
+        #lead-para {
+            /*id属性中包含值first-para的所有元素显示为粗文本*/
+            font-weight: bold;
+            color: lightcoral;
+        }
+
+        #mostImportant {
+            /*使用id选择器,表示有一个重要内容,他可能出现在任何元素中,而且只能出现一次*/
+            color: red;
+            background: yellow;
+        }
+
+        /****************属性选择器**************************/
+        /*1简单属性选择器*/
+        h1[class] {
+            /*有class属性(值不限)*/
+            color: khaki;
+            background: ActiveBorder;
+        }
+
+        img[alt] {
+            /*对所有带有alt属性的图像应用样式,这个特例适合诊断而不是设计,即用来确定图像是否确实有效*/
+            border: 3px solid red;
+        }
+
+        *[title] {
+            /*把包含标题的元素变为粗体显示*/
+            font-weight: 700;
+        }
+
+        a[href][title] {
+            /*为了将同时带有herf和title属性的html超链接的文本置为粗体**/
+            color: lightslategrey;
+        }
+
+        /*2根据具体的属性值*/
+        p[title="1"] {
+            font-weight: 500;
+            background: blue;
+        }
+
+        p[class="class1 class1"] {
+            /*必须属性值完全匹配*/
+            font-weight: 500;
+            background: brown;
+        }
+
+        p[class~="warning2"] {
+            /*如果属性能接受词列表(词之间用空格分隔)可以根据其中任意一个词进行匹配*/
+            color: khaki;
+            background: burlywood;
+        }
+
+        img[title~="Figure"] {
+            /**/
+            border: 1px solid GrayText;
+        }
+
+        span[class^="bar"] {
+            /*属性值以bar开头的*/
+            color: khaki;
+            background: blueviolet;
+        }
+
+        span[class$="y"] {
+            /*属性值以y结尾的*/
+            color: khaki;
+            font-size: larger;
+            background: chartreuse;
+        }
+
+        span[class*="cloud"] {
+            /*属性值中包含子串cloud的所有元素*/
+            color: khaki;
+            background: brown;
+        }
+
+        h1 em {
+            /*后代选择器*/
+            color: magenta;
+        }
+
+        h1 > strong {
+            /*选择子元素,可以有空白符,也可以没有h1>strong */
+            color: indigo;
+        }
+
+        li + li {
+            /*选择相邻兄弟元素*/
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        ol + ul {
+        }
+
+        a:link {
+            /*指示作为超链接并指向一个为访问地址的所有锚(包括已经访问和未访问的链接)*/
+            color: deepskyblue;
+        }
+
+        /*伪类选择器*/
+        a:visited {
+            /*使用已经访问过的链接*/
+            color: silver;
+            text-decoration: line-through;
+            font-style: italic;
+        }
+
+        a:hover {
+            /*鼠标指针停留在哪个元素,IE7支持所有元素*/
+            color: red;
+        }
+
+        a:active {
+            /*被用户输入激活的元素,例如*/
+            color: yellow;
+
+        }
+
+        a.external:link, a.external:visited {
+            color: maroon;
+        }
+
+        input:focus {
+            /*当前拥有输入焦点的元素,IE7不支持对表单元素使用:focus样式*/
+
+            background: silver;
+            font-weight: bold;
+        }
+
+        p:first-child {
+            /*选择第一个元素*/
+            font-weight: bolder;
+            color: lightblue;
+        }
+
+        li:first-child {
+            /*选择第一个元素*/
+            font-weight: bolder;
+            color: lightblue;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<h1>h1展示</h1>
+
+<h2>h2展示</h2>
+
+<p>声明和关键字:rainbow red orangle</p>
+
+<h4>选择器分组</h4><h5>选择器分组</h5>
+
+<p class="warning">
+    类选择器展示
+</p>
+
+<p class="warning urgent">
+    多类选择器展示
+</p>
+
+<p class="warning urgent help">
+    多类选择器展示
+</p>
+
+<p id="first-para">
+    ID选择器
+</p>
+
+<p id="lead-para">
+    ID选择器:省略通配符
+</p>
+
+<h1 class="class1">简单属性选择器</h1>
+
+<h1 class="class2">简单属性选择器</h1>
+
+<p title="把包含标题的元素变为粗体显示">把包含标题的元素变为粗体显示</p>
+
+<a href="http://www.baidu.com" title="baidu">为了将同时带有herf和title属性的html超链接的文本置为粗体</a>
+<a title="baidu">为了将同时带有herf和title属性的html超链接的文本置为粗体(没有href)</a>
+
+<p>Venus</p>
+
+<p title="1">Venus1</p>
+
+<p title="2">Venus2</p>
+
+<p class="class1 class1">/*必须属性值完全匹配*/</p>
+
+<p class="warning2 class1">/*属性值部分匹配*/</p>
+<img src="www.baidu.com" alt="" title="How to Figure Out "/>
+<span class="barren rocky">Mercury</span><span class="cloud baen">venus</span><span
+        class="life-bearing cloudy">Earth </span>
+
+
+<h1>
+    <p><em>
+        后代选择器
+    </em></p>
+</h1>
+
+<h1><strong>
+    选择子元素
+</strong></h1>
+
+<h1>
+    <div><strong>
+        选择子元素
+    </strong></div>
+</h1>
+
+<div>
+    <ol>
+
+        <li>选择相邻兄弟元素ol</li>
+        <li>选择相邻兄弟元素ol</li>
+        <li>选择相邻兄弟元素ol</li>
+
+
+    </ol>
+    <ul>
+        <li>选择相邻兄弟元素ul</li>
+        <li>选择相邻兄弟元素ul</li>
+        <li>选择相邻兄弟元素ul</li>
+    </ul>
+</div>
+
+<a href="#">伪类选择器</a>
+<a href="#" class="external">伪类选择器结合</a>
+<input type="text" name=""/><input type="text" name=""/><input type="text" name=""/>
+
+
+<div>
+    <p>选择第一个元素</p>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+    </ul>
+    <p>选择第一个元素2</p>
+</div>
+
+
+</body>
+</html>

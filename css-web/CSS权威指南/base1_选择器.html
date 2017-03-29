@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="base.css">
+    <style type="text/css">
+        @import url(sheet2.css) all;
+        /*使用相对URL*/
+        @import url(http://example.org/library/layout.css);
+        /*使用绝对URL*/
+        @import url(base.css);
+
+        body {
+
+        }
+
+        /*这个是一个注释*/
+
+        h1 {
+
+        }
+
+        #select h1 {
+            color: red; /*属性:值*/
+            background: yellow; /**/
+        }
+
+        #select p {
+            color: gray;
+
+        }
+
+        #select h2 {
+            color: silver;
+        }
+
+        #select h3 {
+            brain-size: 2cm;
+            color: ultraviolet; /*不正确属性和值,整个声明都会被忽略*/
+        }
+
+        #select h4 {
+            font: medium Helvetica; /*一个属性的值取多个关键字*/
+        }
+
+        #select2 h2, #select2 p { /*选择器分组*/
+            color: gray
+        }
+
+        body, table, td, th, h1, h2, h3, h4, p, pre, strong, em, i, b {
+            color: gray;
+        }
+
+        * {
+            color: red; /*通配符选择器*/
+        }
+
+        #select3 p.warning { /*类选择器*/
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        #select span.warning {
+            font-weight: bolder;
+        }
+
+        /*多类选择器*/
+        .warning.urgent {/*同时包含这些类名的*/
+            background: greenyellow;
+        }
+
+        p.warning.help { /*只匹配有 waring 和help*/
+            background: red;
+        }
+
+        #select4 {/*ID选择器*/
+            border: 1px dashed #00a9e7;
+        }
+
+        /*属性选择器*/
+
+        #select4 h1[class] { /*选择有class属性(值不限制)的所有h1元素, */
+            color: coral;
+        }
+
+        img[alt] {
+            border: 3px solid red;
+        }
+
+        *[title] { /*所有包含标题的元素变为粗体*/
+            font-weight: bold;
+        }
+
+        a[href][title] { /*根据多个属性进行选择,将同时拥有href和title的HTML超链接的文本置为粗体*/
+            font-weight: bold;
+        }
+
+        a[href="http://www.baidu.com"] { /*根据具体的属性值进行选择*/
+            font-weight: bold;
+        }
+
+        a[href="http://www.w3.org"][title="W3C Home"] { /*根据具体的属性值进行选择*/
+            font-size: 200%;
+            color: greenyellow;
+        }
+
+
+        #select5 {
+            border: 1px solid #00a9e7;
+        }
+
+          p[class~="info"] { /* ~:包含这个属性的,根据部分属值性选择器*/
+            font-weight: bolder;
+        }
+
+        #select5 span[class^="cloud"] {/*选择class属性以"cloud"开头的所有元素*/
+            font-style: italic;
+        }
+
+        #select5  span[class$="bar"] {/*选择class属性以"bar"结尾的所有元素*/
+            background: silver;
+        }
+
+        #select5  span[class*="y"] {/*选择class属性中包含子串"y"的所有元素*/
+        font-weight: bold;
+        }
+
+
+        *[lang|="en"] {/*特定属性选择符:会选择lang属性等于en或者以en-开头的所有元素*/
+
+        }
+        /*祖先 -后代关系*/
+        h1 em {/*后代选择器:所有的后代元素*/
+
+        }
+
+
+        blockquote b, p b {/*blockquote 中包含的所有b元素,段落中的所有粗体文本也为灰色*/
+            color: gray;
+        }
+            /*父子关系*/
+        h1 >strong {/*子元素选择符:IE7开始支持w*/
+
+        }
+
+        /*选择紧接在一个h1元素后出现的所有段落,h1y要与p元素有共同的父元素*/
+        h1 + p {/*x选择相邻兄弟元素IE7开始支持*/
+
+        }
+
+        /*伪类选择器:顺序很重要现在的顺序建议是:link-visited-hover-active*/
+        a:link {/*为访问过*/
+                color:blue;
+        }
+        a:visited {/*表示已经访问过了*/
+            color:red;
+        }
+
+        /*动态伪类*/
+        a:hover {/*鼠标停留在哪个元素上*/
+        color:black;
+        }
+
+        a:active {/*用户点击鼠标, 就会激活这个超链接*/
+            color:yellow;
+        }
+        input:focus {/*IE7对所有元素都能应用:hover,但是不支持对表单元素应用:focus*/
+            background:silver;
+            font-weight: bold;
+        }
+
+
+        #childFirst p:first-child {/*选择第一个匹配的元素:经常被用错:IE7开始支持*/
+            font-weight: bold;
+        }
+
+
+        #childFirst li:first-child {/*选择第一个匹配的元素*/
+            font-weight: bold;
+        }
+
+        /*结合使用伪类*/
+        a:visited:visited {
+
+        }
+
+        /*伪元素选择符*/
+        p:first-letter {/*第一个字母*/
+           font-size: 200%;
+
+        }
+
+        p:first-line {/*第一行*/
+
+        }
+
+
+      h2#before:before {/*设置之前元素的样式*/
+                content: "}}";
+            color: silver;
+        }
+ h2#before:after {/*设置之前元素的样式*/
+                content: "}}";
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<p style="color: gray;">内联样式</p>
+
+<div id="select">
+    <h1>选择器</h1>
+    <p>元素选择器</p>
+    <h2>元素选择器</h2>
+    <h3>/*不正确属性和值,整个声明都会被忽略*/</h3>
+    <h4>一个属性的值取多个关键字</h4>
+</div>
+
+<div id="select2">
+    <p>选择器分组</p>
+    <h2>选择器分组</h2>
+</div>
+
+
+<div id="select3">
+
+    <p class="warning">
+        When handing plutonium,care must be taken to avoid
+    </p>
+    <p>With plutonnium<span class="warning">the possibility of</span></p>
+
+    <p class="urgent warning">
+        多类选择器,两个词的顺序无关紧要
+    </p>
+    <p class="urgent warning help">
+        多类选择器,两个词的顺序无关紧要
+    </p>
+</div>
+
+
+<div id="select4">
+    <h1 class="hoopla">Hello</h1>
+    <h1 class="severs">Serenity</h1>
+    <h1>none</h1>
+
+    <a href="http://www.baidu.com">百度</a><br>
+    <a href="http://www.w3.org" title="W3C Home">W3C SCHOOL</a>
+
+
+</div>
+
+<div id="select5">
+    <span class="barren rocky">Mercury</span>
+        <span class="cloudy barren">Venus</span>
+        <span class="life-bearing cloudy">Earty</span>
+    </div>
+
+< href="#none">链接</a>
+<p>Name<input type="text"></p>
+<p>Title<input type="text"></p>
+<p>E-mail<input type="text"></p>
+
+<p id="pAfter">This is an H2 element</p>
+
+
+<a href="">伪类选择器</a>
+<input type="text" value="input:focus">
+
+<div id="childFirst">
+        <p>These are the necessary steps</p>
+            <ul>
+                <li>Item*1</li>
+                <li>Item*2</li>
+                <li>Item*3</li>
+            </ul>
+            <p>Do <em>Not</em>push the </p>
+
+</div>
+
+<h2 id="before">
+    h2:before
+</h2>
+</body>
+</html>

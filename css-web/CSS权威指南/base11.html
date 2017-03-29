@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+
+    <style></style>
+
+
+</head>
+
+
+
+
+<body>
+
+<style>
+
+    ol.ol1 li {
+        list-style-type: decimal;
+    }
+    li.off {
+        list-style-type: none;
+    }
+
+
+
+</style>
+
+<ol>
+    <li>1</li>
+    <li>2</li>
+    <li class="off">3</li>
+    <li>4</li>
+    <li class="off">5</li>
+</ol>
+
+
+<style>
+    ul.ul1 li {
+        list-style-image: url("img/dot.png");
+            list-style-type: square;
+
+    }
+
+
+</style>
+
+<ul class="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+
+<style>
+
+    ul.ul2 li.first {
+        list-style-position: inside;
+    }
+
+    ul.ul2 li.second {
+        list-style-position: outside;
+    }
+
+
+</style>
+
+<ul class="ul2">
+    <li class="first">1</li>
+    <li class="second">2</li>
+</ul>
+
+
+<style>
+    ul.u3 {
+        border:1px dashed black;
+    }
+
+    ul.u3 li {
+        border: 1px dashed gray;
+    }
+
+
+
+</style>
+
+<ul class="u3">
+    <li>Item the first</li>
+    <li>Item the second</li>
+    <li>Item the third</li>
+</ul>
+
+
+
+<style>
+    ul.u4 {
+        border:1px dashed black;
+        padding-left: 1em;
+        margin-left: 0;
+    }
+
+    ul.u4 li {
+        border: 1px dashed gray;
+    }
+
+
+
+</style>
+
+<ul class="u4">
+    <li>Item the first</li>
+    <li>Item the second</li>
+    <li>Item the third</li>
+</ul>
+
+
+<style>
+    a[href]:before {
+        content: "(link)";
+    }
+
+</style>
+
+<a href="#none">Jeffrey</a> seems to be <a href="#none">very happy</a>. althought I can't
+quite work out whether his happiness is over
+( link) OS X.
+
+
+<style>
+    p.p1 {
+        color:green;
+    }
+
+    p.p1:before {
+        content :"::: ";
+        color:purple;
+
+    }
+
+</style>
+
+<p class="p1">生成块级内容</p>
+
+
+<style>
+    h1 {
+        border-top: 3px solid black;
+        padding-top: 0.25em;
+    }
+
+    h1:before {
+        content: "New Section";
+        display: inline;
+        color: gray;
+        border-bottom: 1px dotted black;
+        margin-bottom: 0.25em;
+    }
+
+</style>
+
+    <H1>The Secret Life of Salmon(将生成内容改为行内内容)</H1>
+
+
+<style>
+    h2:before {
+        content:'<em>&para;</em>';
+        color:gray;
+
+    }
+
+    h2.r1:before {
+        content:"We insert this text before all H2 elements because \ it is a good idea to \A show should ";
+        color: gray;
+    }
+</style>
+
+<h2>Spawing(串原样展示)</h2>
+<h2 class="r1">Spawing(插入和去除换行)</h2>
+
+
+<style>
+    a.a1[href]:after {
+        content:" [" attr(href)"]";
+    }
+
+</style>
+<a href="#none" class="a1">插入URL</a>
+
+
+<style>
+    .c23 h1:before {
+        counter-reset: section subsec;/*计数器*/
+        counter-increment: chapter;
+        content: counter(chapter) ". ";
+
+    }
+
+    .c23 h2 {
+        counter-reset: subsec;
+        counter-increment: chapter;
+        content: counter(chapter) "." counter(section) ". ";
+    }
+    .c23 h3 {
+        counter-increment: subsec;
+        content: counter(chapter) "." counter(section) "." counter(subsec) ".";
+    }
+
+</style>
+
+<div class="c23">
+    <h1>为标题增加计数器</h1>
+    <h2>为标题增加计数器</h2>
+    <h3>为标题增加计数器</h3>
+</div>
+
+
+</body>
+</html>

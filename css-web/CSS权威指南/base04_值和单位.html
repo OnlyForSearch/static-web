@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+
+        /*数字:整数("完整"的数)和实数(小数)*/
+
+        /*百分数%*/
+
+        /***********颜色css2.1中CSS规范定义代了17个颜色名******************/
+        h1 {
+            color: maroon
+        }
+
+        h1 {
+            color: silver
+        }
+
+        h1 {
+            color: black
+        }
+
+        /*用RGB指定颜色(红,绿,蓝)*/
+        h1 {
+            color: rgb(100%, 0%, 100%); /*函数式RGB颜色(百分数记法)*/
+        }
+
+        h1 {
+            color: rgb(255, 0, 255); /*函数式RGB颜色(整数三元组记法)*/
+        }
+
+        p.one {
+            color: rgb(1000%, 220%, 1300%); /*等价于rgb(100%,100%, 100%);最大100%,最小0%,超过,或低于自动调整*/
+        }
+
+        p.one {
+            color: rgb(0%, -420%, -1300%); /*等价于rgb(0%,0%, 0%);最大100%,最小0%,超过,或低于自动调整*/
+        }
+
+        p.three {
+            color: rgb(42, 444, -13); /*等价于rgb(42,100,0)*/
+        }
+
+        /*十六进制RGB颜色*/
+        h1 {
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        h1 {
+            color: #903bc0;
+        }
+
+        h1 {
+            color: #00ff00;
+        }
+
+        /*简写十六进制*/
+        h1 {
+            color: #0f0;
+        }
+
+        /*Web安全色:在256色计算机上系统总能避免抖动的颜色
+            Web安全色可以表示为RGB值20%和51(相对应的十六进制的值为33)的倍数
+            0和0%也是安全值
+        */
+        h1 {
+            color: rgb(40%, 100%, 80%);
+        }
+
+        h1 {
+            color: rgb(60%, 0%, 0%);
+        }
+
+        h1 {
+            color: rgb(0, 204, 153);
+        }
+
+        h1 {
+            color: rgb(255, 0, 102);
+        }
+
+        /*十六进制的安全有 00  33 66 99 CC FF
+            简写 0 3 6 9 f
+        */
+        h1 {
+            color: #669933;
+        }
+
+        h1 {
+            color: #00cc66;
+        }
+
+        /*****************长度******************/
+        /*相对长度单位:em(em-height印刷度量单位),ex(x-height,印刷度量单位),px*/
+        h1 {
+            font-size: 1em; /*1em等于14px;在设置子弹体大小的时候,em的值会相对于父元素的字体大小改变*/
+        }
+
+        h1 {
+            font-size: 14px;
+        }
+
+        /*inherit:使得一个属性的值与其父元素的值相同*/
+        #toolbar {
+            background: blue;
+            color: white;
+        }
+
+        #toolbar a {
+            color: inherit; /*inherit:使得一个属性的值与其父元素的值相同*/
+        }
+
+    </style>
+
+
+</head>
+<body>
+<h1>MEeke<em>继承</em></h1>
+
+<div id="toolbar"><a href="">one</a><a href="">two</a></div>
+
+</body>
+</html>

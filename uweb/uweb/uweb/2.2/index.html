@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+	.focus{width:304px;height:396px;border:3px solid #d9d9d9;position:relative;}
+	.focus #pic{width:304px;height:396px;overflow:hidden;}
+	.focus #pic ul{width:1216px;height:396px;float:left;}
+	.focus #pic li{width:304px;height:396px;float:left;}
+	.focus #pic li img{width:304px;height:396px;float:left;}
+	.focus .tip-bg{width:304px;height:21px;background:url(images/focus_tip_bg.png) no-repeat left top;position:absolute;left:0;bottom:0;z-index:12;}
+	.focus #tip{width:96px;height:14px;position:absolute;left:104px;bottom:3px;z-index:13;}
+	.focus #tip ul li{width:14px;height:14px;float:left;display:inline;margin:0 5px;cursor:pointer;background:url(images/focus_tip.png) no-repeat;}
+	.focus #tip ul li.on{background:url(images/focus_tip_current.png) no-repeat;}
+	.focus .btn{width:42px;height:9px;position:absolute;right:0;bottom:5px;z-index:14;overflow:hidden;}
+	.focus .btn ul{width:100%;float:left;}
+	.focus .btn li{width:7px;height:9px;float:left;display:inline;margin:0 7px;cursor:pointer;overflow:hidden;}
+	.focus .btn li.prev{background:url(images/focus_btn_left.png) no-repeat left top;}
+	.focus .btn li.next{background:url(images/focus_btn_right.png) no-repeat left top;}
+
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="focus" style="margin:0 auto">
+  <div id="pic">
+    <ul>
+      <li><a href="#"><img src="images/1.jpg"></a> </li>
+      <li><a href="#"><img src="images/2.jpg"></a> </li>
+      <li><a href="#"><img src="images/3.jpg"></a> </li>
+      <li><a href="#"><img src="images/4.jpg"></a> </li>
+    </ul>
+  </div>
+  <div class="tip-bg"></div>
+  <div id="tip">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="btn">
+    <ul>
+      <li class="prev" id="focus_btn_left"></li>
+      <li class="next" id="focus_btn_right"></li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">jQuery(".focus").slide({ titCell:"#tip li", mainCell:"#pic ul",effect:"left",autoPlay:true,delayTime:200 });</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

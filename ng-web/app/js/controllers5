@@ -1,0 +1,27 @@
+var phonecatApp = angular.module('phonecatApp', []);
+/**为了使用AngularJS的服务，你只需要在控制器的构造函数里面作为参数声
+ * 明出所需服务的名字，就像这样：*/
+phonecatApp.controller('PhoneListCtrl', ['$scope', '$http',
+
+    function ($scope, $http) {
+    $http.get('../phones/phones.json').success(function (data) {
+        /**在PhoneListCtrl控制器中，把HTTP应答预处理一下，使得只显示手机列表的前五个。在$http回调函数里面使用如下代码：*/
+        $scope.phones = data.splice(0,5);
+
+    });
+
+    $scope.orderProp = 'age';
+}]);
+
+/**
+ * $http向Web服务器发起一个HTTP GET请求，索取phone/phones.json（注意
+ * ，url是相对于我们的index.html文件的）。服务器用json文件中的数据作
+ * 为响应。（这个响应或许是实时从后端服务器动态产生的。但是对于浏览
+ * 器来说，它们看起来都是一样的。为了简单起见，我们在教程里面简单地
+ * 使用了一个json文件。）
+ *
+ * $http服务用success返回[对象应答][ng.$q]。当异步响应到达时，用这个
+ * 对象应答函数来处理服务器响应的数据，并且把数据赋值给作用域的
+ * phones数据模型。注意到AngularJS会自动检测到这个json应答，并且已经
+ * 为我们解析出来了！
+ * */

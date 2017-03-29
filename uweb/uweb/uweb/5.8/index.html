@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.hjgxBox{margin:20px 0px; background:url(images/line.gif) left top repeat-y; position:relative;}
+.hjgxBox .startD{width:12px; height:20px; background:#FFF; position:absolute; top:0px; left:0px;}
+.hjgxBox .overD{ width:12px; height:15px; background:url(images/overD.png) center no-repeat; position:absolute; left:0px; bottom:0px; z-index:1;}
+.hjgcTit{padding:10px 0px;}
+.hjgcTit span{ display:block; float:left;}
+.hjgcTit .TLeft { width:33px; height:26px; background:url(images/hjgcTitLeft.png) right center no-repeat;}
+.hjgcTit .TRig { width:5px; height:26px; background:url(images/hjgcTitRig.gif) right center no-repeat;}
+.hjgcTit .TCon{ height:26px; padding:0px 10px; font:16px/25px '微软雅黑'; color:#FFF; background:url(images/hjgcTitCon.gif) center repeat-x;}
+.hjTit{ cursor:pointer;}
+.hjTit span{padding:0px 20px; line-height:30px; color:#97bcd8; }
+.hjInfo{ display:none; width:650px; padding:10px 0px 10px 75px;;}
+.hjInfo .leftImg{ float:left; width:179px;}
+.hjInfo .leftImg img{ width:179px; height:138px; }
+.hjInfo .rightText{ float:right; width:450px; text-align:left; }
+.hjInfo .rightText p{ line-height:22px; color:#666666; }
+.hjbox .on{ color:#106aad;}
+.hjgxBox .gjj{padding-bottom:20px;}
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+
+				<div class="hjgxBox" style=" width:600px; margin:0 auto;">
+					<div class="startD"></div>
+					<div class="overD"></div>
+					
+					<div class="hjgcTit fixed">
+						<span class="TLeft"></span>
+						<span class="TCon">国家级</span>
+						<span class="TRig"></span>
+					</div>
+					<ul class="gjj">
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit on"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed" style="display:block">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					
+					
+					</ul>
+					
+					<div class="hjgcTit fixed">
+						<span class="TLeft"></span>
+						<span class="TCon">省级</span>
+						<span class="TRig"></span>
+					</div>
+					<ul class="gjj">
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					
+					
+					</ul>
+				
+					<div class="hjgcTit fixed">
+						<span class="TLeft"></span>
+						<span class="TCon">市级</span>
+						<span class="TRig"></span>
+					</div>
+					<ul class="gjj">
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+						<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="fixed">
+					<div class="hjbox">
+						<div class="hjTit"><span>2013</span> ·广州新电视塔-2011年建筑奖</div>
+						<div class="hjInfo fixed">
+							<div class="leftImg"><img src="images/case_img.jpg" alt="" /></div>
+							<div class="rightText">
+								<p>广州新电视塔工程位于广州市海珠区阅江西路222号。<br/>用地面积约17.5万平方米，塔基用地面积约为8.5万平方米.<br/>总建筑面积约12.9万平方米.<br/>建筑物高度为600米。
+								</p>
+							</div>
+						</div>
+					</div>
+					</li>
+					
+					
+					</ul>
+				</div>
+				
+					<script type="text/javascript">
+	$(document).ready(function(){		
+		//nav
+		$(".hjbox").click(function(){
+			$(this).children(".hjInfo").slideToggle();
+			$(this).children(".hjTit").toggleClass("on");
+		});		
+	})
+	
+	</script>
+				
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

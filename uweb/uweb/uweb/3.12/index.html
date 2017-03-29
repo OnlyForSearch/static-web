@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.history{ width:780px;  margin:0 auto; padding-top:40px;}
+.history .bjqBox{padding:40px 0px;}
+.history .bigImg {width:639px; float:left;}	
+.history .smallScroll {position:relative; }
+.history .smallScroll .sPrev{position:absolute; left:0px; top:0px; background:url(images/hisBtn.gif) no-repeat 0px -80px; width:27px; height:80px;}
+.history .smallScroll .sPrev:hover{background-position:0px 0px;}
+.history .smallScroll .sNext{position:absolute; right:0px; top:0px; background:url(images/hisBtn.gif) no-repeat 0px -240px; width:27px; height:80px;}
+.history .smallScroll .sNext:hover{background-position:0px -160px;}
+.history .smallScroll .smallImg{  margin:0 auto;  overflow:hidden; width:630px; height:80px; position:relative;}
+.history .smallScroll .smallImg li{ float:left; width:72px; height:80px;   margin:0px 9px; background:url(images/hisBg.gif)  no-repeat 0px 0px; cursor:pointer;}
+.history .smallScroll .smallImg li a{display:block; width:72px; font:20px/40px Arial; color:#e3cdab; text-align:center;padding-top:25px;}
+.history .smallScroll .smallImg  .on{ background:url(images/hisBg.gif) 0px -80px no-repeat;}
+.history .smallScroll .smallImg  .on a{color:#FFF;}
+.history .smallScroll .smallImg img{ width:120px; height:96px; vertical-align:bottom;}		
+
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+
+        <div class="history fixed" style="background:#FFF9E8;">
+          <div class="smallScroll"> <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="smallImg">
+              <ul>
+                <li><a>1999</a></li>
+                <li><a>2000</a></li>
+                <li><a>2001</a></li>
+                <li><a>2002</a></li>
+                <li><a>2003</a></li>
+                <li><a>2004</a></li>
+                <li><a>2005</a></li>
+                <li><a>2006</a></li>
+                <li><a>2007</a></li>
+                <li><a>2008</a></li>
+                <li><a>2009</a></li>
+                <li><a>2010</a></li>
+              </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a> </div>
+          <div class="bjqBox">
+            <ul class="bigImg">
+              <li>
+                <div>
+                  <p style="line-height:30px;">2000-2005年，聘请当红明星林心如代言产品，</p>
+                  <p style="line-height:30px;">果断登陆央视和各级、各类地方媒体，进行广告投放。</p>
+                  <p><img src="images/newsImg2.jpg" alt="" /><img src="images/newsImg3.jpg" alt="" /></p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p style="line-height:30px;">2000-2005年，聘请当红明星林心如代言产品，</p>
+                  <p style="line-height:30px;">果断登陆央视和各级、各类地方媒体，进行广告投放。</p>
+                  <p><img src="images/newsImg2.jpg" alt="" /><img src="images/newsImg3.jpg" alt="" /></p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p style="line-height:30px;">2000-2005年，聘请当红明星林心如代言产品，</p>
+                  <p style="line-height:30px;">果断登陆央视和各级、各类地方媒体，进行广告投放。</p>
+                  <p><img src="images/newsImg2.jpg" alt="" /><img src="images/newsImg3.jpg" alt="" /></p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p style="line-height:30px;">2000-2005年，聘请当红明星林心如代言产品，</p>
+                  <p style="line-height:30px;">果断登陆央视和各级、各类地方媒体，进行广告投放。</p>
+                  <p><img src="images/newsImg2.jpg" alt="" /><img src="images/newsImg3.jpg" alt="" /></p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p style="line-height:30px;">2000-2005年，聘请当红明星林心如代言产品，</p>
+                  <p style="line-height:30px;">果断登陆央视和各级、各类地方媒体，进行广告投放。</p>
+                  <p><img src="images/newsImg2.jpg" alt="" /><img src="images/newsImg3.jpg" alt="" /></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">//大图切换
+jQuery(".history").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"left"});
+//小图左滚动切换
+jQuery(".history .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:7,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext" });
+</script> 
+				
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

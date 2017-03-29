@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp" >
+<head lang="en" >
+    <meta charset="UTF-8" >
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/app.css" />
+
+    <script src="../components/angular/angular.js" ></script >
+    <script src="../components/angular/angular-route/angular-route.js" ></script >
+    <script src="../js/app8.js" ></script >
+    <script src="../js/controllers8" ></script >
+    <title >08：更多模板</title >
+</head >
+<body  >
+<!--模板$route服务通常和ngView指令一起使用。ngView指令的角色是为当前路由
+把对应的视图模 板载入到布局模板中。-->
+<div ng-view></div>
+<!--注意，我们把index.html模板里面大部分代码移除，我们只放置了一个<div>容器，
+这个<div>具有ng-view属 性。我们删除掉的代码现在被放置在phone-list.html模板中-->
+
+</body >
+</html >

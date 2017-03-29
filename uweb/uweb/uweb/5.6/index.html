@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.sideMenu { width:320px; }
+.sideMenu h3 { height:162px; background:url(images/slideMenu2.gif) center no-repeat; cursor:pointer; width:32px; float:left; color:#333; }
+.sideMenu h3 p { width:13px; margin:0 auto; font:normal 12px/15px "微软雅黑", '宋体', Arial; padding-top:15px; }
+.sideMenu h3.on { background:url(images/slideMenu1.gif) center no-repeat; color:#fff; }
+.sideMenu ul { color:#999; display:none; /* 默认都隐藏 */ float:left; width:217px; height:160px; background: url(images/sideMenusj.gif) center left no-repeat #fafafa; border-top:1px solid #dadada; border-bottom:1px solid #dadada; }
+.sideMenu ul li div { width:184px; margin:20px auto 0px; line-height:24px; color:#333; }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+  <div class="sideMenu fixed" style="margin:0 auto;">
+        <h3 class="on">
+          <p>工程建设与服务</p>
+        </h3>
+        
+        <ul>
+          <li>
+            <div>广州建筑持有房屋建筑工程总承包特极资质1项、总承包一极资质34项、拥有强优的总承包能力、综合实力居广东省建筑业企业之首。</div>
+          </li>
+        </ul>
+        
+        <h3 >
+          <p>房地产开发经营</p>
+        </h3>
+        <ul>
+          <li>
+            <div>广州建筑持有房屋建筑工程总承包特极资质1项、总承包一极资质34项、拥有强优的总承包能力、综合实力居广东省建筑业企业之首。</div>
+          </li>
+        </ul>
+        <h3>
+          <p>新材料研发与经营</p>
+        </h3>
+        <ul>
+          <li>
+            <div>广州建筑持有房屋建筑工程总承包特极资质1项、总承包一极资质34项、拥有强优的总承包能力、综合实力居广东省建筑业企业之首。</div>
+          </li>
+        </ul>
+      </div>
+<script type="text/javascript">
+jQuery(".sideMenu").slide({titCell:"h3", targetCell:"ul", delayTime:300 , triggerTime:150, defaultPlay:true,returnDefault:true });
+</script>
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

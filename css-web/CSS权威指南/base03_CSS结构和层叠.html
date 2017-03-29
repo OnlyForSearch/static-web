@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+
+        /*选择器的特殊性:,如果一个元素有两个或多个冲突的属性声明,那么最高特殊性将会胜出*/
+        /*从左往右比较
+            选择器的特殊性由选择器的组件确定的,特殊性值为4个部分,如0,0,0,0;
+            特殊性有如下确定:
+            1对于选择器给定的各个ID属性值,加0,1,0,0
+            2对于选择器给定的各个类属性值,属性选择或伪类加0,0,1,0
+            3对于选择器给定的各个元素和伪元素加0,0,0,1
+            4结合符和通配符选择器对特殊性没有任何贡献,0,0,0,0
+            5内联声明的特殊性都是1,0,0,0
+
+        */
+        h1 {
+            color: red;
+        }
+
+        /*specificity=0,0,0,1*/
+        p em {
+            color: purple;
+        }
+
+        /*specificity=0,0,0,2*/
+        .grape {
+            color: red;
+        }
+
+        /*specificity=0,0,1,0*/
+        *.brght {
+            color: yellow;
+        }
+
+        /*specificity=0,0,1,0*/
+        p.brght em.dark {
+            color: maroon;
+        }
+
+        /*specificity=0,0,2,2*/
+        #id216 {
+            color: blue;
+        }
+
+        /*specificity=0,1,0,0*/
+        div#sidebar *[href] {
+            color: silver;
+        }
+
+        /*specificity=0,1,1,1*/
+
+        h2 {
+            color: red;
+        }
+
+        /*0,0,0,1*/
+        body h2 {
+            color: greenyellow;
+        }
+
+        /*0,0,0,2(winner)*/
+
+        h2.grape {
+            color: red;
+        }
+
+        /*0,0,1,1(winner)*/
+        h2 {
+            color: rosybrown;
+        }
+
+        /*0,0,0,1*/
+
+        html > body table tr[id="totals"] td ul > li {
+            color: maroon
+        }
+
+        /*0,0,1,7*/
+        li#answer {
+            color: navy
+        }
+
+        /*0,1,0,1(winner)*/
+
+        /*通配符选择器的特殊性*/
+        div p {
+            color: black
+        }
+
+        /*0,0,0,2*/
+        * {
+            color: darkgray
+        }
+
+        /*0,0,0,0*/
+
+        /*ID和属性选择器的特殊性:ID选择器和指定id属性的属性选择器在特殊性上是不同的*/
+        #meadow {
+            color: green
+        }
+
+        /*0,1,0,0*/
+        *[id="meadow"] {
+            color: red;
+        }
+
+        /*0,0,1,0*/
+
+        /*重要性:声明可能非常重要--css2.1:重要声明*/
+        p.dark {
+            color: #444444 !important; /*在声明的结束分号之前插入!important,必须放在声明的最后*/
+            background: white;
+        }
+
+        p.light {
+            color: yellow;
+            font: small Times, serif !important; /*重要声明和一个非重要声明冲突,胜出总是重要声明*/
+        }
+
+        /*********继承机制:基于继承机制,样式不仅应用到指定的元素,还会应用到他的后代元素*********/
+        h1 {
+            color: GrayText
+        }
+
+        /*有些属性就不会继承*/
+        h2 {
+            color: #2aabd2;
+            border: 1px; /*border(边框)就不会继承,大多数框模型属性(外边距,内边距,背景和边框)都不能继承*/
+            margin: auto;
+            padding: inherit;
+            background: lavenderblush;
+        }
+
+        /*********层叠:层叠规则
+                1找出所有规则,
+                2!important标志的规则
+                3特殊性声明排序
+                4出现的顺序:一个声明在样式表或文档中越后出现,它声明的权重就越大
+
+        *********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+        /*********继承机制*********/
+
+
+    </style>
+
+
+</head>
+<body>
+<h1>MEeke<em>继承</em></h1>
+
+</body>
+</html>

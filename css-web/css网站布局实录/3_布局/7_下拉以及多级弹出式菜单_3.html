@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style>
+
+        body {
+            padding-bottom: 150px;
+        }
+        ul {
+            list-style: none;
+        }
+        .navGroup   li {
+
+           float: left;
+            text-align: center;
+            margin: 0px;
+        }
+
+        .navGroup li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            padding:5px 11px 1px 13px;
+            margin:0;
+        }
+
+
+    /*j解决ul在IE中显示不正确的问题*/
+    * html ul li { float: left; height:1%;}
+    * html ul li a{ height:1%;}
+   /*End */
+
+      .navGroup  li a:hover {
+          color: #CCFF66;
+      }
+
+        #nav1 {
+            background-color: #7d7d7d;
+            border-top: 1px solid #A5A5A5;
+        }
+
+        #nav1 a:hover {
+            background: #727272;
+        }
+        #nav2 a:hover {
+            background: #393939;
+        }
+
+        .noArrow a{
+            background-image: none;
+        }
+        span.colorYellow {
+            color: #BAFC58;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        <!--
+
+        startList = function () {
+            if (document.all && document.getElementById) {
+                var navRoot = document.getElementById("nav");
+
+                for (var i = 0; i < navRoot.childNodes.length; i++) {
+                    var node = navRoot.childNodes[i];
+                    if (node.nodeName == "LI") {
+                        node.onmouseover = function () {
+                            this.className += " over";
+                        }
+                        node.onmouseout = function () {
+                            this.className = this.className.replace(" over", "");
+                        }
+                    }
+
+                }
+
+
+            }
+        };
+        window.onload=startList;
+        //-->
+
+    </script>
+</head>
+<body>
+
+<ul id="nav1" class="navGroup">
+    <li class="noArrow"><a href="#">首页</a>
+        <ul>
+            <li><a href="#">教程1</a></li>
+            <li><a href="#">教程1</a></li>
+            <li><a href="#">教程1</a></li>
+            <li><a href="#">教程1</a></li>
+            <li><a href="#">教程2</a></li>
+            <li><a href="#"><span class="colorYellow">教程3</span></a></li>
+            <li><a href="#">教程4</a></li>
+        </ul>
+    </li>
+
+</ul>
+<ul id="nav2" class="navGroup">
+    <li class="noArrow"><a href="#">Blog</a>
+        <ul>
+            <li><a href="#">Blog1</a></li>
+            <li><a href="#"><span class="colorLIme">Blog2</span></a></li>
+            <li><a href="#">Blog3</a></li>
+            <li><a href="#"><span class="colorYellow">教程3</span></a></li>
+
+            <li><a href="#">Blog3</a></li>
+            <li><a href="#">Blog3</a></li>
+
+
+            <li><a href="#">Blog4</a></li>
+            <li><a href="#"><span class="colorLIme">Blog2</span></a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

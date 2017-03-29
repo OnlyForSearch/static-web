@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        /**************动态超链接**************/
+        #id1 {
+            background: url(bg9.gif); /* 页面背景图片 */
+            margin: 0px; padding: 0px;
+            cursor: pointer;
+        }
+
+        #id1 .chara1 {
+            font-size: 12px;
+            background-color: #90bcff; /* 导航条的背景颜色 */
+        }
+
+        #id1 .chara1 td {
+            text-align: center;
+        }
+
+        #id1 a:link { /* 超链接正常状态下的样式 */
+            color: #005799; /* 深蓝 */
+            text-decoration: none; /* 无下划线 */
+        }
+
+        #id1 a:visited { /* 访问过的超链接 */
+            color: #000000; /* 黑色 */
+            text-decoration: none; /* 无下划线 */
+        }
+
+        #id1 a:hover { /* 鼠标经过时的超链接 */
+            color: #FFFF00; /* 黄色 */
+            text-decoration: underline; /* 下划线 */
+        }
+
+        /*************按钮超链接***************/
+        #id2  a { /* 统一设置所有样式 */
+            font-family: Arial;
+            font-size: .8em;
+            text-align: center;
+            margin: 3px;
+        }
+
+        #id2  a:link, a:visited { /* 超链接正常状态、被访问过的样式 */
+            color: #A62020;
+            padding: 4px 10px 4px 10px;
+            background-color: #ecd8db;
+            text-decoration: none;
+            border-top: 1px solid #EEEEEE; /* 边框实现阴影效果 */
+            border-left: 1px solid #EEEEEE;
+            border-bottom: 1px solid #717171;
+            border-right: 1px solid #717171;
+        }
+
+        #id2  a:hover { /* 鼠标经过时的超链接 */
+            color: #821818; /* 改变文字颜色 */
+            padding: 5px 8px 3px 12px; /* 改变文字位置 */
+            background-color: #e2c4c9; /* 改变背景色 */
+            border-top: 1px solid #717171; /* 边框变换，实现“按下去”的效果 */
+            border-left: 1px solid #717171;
+            border-bottom: 1px solid #EEEEEE;
+            border-right: 1px solid #EEEEEE;
+        }
+
+
+        /************浮雕超链接****************/
+        #id3  {
+            padding: 0px;
+            margin: 0px;
+            background-color: #f5eee1;
+        }
+
+        #id3 table.banner {
+            background: url(banner1_bg.jpg) repeat-x;
+            width: 100%;
+        }
+
+        #id3 table.links {
+            background: url(button1_bg.jpg) repeat-x;
+            font-size: 12px;
+            width: 100%
+        }
+
+        #id3 a {
+            width: 80px; height: 32px;
+            padding-top: 10px;
+            text-decoration: none;
+            text-align: center;
+            background: url(button1.jpg) no-repeat; /* 超链接背景图片 */
+        }
+
+        #id3  a:link { color: #654300; }
+
+        #id3 a:visited { color: #654300; }
+
+        #id3  a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+            background: url(button2.jpg) no-repeat; /* 变换背景图片 */
+        }
+
+        /**************鼠标变幻超链接**************/
+
+        #id4 {
+            padding: 0px;
+            margin: 0px;
+            background-color: #efe5e2;
+        }
+
+        #id4 table.banner {
+            background: url(banner2_bg.jpg) repeat-x;
+            width: 100%;
+        }
+
+        #id4 table.links {
+            background: url(button3_bg.jpg) repeat-x;
+            font-size: 12px;
+            width: 100%
+        }
+
+        #id4   a {
+            width: 80px; height: 32px;
+            padding-top: 10px;
+            text-decoration: none;
+            text-align: center;
+            background: url(button3.jpg) no-repeat; /* 超链接背景图片 */
+        }
+
+        #id4  a:link, a:visited { color: #2d2d26; }
+
+        #id4  a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+            background: url(button4.jpg) no-repeat; /* 变换背景图片 */
+        }
+
+        #id4  a.help:hover { /* “帮助”按钮的样式 */
+            cursor: help; /* 变幻鼠标形状 */
+        }
+        /*************页面滚动条***************/
+        #id5 { /* 页面滚动条 */
+            background-color: #efe5e2;
+            scrollbar-3dlight-color: #B0C4DE;
+            scrollbar-arrow-color: #34547E;
+            scrollbar-base-color: #FF0000; /* 基调颜色 */
+            scrollbar-darkshadow-color: #1D4272;
+            scrollbar-face-color: #CFDFF4;
+            scrollbar-highlight-color: #FFFFFF;
+            scrollbar-shadow-color: #5380BA;
+        }
+
+        #id5  .largetext { /* 文本框滚动条 */
+            scrollbar-3dlight-color: #B0C4DE;
+            scrollbar-arrow-color: #FFFFFF;
+            scrollbar-base-color: #8BA9CF;
+            scrollbar-darkshadow-color: #436DA3;
+            scrollbar-face-color: #34547E;
+            scrollbar-highlight-color: #E6ECF4;
+            scrollbar-shadow-color: #000000;
+        }
+
+
+        /****************************/
+        /****************************/
+        /****************************/
+        /****************************/
+        /****************************/
+        /****************************/
+
+    </style>
+
+</head>
+<body>
+<div style="border:1px solid gray" id="id1">
+
+    <table align="center" cellpadding="1" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><img src="banner3.jpg" border="0"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="chara1" align="center" cellpadding="2" cellspacing="2" width="600px">
+        <tbody>
+        <tr>
+            <td><a href="#">首页</a></td>
+            <td><a href="#">心情日记</a></td>
+            <td><a href="#">Free</a></td>
+            <td><a href="#">一起走到</a></td>
+            <td><a href="#">从明天起</a></td>
+            <td><a href="#">纸飞机</a></td>
+            <td><a href="#">下一站</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div style="border:1px solid gray" id="id2">
+
+    <a href="#">首页</a>
+    <a href="#">心情日记</a>
+    <a href="#">学习心得</a>
+    <a href="#">工作笔记</a>
+    <a href="#">生活琐碎</a>
+    <a href="#">其他</a>
+
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div style="border:1px solid gray" id="id3">
+
+    <table class="banner" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><img src="banner1_left.jpg" border="0"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="links" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><a href="#">首页导读</a><a href="#">在线用户</a><a href="#">查询网友</a><a href="#">在线好友</a><a href="#">好友名单</a><a href="#">查看讯息</a><a href="#">发送讯息</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id4">
+
+    <table class="banner" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><img src="banner2_left.jpg" border="0"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="links" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td><a href="#">首页导读</a><a href="#">推荐版面</a><a href="#">推荐文章</a><a href="#">收藏夹</a><a href="#">我的信箱</a><a href="#">休闲娱乐</a><a href="#" class="help">帮助</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id5">
+
+<textarea rows="6" cols="50" class="largetext">.largetext {
+	scrollbar-3dlight-color: #B0C4DE;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-base-color: #8BA9CF;
+	scrollbar-darkshadow-color: #436DA3;
+	scrollbar-face-color: #34547E;
+	scrollbar-highlight-color: #E6ECF4;
+	scrollbar-shadow-color: #000000;
+}
+</textarea>
+
+    <p>
+        CSS（Cascading Style
+        Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。CSS是1996年由W3C审核通过，并且推荐使用的。简单的说CSS的引入就是为了使得HTML能够更好的适应页面的美工设计。它以HTML为基础，提供了丰富的格式化功能，如字体、颜色、背景、整体排版等等，并且网页设计者可以针对各种可视化浏览器设置不同的样式风格，包括显示器、打印机、打字机、投影仪、PDA等等。CSS的引入随即引发了网页设计的一个又一个新高潮，使用CSS设计的优秀页面层出不穷。
+    </p>
+
+
+</div>
+
+</body>
+</html>

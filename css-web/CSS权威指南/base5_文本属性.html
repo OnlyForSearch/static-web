@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>文本属性</title>
+    <style type="text/css">
+        p.textIdent {/*缩进*/
+            text-indent: 3em;
+            width: 200px;
+            border: 1px solid black;
+        }
+        p.textIdent2 {/*缩进悬挂*/
+            width: 200px;
+            text-indent:-4em;
+            margin-left: 4em;
+            padding-left: 4em;
+            /*text-align: center;*/
+            border: 1px solid black;
+        }
+
+        div#outer {
+            width:500px;
+            border: 1px solid red;
+        }
+        div#inner {
+            text-indent: 10%;
+        }
+         div#outer p {
+             width:200px;
+         }
+
+
+        /*line-height值和字体大小之间的差就是行间距*/
+
+         body {
+             line-height: 14px;
+             font-size: 13px;
+         }
+
+        p.cl1 {
+            line-height: 1.5em;
+        }
+
+        p.cl2 {
+            font-size: 10px;
+            line-height: 150%;
+        }
+
+        p.cl3 {
+            line-height: 0.33in;
+        }
+
+
+
+        div#lineHeight  {
+                line-height: 1.5; /*缩放因子*/
+        }
+
+        div#lineHeight p {
+            font-size: 18px;
+        }
+
+
+                p.spread {
+                    word-spacing: 0.5em;/*字间隔*/
+                }
+            p.tight {
+                word-spacing: -0.5em;
+            }
+
+        p.base {
+            word-spacing: normal;
+        }
+
+        p.normal {
+            word-spacing: 0;
+        }
+    p.spacoius {
+        letter-spacing: 0.25em;/*字母间隔*/
+    }
+    p.tight2 {
+        letter-spacing: 0.25em;/*字母间隔*/
+
+    }
+
+        p.spacoius    h2 {
+
+            text-transform: uppercase;/*文本转换*/
+        }
+
+
+        p.emph {
+            text-decoration: underline;/*文本装饰*/
+        }p.emph2 {
+            text-decoration: overline;/*文本装饰*/
+        }p.emph3 {
+            text-decoration: line-through;/*文本装饰*/
+        }p.emph4 {
+            text-decoration: blink;/*文本装饰*/
+        }p.emph5 {
+            text-decoration: none;/*文本装饰*/
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<p class="textIdent">缩进
+    This is  a paragragh element, whick means that the first line will not be indented a quarte-inch ,The other lines in the paragraph will not be indentted ,no matter how long the paragragh may be
+</p><p class="textIdent2">缩进悬挂
+    This is  a paragragh element, whick means that the first line will not be indented a quarte-inch ,The other lines in the paragraph will not be indentted ,no matter how long the paragragh may be
+</p>
+
+<div id="outer">
+    <div id="inner">文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,
+        <p>文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,文本呢缩进的继承,</p>
+    </div>
+</div>
+
+
+<p>This is paragraph inherits 'line-height'</p>
+
+<p class="cl1">cl1</p>
+<p class="cl2">This paragraph has a 'line-height' of 15px (10 * 150%)</p>
+<p class="cl3">
+    THis is  paragraph has a 'line-height' of 0.33in so it will have
+</p>
+
+<div id="lineHeight">
+        <p>
+            This is  a paragragh element, whick means that the first line will not be indented a quarte-inch ,The other lines in the paragraph will not be indentted ,no matter how long the paragragh may be is 27px (18 * 1.5)
+
+        </p>
+
+</div>
+
+<style>
+    span.raise {
+        color: #fb2347;
+        vertical-align: super;
+    }
+    span.lower {
+        color: chartreuse;
+        vertical-align: sub;
+    }
+</style>
+<p>
+
+    上标和下标对齐:This is paragraph contians <span class="raise">supersscripted</span>
+        and <span class="lower">subscripted</span>text.
+</p>
+
+<style>
+    .feeder {
+        vertical-align: bottom;
+        background-color: cornflowerblue;
+    }
+</style>
+    <p style="font-size: 16px">
+
+        底端对齐:vertical-align: bottom;将元素
+        的行内框的底端与行框的底端对齐
+        <img src="img/love_b_100.png" class="feeder">的底端
+        <img src="img/love_b_100.png" class="feeder">的底端
+
+    </p>
+
+<p class="normal">The spaces between words in this  paragragh will be increased</p>
+<p class="base">The spaces between words in this  paragragh will be increased</p>
+<p class="tight">The spaces between words in this  paragragh will be increased</p>
+<p class="spread">The spaces between words in this  paragragh will be increased</p><p class="spacoius">The spaces between words in this  paragragh will be increased
+    <h2> This is an Hl element</h2>
+</p>
+
+<p class="emph">文本装饰</p>
+<p class="emph2">文本装饰</p>
+<p class="emph3">文本装饰</p>
+<p class="emph4">文本装饰</p>
+<p class="emph5">文本装饰</p>
+
+
+<style>
+    /*文本阴影*/
+    p.cll1 { color: #000; text-shadow: silver 2px 2px 2px; }
+    p.cll2 { color: white; text-shadow:  0 0 2px black; }
+    p.cll3 { color: #000; text-shadow: gray 1em 1em 5px, -1em -1em silver; }
+
+</style>
+<p class="cll1">文本阴影文本阴影文本阴影The spaces between words in this  paragragh will be increased</p>
+<p class="cll2">文本阴影文本阴影文本阴影The spaces between words in this  paragragh will be increased</p>
+<p class="cll3">文本阴影文本阴影文本阴影The spaces between words in this  paragragh will be increased</p>
+
+
+<style>
+
+    /*空白符*/
+    p.space32 {
+        white-space:pre;
+    }
+</style>
+<p class="space32">
+    保留标记中的空格 This   paragraph   has  many
+</p>
+
+<p style="white-space: nowrap;width:500px">
+    用white-space: nowrap属性防止换行spaces between words in this  paragragh will be increasedspaces between words in this  paragragh will be increasedspaces between words in this  paragragh will be increased
+</p>
+
+</body>
+</html>

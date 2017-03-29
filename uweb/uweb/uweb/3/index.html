@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+#ifocus_btn {  position:relative; width:1000px; }
+#ifocus_btn .box{width:951px; margin:0 auto;}
+#ifocus_btn .sPrev{ position:absolute; z-index:999;display: block; width: 39px; height:32px; background:#000; top:50px; left:0px; }
+#ifocus_btn .sNext{ position:absolute; z-index:999;display: block; width: 39px; height:32px; background:#000; top:50px; right:0px;}
+#ifocus_btn ul { float:left; }
+#ifocus_btn li { width:317px; height:135px; cursor:pointer; }
+#slideBox{ width:317px; height:135px; overflow:hidden; position:relative; border:1px solid #ddd;  }
+#slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:5px; z-index:1; }
+#slideBox .hd ul{ overflow:hidden; zoom:1; float:left;  }
+#slideBox .hd ul li{ float:left; margin-right:2px;  width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
+#slideBox .hd ul li.on{ background:#f00; color:#fff; }
+#slideBox .bd{ position:relative; height:100%; z-index:0;   }
+#slideBox .bd li{ zoom:1; vertical-align:middle; }
+#slideBox .bd img{ width:317px; height:135px; display:block;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div id="ifocus_btn" style="margin:0 auto;"> <a class="sPrev" href="javascript:void(0)"></a>
+  <div class="box">
+    <ul class="fixed ull">
+      <li><img src="images/index_01.jpg" /></li>
+      <li>
+        <div id="slideBox" class="slideBox">
+          <div class="hd">
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div>
+          <div class="bd">
+            <ul class="ul">
+              <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/index_01.jpg" /></a></li>
+              <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/index_01.jpg" /></a></li>
+              <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/index_01.jpg" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+      <li><img src="images/index_01.jpg" /></li>
+    </ul>
+  </div>
+  <ul ckass="hdd">
+    <li></li>
+  </ul>
+  <a class="sNext" href="javascript:void(0)"></a> </div>
+<script type="text/javascript">
+jQuery("#ifocus_btn #slideBox").slide({mainCell:".bd ul",vis:1,autoPlay:true,effect:"top"});
+jQuery("#ifocus_btn").slide({ mainCell:".ull", titCell:".hdd",delayTime:100,vis:3,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext" });
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

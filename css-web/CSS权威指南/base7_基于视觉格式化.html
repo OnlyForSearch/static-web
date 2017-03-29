@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Title</title>
+
+    <style>
+        p.p1 {
+            margin-left: 100px;
+            margin-right: 100px; /*y右外边距总是会根据实际宽度有一个auto值时的规则来设置,由这个auto值来填补所需的距离*/
+            width: 100px;
+        }
+
+        p.p2 {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        p.p3 {
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div.div1 {
+            padding: 30px;
+            background: silver;
+        }
+
+        div.div1 p {
+            margin: 20px;
+            padding: 0;
+            background: white;
+        }
+
+        /*7个水平属性的总和要等于父元素的width*/
+        div.div2 {
+            width: 400px;
+            border: 3px solid black;
+            background: silver;
+        }
+
+        div.div2 p.wide {
+            margin-left: 10px;
+            width: auto;
+            border: 1px solid #0a0a0a;
+            margin-right: -48px;
+        }
+
+        /*设置一个负左外边距*/
+
+        div.div3 {
+            width: 400px;
+            border: 3px solid black;
+            background: silver;
+        }
+
+        div.div3 p.wide {
+            margin-left: -50px;
+            width: auto;
+            margin-right: 10px;
+            border: 3px solid gray;
+        }
+
+        /******正常流中margin-top或margin-bottom 设置auto,会自动设置计算为0*****/
+
+        div.div5 {
+            border: 1px solid #00b700;
+        }
+
+        div.div5 ul {
+            border: 1px solid #0000FF;
+            margin-bottom: 15px;
+        }
+
+        div.div5 li {
+            border: 1px solid #1D4272;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        div.div5 h1 {
+            border: 1px solid #1B4E51;
+            margin-top: 28px;
+        }
+
+        /*负外边距*/
+        .div6 {
+            background: aquamarine;
+        }
+
+        .div6 p.neg {
+            margin-top: -50px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 0;
+            border: 3px solid gray;
+            background: cadetblue;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<p class="p1">
+    A paragraph
+</p>
+
+<p class="p2">
+    A paragraph
+</p>
+
+<p class="p3">
+    A paragraph
+</p>
+
+<div class="div1">
+    <p>A paragraph</p>
+    <p>Another paragraph</p>
+
+</div>
+<div class="div2">
+    <p class="wide">A paragraph</p>
+    <p>Another paragraph</p>
+</div>
+
+<div class="div3">
+    <p class="wide">A paragraph</p>
+    <p>Another paragraph</p>
+</div>
+
+
+<div style="height:6em; border:  1px solid #00a9e7;background: aquamarine">
+    <p style="height: 50%; border: 1px dashed darkviolet">Half as talll</p>
+</div>
+
+<div style="height: auto; background: azure;border: 1px solid #0a0a0a;">
+    <p style="height: 50%">
+        使div的height 为auto ,段落将与div本身的高度完全相同
+    </p>
+
+</div>
+
+<div style="height: auto;background: silver;">
+    <p style="margin-top: 2em;background: blueviolet;margin-bottom: 2em">A paragraph
+
+    </p>
+
+</div>
+
+<div style="height: auto;border-top: 1px solid; border-bottom: 1px solid ;background: silver">
+    <p style="margin-top: 2em;margin-bottom: 2em;background: brown">Another Paragraph</p>
+
+</div>
+
+<div class="div5">
+    <ul>
+        <li>sdfds</li>
+        <li>Another list item</li>
+    </ul>
+    <h1>Level-one heading</h1>
+
+</div>
+
+<br>
+<div class="div6" style="width: 420px ; padding: 10px;margin-top: 50px;border: 1px solid;">
+    <p class="neg">A paragraph</p>
+    A div 负上外边距的效果
+</div>
+
+<div class="div7" style="width: 420px;margin-top: 50px ;background: green">
+    <p class="neg"
+       style="margin-bottom: -50px;margin-right: 10px;margin-left: 10px;margin-top: 0px;border: 3px solid gray;background: aquamarine">
+        A paragraph 负下外边距的效果
+    </p>
+
+</div>
+<p>The next paragraph</p>
+
+
+<div style="border: 1px dashed #1D4272;background: chocolate;">
+    <ul style="margin-bottom: -15px;">
+        <li style="margin-bottom: 20px;background: grey">A list item</li>
+        <li style="margin-bottom: 20px;background: grey"> list item</li>
+    </ul>
+    <h1 style="margin-top: -18px;background: burlywood">正负外边距合并详解</h1>
+
+</div>
+
+
+<style type="text/css">
+    .div8 {
+
+        border: 1px solid black;
+    }
+
+    .div8 ul li {
+        border: 1px solid grey;
+    }
+</style>
+
+<div class="div8">
+    <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+    </ul>
+</div>
+
+
+<div>
+    <p><span style="border:1px dashed black">单行行内元素 This is  text content within a SPAN which is inside a containing element (a paragraph , in this case) The border sows the bounds of the</span>
+    </p>
+
+</div>
+
+<div>
+    <p style="width: 300px"><span style="border:1px dashed black">多行行行内元素 This is  text content within a SPAN which is inside a containing element (a paragraph , in this case) The border sows the bounds of the</span>
+    </p>
+
+</div>
+
+
+<div>
+
+    <p style="line-height: 0.25em;"></p>
+
+</div>
+
+<div>
+     <span style="font-size: 15px;border: 1px solid black
+     "> inline element</span>
+
+</div>
+
+<div>
+    <span style="line-height: 24px;font-size: 15px;border: 1px solid black ">内容区加上行间距等于行内框 inline element</span>
+
+</div>
+
+<p style="font-size: 12px;line-height: 12px;">
+    This is Text <em>some of which is emphasized</em>
+
+    publis other text<br>which is<strong style="font-size: 24px">Strong emphasized</strong>
+    and which is<br>
+    larger than the surounding text
+</p>
+
+
+<p style="font-size: 12px;line-height: 12px;background: yellowgreen;">
+    This is Text <em>some of which is emphasized</em>
+
+    publis other text<br>which is<strong style="background:aqua;font-size: 24px;vertical-align: 4px">Strong
+    emphasized</strong>
+    and which is(把元素上升4像素)<br>
+    larger than the surounding text(垂直对齐影响行框高度)
+</p>
+
+<p style="font-size: 12px;line-height: 12px;background: yellowgreen;">
+    This is Text <em>some of which is emphasized</em>
+
+    publis other text<br>which is<strong style="background:aqua;font-size: 24px;">Strong emphasized</strong>
+    and <span style="background:aqua;vertical-align: top">tall</span> which is()<br>
+    larger than the surounding text(行内元素与行框对齐)
+</p>
+
+
+<p style="font-size: 12px;line-height: 12px;background: yellowgreen;">
+    This is Text <em>some of which is emphasized</em>
+
+    publis other text<br>which is<strong style="font-size: 24px;">Strong emphasized</strong>
+    and <span style="vertical-align: top;line-height: 4px;background:aqua;">tall</span> which is()<br>
+    larger than the surounding text(文本再一次超出行框)
+</p>
+
+<p style="font-size: 12px;line-height: 12px;background: yellowgreen;">
+    This is Text <em>some of which is emphasized</em>
+
+    publis other text<br>which is<strong style="font-size: 24px;">Strong emphasized</strong>
+    and <span style="vertical-align: top;line-height: 18px;background:aqua;">tall</span> which is()<br>
+    larger than the surounding text(设置line-height实际上大于其font-size)
+</p>
+
+
+<p style="font-size: 14px;line-height: 1em;">
+    Not only does this paragraph hava "normal" text,
+    <big style="font-size: 250%;line-height: 1em">
+        some big text
+
+    </big> is found<br/>
+    This large text helps(为行内元素指定line-height)
+</p>
+
+
+<p style="font-size: 14px ;line-height: 24px;width: 340px;">
+    Not only does this paragraph have "normal" text
+    .but it alse <a style="border: 5px solid blue;">a hyperlink</a> is found This large text helps illustrate our point
+
+</p>
+
+<p style="line-height: 1.5;font-size: 15px;width:400px;">
+    This paragraph hash a line-height of 1.5 times its fontsize
+    <small style="font-size: 66%">such as this small element</small>
+    also have line-heights 1.5 time their <big style="font-size: 200%">this big element right here</big> by using a
+    scaling factor
+
+
+</p>
+<p style="line-height: 1.5;font-size: 15px;width:400px;">
+    This paragraph hash a line-height of 1.5 times its fontsize
+    <small style="font-size: 66%">such as this small element</small>
+    also have line-heights 1.5 time their <big style="font-size: 200%;line-height: 1em">this big element right
+    here</big> by using a scaling factor
+
+
+</p>
+
+
+<p style="font-size: 15px ;line-height: 1em">
+    <span style="background:#999;padding-top:10px; padding-bottom: 10px"></span>
+</p>
+
+
+<style type="text/css">
+    div#navigation a {
+        display: block;
+    }
+
+</style>
+<div id="navigation">
+    <a href="#none">WidgetCO</a>
+    <a href="#none">Prodeu</a>
+    <a href="#none">Ser</a>
+    <a href="#none">Wid</a>
+    <a href="#none">Objuit</a>
+    <a href="#none">WidgetCO</a>
+    <a href="#none">将显示角色由inline改变为block</a>
+</div>
+
+<style type="text/css">
+    #rollcall li {
+        display: inline;
+        border-right: 1px solid;
+        padding: 0 0.33em;
+    }
+
+    #rollcall li:first-child {
+        border-left: 1px solid;
+    }
+
+</style>
+<ul id="rollcall">
+    <li>Li1</li>
+    <li>Li2</li>
+    <li>Li3</li>
+    <li>Li4</li>
+    <li>Li5</li>
+    <li>Li6</li>
+    <li>j将显示橘色由list-item改为inline</li>
+</ul>
+
+
+<style type="text/css">
+    div#one p {
+        display: block;
+        width: 6em;
+        text-align: center;
+        border: 1px solid;
+    }
+
+    div#two p {
+        display: inline;
+        width: 6em;
+        text-align: center;
+        border: 1px solid;
+    }
+
+    div#three p {
+        display: inline-block;
+        width: 6em;
+        text-align: center;
+        border: 1px solid;
+    }
+   div#four p {
+        display: inline-block;
+
+       height: 2em;
+        border: 1px solid;
+    }
+
+
+</style>
+
+<div id="one" style="margin: 1em 0;border:  1px solid;">
+    This text is the content of a block-level elment . whith this block leve <p>Look ites block-level</p>
+    Here's the of the DIV, whick is still block-level
+</div>
+<div id="two" style="margin: 1em 0;border:  1px solid;">
+    This text is the content of a block-level elment . whith this block leve <p>Look ites block-level</p>
+
+    Here's the of the DIV, whick is still block-level
+
+</div>
+<div id="three" style="margin: 1em 0;border:  1px solid;">
+    This text is the content of a block-level elment . whith this block leve <p>Look ites block-level</p>
+
+
+    Here's the of the DIV, whick is still block-level(行内快元素的行为)
+</div>
+<div id="four" style="margin: 1em 0;border:  1px solid;">
+    This text is the content of a block-level elment . whith this block leve <p>Look ites block-level</p>
+
+
+    Here's the of the DIV, whick is still block-level(行内快元素的行为)
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../ng-web/app/components/jquery-1.11.3/jquery.min.js"></script>
+    <style>
+        /* CSS Document */
+        body {
+            font: 14px/1.43 "Helvetica Neue", Tahoma, "Microsoft YaHei", Arial;
+            color: #253443;
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            background: #FFF;
+            font-size: 12px;
+            width: 100%;
+            border: 1px;
+            width: 100%;
+        }
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        table thead tr {
+            background-color: #E6F0FF;
+        }
+        table thead tr th {
+            padding: 5px 8px;
+            font-weight: normal;
+            color: #999;
+            border-bottom: 1px solid #B50802;
+            vertical-align: bottom;
+            line-height: 20px;
+        }
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        table tbody tr td {
+            padding: 8px;
+            border-top: 0px;
+            border-bottom: 1px solid #DDD;
+            vertical-align: middle;
+            line-height: 20px;
+        }
+        table tfoot tr td {
+            width: 100%;
+            background-color: #F4F4F4;
+            height: 20px;
+            padding: 8px 0px;
+            color: #000;
+        }
+        table tfoot tr td input {
+            width: 30px;
+            float: left;
+        }
+        table tfoot tr td span {
+            display: inline-block;
+            cursor: pointer;
+            height:20px;
+            padding:0 10px;
+            float: left;
+        }
+        .mouseover {
+            background-color: #EAF2FF;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<form id="form1">
+    <table id="dg">
+    </table>
+</form>
+
+
+
+<script !src="">
+    // JavaScript Document
+    $(function () {
+        var dataGrid = function (ele, opt) {
+            this.defaults = {
+                //id
+                id: "",
+                //请求url
+                url: null,
+                //表头格式
+                columns: null,
+                //是否分页
+                pagination: false,
+                //是否隔行变色
+                isoddcolor: false,
+                //是否搜索栏
+                searchnation:false,
+                //页显示
+                pagesize: 5,
+                //页索引
+                pageindex: 1,
+                //总页数
+                totalpage: null
+            }
+            this.settings = $.extend({}, this.defaults, opt);
+        }
+
+        dataGrid.prototype = {
+            _id:null,
+            _op:null,
+            init: function () {
+                this._id=this.settings.id;
+                _op=this;
+                this.create();
+                this.bindEvent();
+            },
+            create: function () {
+                //初始化元素
+                this.InitializeElement();
+                //初始化表头
+                this.createTableHead();
+                //初始化动态行
+                this.createTableBody(1);
+                //初始化搜索框
+                //if(this.settings.searchnation) this.createsearchbox();
+                //选择是否分页
+                if (this.settings.pagination) this.createTableFoot();
+            },
+            bindEvent: function () {
+                //添加上一页事件
+                this.registerUpPage();
+                //添加下一页事件
+                this.registerNextPage();
+                //添加首页事件
+                this.registerFirstPage();
+                //添加最后一页事件
+                this.registerlastPage();
+                //添加跳转事件
+                this.registerSkipPage();
+                //添加鼠标悬浮事件
+                this.registermousehover();
+                //添加隔行变色
+                this.registerchangebgcolor();
+                //添加全选全不选事件
+                this.registercheckall();
+            },
+            //初始化元素
+            InitializeElement: function () {
+                //var id = this.settings.id;
+                $("#"+this._id).empty().append("<thead><tr></tr></thead><tbody></tbody><TFOOT></TFOOT>");
+            },
+            //循环添加表头
+            createTableHead: function () {
+                var headcols = this.settings.columns;
+                for (var i = 0; i < headcols.length; i++) {
+                    if (headcols[i].field == 'ck') $("table[id='" + this._id + "'] thead tr").append("<th width='50px'><input name='chkall' type='checkbox'></th>");
+                    else $("table[id='" + this._id + "'] thead tr").append("<th width=" + headcols[i].width + " align=" + headcols[i].align + ">" + headcols[i].title + "</th>");
+                }
+            },
+            //循环添加行
+            createTableBody: function (pn) {
+                var columns = _op.settings.columns;
+                var json = this.getAjaxDate( _op.settings.url, null);
+                //总页数=向上取整(总数/每页数)
+                _op.settings.totalpage = Math.ceil((json.total) / _op.settings.pagesize);
+                //开始页数
+                var startPage = _op.settings.pagesize * (pn - 1);
+                //结束页数
+                var endPage = startPage + _op.settings.pagesize;
+                var rowsdata = "";
+                for (var row = startPage; row < endPage; row++) {
+                    if (row == json.rows.length) break;
+                    rowsdata += "<tr>";
+                    for (var colindex = 0; colindex < columns.length; colindex++) {
+                        if (columns[colindex].field == 'ck') rowsdata += '<td width="50px" align="center"><input name="chk" type="checkbox"></td>'
+                        else rowsdata += '<td width=' + columns[colindex].width + ' align=' + columns[colindex].align + '>' + json.rows[row][columns[colindex].field] + '</td>';
+                    }
+                    rowsdata += "</tr>";
+                }
+                $("table[id='" + this._id + "'] tbody").empty().append(rowsdata);
+                $("#currentpageIndex").html(pn);
+                this.registermousehover();
+            },
+            //初始化分页
+            createTableFoot: function () {
+                var footHtml = "<tr><td>";
+                footHtml += "<span id='countPage'>第<font id='currentpageIndex'>1</font>/" + _op.settings.totalpage + "页</span>";
+                footHtml += "<span id='firstPage'>首页</span>";
+                footHtml += "<span id='UpPage'>上一页</span>";
+                footHtml += "<span id='nextPage'>下一页</span>";
+                footHtml += "<span id='lastPage'>末页</span>";
+                footHtml += "<input type='text'/><span id='skippage'>跳转</span>";
+                footHtml += "</td></tr>";
+                $("table[id='" + this._id + "'] tfoot").append(footHtml);
+                $("table[id='" + this._id + "'] tfoot tr td").attr("colspan", "5");
+            },
+            //添加鼠标悬浮事件
+            registermousehover: function () {
+                //添加鼠标悬浮事件
+                $("table[id='" + this._id + "'] tbody tr").mouseover(function () {
+                    $(this).addClass("mouseover");
+                }).mouseleave(function () {
+                    $(this).removeClass("mouseover");
+                });
+            },
+            //添加隔行变色事件
+            registerchangebgcolor: function () {
+                //添加隔行变色
+                if (this.settings.isoddcolor) $("table[id='" + this._id + "'] tr:odd").css("background-color", "#A77C7B").css("color", "#fff");
+            },
+            //添加全选全不选事件
+            registercheckall: function () {
+                //添加全选全不选事件
+                $("input[name='chkall']").click(function () {
+                    if (this.checked) {
+                        $("input[name='chk']").each(function () {
+                            $(this).attr("checked", true);
+                        });
+                    } else {
+                        $("input[name='chk']").each(function () {
+                            $(this).attr("checked", false);
+                        });
+                    }
+                });
+            },
+            //添加首页事件
+            registerFirstPage: function () {
+                $("#firstPage").click(function(){
+                    _op.settings.pageindex = 1;
+                    _op.createTableBody( _op.settings.pageindex);
+                });
+            },
+            //添加上一页事件
+            registerUpPage: function () {
+                $("table").delegate("#UpPage", "click",
+                        function () {
+                            if ( _op.settings.pageindex == 1) {
+                                alert("已经是第一页了");
+                                return;
+                            }
+                            _op.settings.pageindex = _op.settings.pageindex - 1;
+                            _op.createTableBody(_op.settings.pageindex);
+                        });
+            },
+            //添加下一页事件
+            registerNextPage: function () {
+                $("table").delegate("#nextPage", "click",
+                        function () {
+                            if (_op.settings.pageindex == _op.settings.totalpage) {
+                                alert("已经是最后一页了");
+                                return;
+                            }
+                            _op.settings.pageindex = _op.settings.pageindex + 1;
+                            _op.createTableBody(_op.settings.pageindex);
+                        });
+            },
+            //添加尾页事件
+            registerlastPage: function () {
+                $("table").delegate("#lastPage", "click",
+                        function () {
+                            _op.settings.pageindex = _op.settings.totalpage;
+                            _op.createTableBody( _op.settings.totalpage);
+                        });
+            },
+            //添加页数跳转事件
+            registerSkipPage: function () {
+                $("table").delegate("#skippage", "click",
+                        function () {
+                            var value = $("table[id='" + this._id + "'] tfoot tr td input").val();
+                            if (!isNaN(parseInt(value))) {
+                                if (parseInt(value) <= _op.settings.totalpage) _op.createTableBody(parseInt(value));
+                                else alert("超出页总数");
+                            } else alert("请输入数字");
+                        });
+            },
+            //添加异步ajax事件
+            getAjaxDate: function (url, parms) {
+                //定义一个全局变量来接受$post的返回值
+                var result;
+                //用ajax的同步方式
+                $.ajax({
+                    url: url,
+                    async: false,
+                    //改为同步方式
+                    data: parms,
+                    success: function (data) {
+                        result = data;
+                    }
+                });
+                return result;
+            }
+        }
+
+        $.fn.grid = function (options) {
+            var grid = new dataGrid(this, options);
+            return this.each(function () {
+                grid.init();
+            });
+        }
+    })
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        $("#dg").grid({
+            id:"dg",
+            url:"data.json",
+            columns: [
+                {field:'ck',checkbox:true},
+                { field: 'ID', title: '编号', width:100, align: 'center'},
+                { field: 'name', title: '名称', width: 150, align: 'left' },
+                { field: 'descrtion', title: '描述', width: 350, align: 'left' },
+                { field: 'Price', title: '价格', width: 100, align: 'left' }
+            ],
+            isoddcolor:false,
+            pagination:true,
+            searchnation:true,
+            pagesize:5
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        /********************alpha滤镜*********************/
+        #id1 {
+            background: url(bg1.jpg);
+            margin: 20px;
+        }
+
+        #id1 img {
+            border: 1px solid #d58000;
+        }
+
+        #id1 .alpha {
+            filter: alpha(opacity=50);
+        }
+
+
+
+        /*******************alpha滤镜**********************/
+        #id2 {
+            background: url(bg1.jpg);
+            margin: 20px;
+        }
+
+        #id2 img {
+            border: 1px solid #d58000;
+        }
+
+        #id2 .alpha {
+            filter: alpha(opacity=0, finishopacity=100, style=1, startx=0, starty=0, finishx=0, finishy=100);
+            /* 从上到下渐变 */
+        }
+
+        /*******************alpha滤镜**********************/
+        #id3 {
+            background: url(bg1.jpg);
+            margin: 10px;
+        }
+
+        #id3  .alpha1 {
+            filter: alpha(opacity=100, finishopacity=0, style=2);
+            /* 圆形渐变，中间不透明，四周透明 */
+        }
+
+        #id3  .alpha2 {
+            filter: alpha(opacity=0, finishopacity=80, style=2);
+        }
+
+        /********************alpha滤镜*********************/
+        #id4 {
+            background: url(bg1.jpg);
+            margin: 10px;
+        }
+
+        #id4 .alpha1 {
+            filter: alpha(opacity=100, finishopacity=0, style=3);
+            /* 矩形渐变，中间不透明，四周透明 */
+        }
+
+        #id4 .alpha2 {
+            filter: alpha(opacity=0, finishopacity=100, style=3);
+            /* 反之 */
+        }
+
+
+        /*******************Blur滤镜**********************/
+        #id5 {
+            margin: 10px;
+        }
+
+        #id5  .blur {
+            filter: progid:DXImageTransform.Microsoft.blur(pixelradius=4, makeshadow=false);
+        }
+
+        /*****************************************/
+        #id6 {
+            margin: 10px;
+        }
+
+        #id6 .motionblur {
+            filter: progid:DXImageTransform.Microsoft.MotionBlur(strength=30, direction=90, add=true); /* 水平向右 */
+        }
+
+        /********************chroma滤镜*********************/
+
+        #id7 {
+            margin: 10px;
+        }
+
+        #id7  .chroma {
+            filter: chroma(color=FF6800); /* 去掉金黄色 */
+        }
+
+        /*******************DropShadow阴影效果**********************/
+        #id8 {
+            margin: 12px;
+        }
+
+        #id8 span {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100px; font-size: 80px;
+            filter: dropshadow(color=#AAAAAA, positive=true, offx=4, offy=4);
+        }
+
+        /*********************DropShadow阴影效果********************/
+        #id9 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id9  .drop1 {
+            filter: dropshadow(color=#ffb6aa, offx=6, offy=4, positive=true);
+        }
+
+        #id9 .drop2 {
+            filter: dropshadow(color=#FFAAAA, offx=6, offy=4, positive=false);
+        }
+
+
+        /*******************Flip翻转**********************/
+        #id10 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id10 .flip1 {
+            filter: fliph; /* 水平翻转 */
+        }
+
+        #id10 .flip2 {
+            filter: flipv; /* 竖直翻转 */
+        }
+
+        #id10 .flip3 {
+            filter: flipv fliph; /* 水平、竖直同时翻转 */
+        }
+
+        /*****************Glow发光特效************************/
+        #id11 {
+            margin: 12px;
+            background-color: #000000;
+        }
+
+        #id11  span {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100px; font-size: 80px;
+            color: #ff9c00; /* 文字金黄色 */
+            filter: glow(color=#FFFF99, strength=6); /* 发黄色光 */
+        }
+
+        /*****************************************/
+        #id12 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id12 .glow {
+            filter: glow(color=#FFFFCC, strength=5); /* 发淡黄色的光 */
+        }
+
+        /******************Gray灰度***********************/
+        #id13 {
+            margin: 12px;
+        }
+
+        #id13  .gray {
+            filter: gray; /* 黑白图片 */
+        }
+        /******************Invert反色***********************/
+        #id14 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id14 .invert {
+            filter: invert; /* 底片效果 */
+
+        }
+
+
+        /*****************Mask遮罩************************/
+        #id15 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id15 .mask {
+            filter: mask(color=#8888FF); /* 遮罩效果 */
+        }
+
+        /*******************shadow阴影**********************/
+        #id16 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id16 .shadow {
+            filter: shadow(color=#CCCCFF, direction=135); /* 阴影效果 */
+        }
+
+        #id16 .drop {
+            filter: dropshadow(color=#CCCCFF, offx=5, offy=5, positive=true);
+            /* 下落阴影 */
+        }
+
+        /********************X-ray滤镜*********************/
+        #id17 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id17 .xray {
+            filter: xray; /* X光效果 */
+        }
+
+        #id17  .gray {
+            filter: gray; /* 黑白效果 */
+        }
+
+        /********************浮雕滤镜*********************/
+        #id18 {
+            margin: 12px;
+            background: #000000;
+        }
+
+        #id18 span.emboss {
+            font-family: 黑体;
+            height: 100px; font-size: 80px;
+            font-weight: bold;
+            color: #FFFFFF;
+            filter: progid:DXImageTransform.microsoft.emboss(bias=0.5);
+        }
+
+        #id18 span.engrave {
+            font-family: 黑体;
+            height: 100px; font-size: 80px;
+            font-weight: bold;
+            color: #FFFFFF;
+            filter: progid:DXImageTransform.microsoft.engrave(bias=0.5);
+        }
+
+
+        /*****************************************/
+        /*****************************************/
+    </style>
+
+</head>
+<body >
+<div style="border:1px solid gray" id="id1">
+    <img src="building1.jpg" border="0">&nbsp;&nbsp;
+    <img src="building1.jpg" border="0" class="alpha">
+
+</div>
+<div style="border:1px solid gray" id="id2">
+    <img src="building2.jpg" border="0">&nbsp;&nbsp;
+    <img src="building2.jpg" border="0" class="alpha">
+
+</div>
+<div style="border:1px solid gray" id="id3">
+    <center>
+        <img src="building3.jpg"><br><br>
+        <img src="building3.jpg" class="alpha1">
+        <img src="building3.jpg" class="alpha2">
+    </center>
+
+</div>
+<div style="border:1px solid gray" id="id4">
+
+    <center>
+        <img src="strawberry.jpg">
+        <img src="strawberry.jpg" class="alpha1">
+        <img src="strawberry.jpg" class="alpha2">
+    </center>
+
+</div>
+<div style="border:1px solid gray" id="id5">
+
+    <img src="building9.jpg">&nbsp;
+    <img src="building9.jpg" class="blur">
+
+</div>
+<div style="border:1px solid gray" id="id6">
+
+    <img src="liuxiang.jpg">&nbsp;&nbsp;
+    <img src="liuxiang.jpg" class="motionblur">
+
+</div>
+<div style="border:1px solid gray" id="id7">
+
+    &nbsp;<img src="tiger.gif">&nbsp;&nbsp;
+    <img src="tiger.gif" class="chroma">
+
+</div>
+<div style="border:1px solid gray" id="id8">
+
+    <span>CSS滤镜</span>
+
+
+</div>
+<div style="border:1px solid gray" id="id9">
+
+    <img src="fishing.gif">&nbsp;
+    <img src="fishing.gif" class="drop1">&nbsp;&nbsp;&nbsp;
+    <img src="fishing.gif" class="drop2">
+
+
+</div>
+<div style="border:1px solid gray" id="id10">
+    <img src="building4.jpg"><img src="building4.jpg" class="flip1"><br>
+    <img src="building4.jpg" class="flip2"><img src="building4.jpg" class="flip3">
+
+
+</div>
+<div style="border:1px solid gray" id="id11">
+
+    <span>CSS发光滤镜</span>
+
+</div>
+<div style="border:1px solid gray" id="id12">
+    <img src="girl.gif">
+    <img src="girl.gif" class="glow">
+
+
+</div>
+<div style="border:1px solid gray" id="id13">
+
+    <img src="building5.jpg">&nbsp;
+    <img src="building5.jpg" class="gray">
+
+</div>
+<div style="border:1px solid gray" id="id14">
+    <img src="building6.jpg">&nbsp;
+    <img src="building6.jpg" class="invert">
+</div>
+<div style="border:1px solid gray" id="id15">
+    <img src="muma.gif">&nbsp;
+    <img src="muma.gif" class="mask">
+
+</div>
+<div style="border:1px solid gray" id="id16">
+    <img src="baby.gif">&nbsp;
+    <img src="baby.gif" class="shadow">&nbsp;
+    <img src="baby.gif" class="drop">
+
+</div>
+<div style="border:1px solid gray" id="id17">
+    <img src="building7.jpg">&nbsp;
+    <img src="building7.jpg" class="xray">&nbsp;
+    <img src="building7.jpg" class="gray">
+
+</div>
+<div style="border:1px solid gray" id="id18">
+    <span class="emboss">浮雕Emboss滤镜</span>
+    <span class="engrave">浮雕Engrave滤镜</span>
+
+
+</div>
+<div style="border:1px solid gray" id="id19"></div>
+<div style="border:1px solid gray" id="id20"></div>
+<div style="border:1px solid gray" id="id21"></div>
+<div style="border:1px solid gray" id="id22"></div>
+<div style="border:1px solid gray" id="id23"></div>
+<div style="border:1px solid gray" id="id24"></div>
+<div style="border:1px solid gray" id="id25"></div>
+<div style="border:1px solid gray" id="id26"></div>
+
+</body>
+</html>

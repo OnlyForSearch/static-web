@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <title></title>
+    <style>
+        #id1 div {
+            font-size: 18px; /* 字号大小 */
+            font-weight: bold; /* 字体粗细 */
+            font-family: Arial; /* 字体 */
+            color: #FF0000; /* 颜色 */
+            background-color: #FFFF00; /* 背景颜色 */
+            text-align: center; /* 对齐方式 */
+            width: 300px; /* 块宽度 */
+            height: 100px; /* 块高度 */
+        }
+
+        #id3 div {
+            border-width: 6px;
+            border-color: #000000;
+            margin: 20px; padding: 5px;
+            background-color: #FFFFCC;
+        }
+
+        /****************浏览器对待background-color的不同***************/
+        #id5 .chara1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        #id5 .tableborder {
+            border: 1px solid #000000;
+        }
+
+        #id5 .cell {
+            border: 10px dashed #000000;
+            text-align: center;
+            background-color: #e799f8;
+        }
+
+        /**************padding************/
+        #id7 .outside {
+            padding: 10px 30px 50px 100px; /* 同时设置，顺时针 */
+            border: 1px solid #000000; /* 外边框 */
+            background-color: #fffcd3; /* 外背景 */
+        }
+
+        #id7 .inside {
+            background-color: #66b2ff; /* 内背景 */
+            border: 1px solid #005dbc; /* 内边框 */
+            width: 100%; line-height: 40px;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        /*********************两个行内元素的margin************************/
+        #id9 span {
+            background-color: #a2d2ff;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        #id9 span.left {
+            margin-right: 30px;
+            background-color: #a9d6ff;
+        }
+
+        #id9 span.right {
+            margin-left: 40px;
+            background-color: #eeb0b0;
+        }
+
+        /****************两个块级元素的margin*********************/
+        /****************两个块级元素的margin*********************/
+        #id10 div {
+            background-color: #a2d2ff;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        /****************两个块级元素的margin*********************/
+
+        #id11 div.father { /* 父div */
+            background-color: #fffebb;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+            border: 1px solid #000000;
+        }
+
+        #id11  div.son { /* 子div */
+            background-color: #a2d2ff;
+            margin-top: 30px;
+            margin-bottom: 0px;
+            padding: 15px;
+            border: 1px dashed #004993;
+        }
+
+        /*************************设置父块的高度******************************/
+        #id12  div.father { /* 父div */
+            background-color: #fffebb;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+            border: 1px solid #000000;
+            height: 40px; /* 设置父div的高度 */
+        }
+
+        #id12  div.son { /* 子div */
+            background-color: #a2d2ff;
+            margin-top: 30px; margin-bottom: 0px;
+            padding: 15px;
+            border: 1px dashed #004993;
+        }
+        /*******************************************************/
+        #id13 span {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+            border: 1px dashed #000000;
+        }
+
+        #id13 span.left {
+            margin-right: 30px;
+            background-color: #a9d6ff;
+        }
+
+        #id13 span.right {
+            margin-left: -53px; /* 设置为负数 */
+            background-color: #eeb0b0;
+        }
+
+        /***********************float属性********************************/
+        #id14 {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        #id14 .father {
+            background-color: #fffea6;
+            border: 1px solid #111111;
+            padding: 25px; /* 父块的padding */
+        }
+
+        #id14 .son1 {
+            padding: 10px; /* 子块son1的padding */
+            margin: 5px; /* 子块son1的margin */
+            background-color: #70baff;
+            border: 1px dashed #111111;
+            float: left; /* 块son1左浮动 */
+        }
+
+        #id14 .son2 {
+            padding: 5px;
+            margin: 0px;
+            background-color: #ffd270;
+            border: 1px dashed #111111;
+        }
+
+        /**************************float属性*****************************/
+
+        #id15 {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        #id15 .father {
+            background-color: #fffea6;
+            border: 1px solid #111111;
+            padding: 25px; /* 父块的padding */
+        }
+
+        #id15 .son1 {
+            padding: 10px;
+            margin: 5px 0px 0px -35px; /* 负数margin */
+            background-color: #70baff;
+            border: 1px dashed #111111;
+            float: left; /* 块son1左浮动 */
+        }
+
+        #id15 .son2 {
+            padding: 5px;
+            margin: 0px;
+            background-color: #ffd270;
+            border: 1px dashed #111111;
+        }
+        /***************************float属性****************************/
+        #id16 {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        #id16 .father {
+            background-color: #fffea6;
+            border: 1px solid #111111;
+            padding: 25px; /* 父块的padding */
+        }
+
+        #id16 .son1 {
+            padding: 5px;
+            background-color: #70baff;
+            border: 1px dashed #111111;
+        }
+
+        #id16 .son2 {
+            padding: 5px; /* 子块son2的padding */
+            margin: 5px;
+            background-color: #ffd270;
+            border: 1px dashed #111111;
+            float: right; /* 子块son2向右浮动 */
+        }
+
+        /***************************float属性****************************/
+        #id17 {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        #id17 .father {
+            background-color: #fffea6;
+            border: 1px solid #111111;
+            padding: 25px; /* 父块的padding */
+        }
+
+        #id17 .son1 {
+            padding: 5px;
+            margin-right: 3px; /* 子块son1的右margin */
+            background-color: #70baff;
+            border: 1px dashed #111111;
+            float: left; /* 子块son1向左浮动 */
+        }
+
+        #id17 .son2 {
+            padding: 5px;
+            background-color: #ffd270;
+            border: 1px dashed #111111;
+            float: left; /* 子块son2也向左浮动 */
+            width: 60%;
+        }
+        /***************************float属性 clear****************************/
+        #id18 body {
+            margin: 5px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id18 .block1 {
+            padding-left: 10px;
+            margin-right: 10px;
+            float: left; /* 块1向左浮动 */
+        }
+
+        #id18 h3 {
+            background-color: #a5d1ff; /* 标题的背景色 */
+            border: 1px dotted #222222; /* 标题边框 */
+            clear: left; /* 清除float对左侧的影响 */
+        }
+
+        /***************************float属性 clear****************************/
+        #id19 {
+            margin: 5px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id19 .block1 {
+            padding-left: 10px;
+            margin-right: 10px;
+            float: left; /* 块1向左浮动 */
+        }
+
+        #id19 .block2 {
+            padding-right: 10px;
+            margin-left: 10px;
+            float: right; /* 块2向右浮动 */
+        }
+
+        #id19 h3 {
+            background-color: #a5d1ff; /* 标题的背景色 */
+            border: 1px dotted #222222; /* 标题边框 */
+            clear: both; /* 清除两端的float影响 */
+        }
+
+        /***************************position属性****************************/
+        #id20 {
+            margin: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        #id20 #father {
+            background-color: #a0c8ff;
+            border: 1px dashed #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #id20  #block {
+            background-color: #fff0ac;
+            border: 1px dashed #000000;
+            padding: 10px;
+            position: absolute; /* absolute绝对定位 */
+            left: 20px; /* 块的左边框离页面左边界20px */
+            top: 40px; /* 块的上边框离页面上边界40px */
+        }
+        /***************************float属性****************************/
+        /***************************float属性****************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+        /*******************************************************/
+
+    </style>
+
+</head>
+<body>
+
+<div id="id1">
+    <div>
+        这是一个div标记
+    </div>
+</div>
+<div style="border:1px solid gray" id="id2">
+    <p>div标记不同行：</p>
+
+    <div><img src="building.jpg" border="0"></div>
+    <div><img src="building.jpg" border="0"></div>
+    <div><img src="building.jpg" border="0"></div>
+    <p>span标记同一行：</p>
+    <span><img src="building.jpg" border="0"></span>
+    <span><img src="building.jpg" border="0"></span>
+    <span><img src="building.jpg" border="0"></span>
+
+</div>
+<div style="border:1px solid gray" id="id3">
+    <div style="border-style:dashed">The border-style of dashed.</div>
+    <div style="border-style:dotted">The border-style of dotted.</div>
+    <div style="border-style:double">The border-style of double.</div>
+    <div style="border-style:groove">The border-style of groove.</div>
+    <div style="border-style:inset">The border-style of inset.</div>
+    <div style="border-style:outset">The border-style of outset.</div>
+    <div style="border-style:ridge">The border-style of ridge.</div>
+    <div style="border-style:solid">The border-style of solid.</div>
+
+</div>
+<div style="border:1px solid gray" id="id4">
+    <p style="border-bottom: 8px dotted blue;">
+        We can read of things that happened 5,000 years ago in the Near East, where people first learned to write. But there are some parts of the world where even now people
+        cannot write. The only way that they can preserve their history is to recount it as sagas.
+    </p>
+
+    <p>Next paragraph</p>
+
+</div>
+<div style="border:1px solid gray" id="id5">
+    <table cellpadding="10" cellspacing="25" class="chara1 tableborder">
+        <tr>
+            <td class="cell" height="80px" width="120px">content</td>
+        </tr>
+    </table>
+
+</div>
+<div style="border:1px solid gray" id="id6">
+    <p style="border-bottom: 8px dotted blue; padding-bottom: 30px;">
+        We can read of things that happened 5,000 years ago in the Near East, where people first learned to write. But there are some parts of the world where even now people
+        cannot write. The only way that they can preserve their history is to recount it as sagas.
+    </p>
+
+    <p>Next paragraph</p>
+
+</div>
+<div style="border:1px solid gray" id="id7">
+    <div class="outside">
+        <div class="inside">padding</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id8">
+    <p style="border-bottom: 8px dotted blue; padding-bottom: 30px; margin-bottom: 60px;">
+        We can read of things that happened 5,000 years ago in the Near East, where people first learned to write. But there are some parts of the world where even now people
+        cannot write. The only way that they can preserve their history is to recount it as sagas.
+    </p>
+
+    <p>Next paragraph</p>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id9">
+    <span class="left">行内元素1</span><span class="right">行内元素2</span>
+
+</div>
+<div style="border:1px solid gray" id="id10">
+    <div style="margin-bottom:50px;">块元素1</div>
+    <div style="margin-top:30px;">块元素2</div>
+
+</div>
+<div style="border:1px solid gray" id="id11">
+    <div class="father">
+        <div class="son">子div</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id12">
+    <div class="father">
+        <div class="son">子div</div>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<div style="border:1px solid gray" id="id13">
+
+    <span class="left">行内元素1</span><span class="right">行内元素2</span>
+
+</div>
+<div style="border:1px solid gray" id="id14">
+    <div class="father">
+        <div class="son1">float1</div>
+        <div class="son2">float2</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id15">
+
+    <div class="father">
+        <div class="son1">float1</div>
+        <div class="son2">float2</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id16">
+    <div class="father">
+        <div class="son1">float1</div>
+        <div class="son2">float2</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id17">
+    <div class="father">
+        <div class="son1">float1</div>
+        <div class="son2">CSS（Cascading Style Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。</div>
+    </div>
+
+</div>
+<div style="border:1px solid gray" id="id18">
+    <div class="block1"><img src="building2.jpg" border="0"></div>
+    <div>对于一个网页设计者来说，HTML语言一定不会感到陌生，因为它是所有网页制作的基础。但是如果希望网页能够美观、大方，并且升级方便，维护轻松，那么仅仅HTML是不够的，CSS在这中间扮演着重要的角色。本章从CSS的基本概念出发，介绍CSS语言的特点，以及如何在网页中引入CSS，并对CSS进行初步的体验。</div>
+    <h3>CSS的概念</h3>
+
+    <div>CSS（Cascading Style Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。</div>
+
+
+</div>
+
+
+<div style="border:1px solid gray" id="id19">
+    <div class="block1"><img src="building2.jpg" border="0"></div>
+    <div>对于一个网页设计者来说，HTML语言一定不会感到陌生，因为它是所有网页制作的基础。但是如果希望网页能够美观、大方，并且升级方便，维护轻松，那么仅仅HTML是不够的，CSS在这中间扮演着重要的角色。<br><br></div>
+    <div class="block2"><img src="building3.jpg" border="0"></div>
+    <div>CSS的引入随即引发了网页设计的一个又一个新高潮，使用CSS设计的优秀页面层出不穷。本章从CSS的基本概念出发，介绍CSS语言的特点，以及如何在网页中引入CSS，并对CSS进行初步的体验。</div>
+    <h3>CSS的概念</h3>
+
+    <div>CSS（Cascading Style Sheet），中文译为层叠样式表，是用于控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。</div>
+
+
+</div>
+<div style="border:1px solid gray" id="id20">
+
+    <div id="father">
+        <div id="block">absolute</div>
+    </div>
+
+
+</div>
+<div style="border:1px solid gray" id="id21"></div>
+<div style="border:1px solid gray" id="id22"></div>
+<div style="border:1px solid gray" id="id23"></div>
+<div style="border:1px solid gray" id="id24"></div>
+<div style="border:1px solid gray" id="id25"></div>
+<div style="border:1px solid gray" id="id26"></div>
+<div style="border:1px solid gray" id="id27"></div>
+<div style="border:1px solid gray" id="id28"></div>
+<div style="border:1px solid gray" id="id29"></div>
+<div style="border:1px solid gray" id="id30"></div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+	.focusBox { position: relative; width: 320px; height: 240px; overflow: hidden; font: 12px/1.5 Verdana, Geneva, sans-serif; text-align: left; background: white; }
+	.focusBox .pic img { width: 320px; height: 240px; display: block; }
+	.focusBox .txt-bg { position: absolute; bottom: 0; z-index: 1; height: 36px; width:100%;  background: #333; filter: alpha(opacity=40); opacity: 0.4; overflow: hidden; }
+	.focusBox .txt { position: absolute; bottom: 0; z-index: 2; height: 36px; width:100%; overflow: hidden; }
+	.focusBox .txt li{ height:36px; line-height:36px; position:absolute; bottom:-36px;}
+	.focusBox .txt li a{ display: block; color: white; padding: 0 0 0 10px; font-size: 12px; font-weight: bold; text-decoration: none; }
+	.focusBox .num { position: absolute; z-index: 3; bottom: 8px; right: 8px; }
+	.focusBox .num li{ float: left; position: relative; width: 18px; height: 15px; line-height: 15px; overflow: hidden; text-align: center; margin-right: 1px; cursor: pointer; }
+	.focusBox .num li a,.focusBox .num li span { position: absolute; z-index: 2; display: block; color: white; width: 100%; height: 100%; top: 0; left: 0; text-decoration: none; }
+	.focusBox .num li span { z-index: 1; background: black; filter: alpha(opacity=50); opacity: 0.5; }
+	.focusBox .num li.on a,.focusBox .num a:hover{ background:#f60;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="focusBox" style="margin:0 auto">
+  <ul class="pic">
+    <li><a href="#"><img src="images/1.jpg"/></a></li>
+    <li><a href="#"><img src="images/2.jpg"/></a></li>
+    <li><a href="#"><img src="images/3.jpg"/></a></li>
+    <li><a href="#"><img src="images/4.jpg"/></a></li>
+  </ul>
+  <div class="txt-bg"></div>
+  <div class="txt">
+    <ul>
+      <li><a href="#">SuperSlide美女福利图Quiet</a></li>
+      <li><a href="#">SuperSlide美女福利图DoubleLi</a></li>
+      <li><a href="#">SuperSlide美女福利图爱的练习曲</a></li>
+      <li><a href="#">SuperSlide美女福利图夜莺</a></li>
+    </ul>
+  </div>
+  <ul class="num">
+    <li><a>1</a><span></span></li>
+    <li><a>2</a><span></span></li>
+    <li><a>3</a><span></span></li>
+    <li><a>4</a><span></span></li>
+  </ul>
+</div>
+<script type="text/javascript">
+		jQuery(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",
+			//下面startFun代码用于控制文字上下切换
+			startFun:function(i){
+				 jQuery(".focusBox .txt li").eq(i).animate({"bottom":0}).siblings().animate({"bottom":-36});
+			}
+		});
+	</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

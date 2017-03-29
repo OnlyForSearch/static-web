@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.activityBox { height: 280px; width:275px; position:relative; font: 12px/20px Arial,Helvetica,'宋体',sans-serif; }
+.activityBox a{ color:#C30;  }
+.activityBox .title { width: 255px; height: 34px; line-height: 34px; padding: 0 10px; background:#E52;  }
+.activityBox .title h2 { font-size: 18px; line-height: 34px; font-family: '微软雅黑', '黑体', '宋体'; color: #fff; font-weight:normal; }
+.activityBox .title .pageState{ margin-left:5px;  }
+.activityBox .content { width: 275px; position: relative; }
+.activityBox .content .contentInner { width: 235px; height: 220px; margin: 0 8px; padding: 10px 9px; position: relative; overflow: hidden; border: 3px solid #E52;  }
+.activityBox .content .contentInner ul { width: 235px; height: 220px; position: absolute; }
+.activityBox .content .contentInner ul li { height: 240px; }
+.activityBox .content .contentInner ul li img{ vertical-align:middle; }
+.activityBox .content .contentInner .mt5 { margin-top:5px;  }
+.activityBox .content .contentInner p span{ color:#999; margin-left:15px;  }
+.activityBox .title, .activityBox .title a { color: #fff; }
+.activityBox .title .ac_List { position: absolute; right: 55px; top:0; }
+.activityBox .title .prev, .activityBox .title .next { width: 16px; height: 14px; position: absolute; display: block; top: 10px; cursor: pointer; background:url(images/index_main.png) 0 0 no-repeat; }
+.activityBox .title .prev { right: 29px; background-position: -52px -345px; }
+.activityBox .title .next { right: 10px; background-position: -35px -345px; }
+.activityBox .title .prev:hover { background-position: -86px -345px; }
+.activityBox .title .next:hover { background-position: -69px -345px; }
+.activityBox .leftZone, .activityBox .rightZone { background:url(images/index_main.png) 0 0 no-repeat; width: 8px; height: 8px; font-size: 0; display: block; position: absolute; top: 0; }
+.activityBox .leftZone { background-position: -103px -345px; left: 0; }
+.activityBox .rightZone { background-position: -114px -345px; right: 0; }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="activityBox" style="margin:0 auto">
+  <div class="title">
+    <h2>活动进行中..</h2>
+    <span class="ac_List"><a href="#">全部</a><span class="pageState"></span></span>
+    <span class="prev"></span>
+    <span class="next"></span>
+  </div>
+  <div class="content"> <span class="leftZone"></span>
+    <div class="contentInner">
+      <ul>
+        <li> <a href="#"><img src="images/1.jpg" /></a>
+          <p class="mt5"><a href="#">盘点男色赢积分</a></p>
+          <p>截止日期：12月10日<span>246人关注</span></p>
+        </li>
+        <li> <a href="#"><img src="images/2.jpg" /></a>
+          <p class="mt5"><a href="#">表白：那些没有好好说的再见</a></p>
+          <p>截止日期：12月12日<span>1001人关注</span></p>
+        </li>
+        <li> <a href="#"><img src="images/3.jpg" /></a>
+          <p class="mt5"><a href="#">10点特价围观《王的盛宴》</a></p>
+          <p>截止日期：12月04日<span>797人关注</span></p>
+        </li>
+        <li> <a href="#"><img src="images/4.jpg" /></a>
+          <p class="mt5"><a href="#">横扫沪上影院特价票</a></p>
+          <p>截止日期：12月27日<span>892人关注</span></p>
+        </li>
+        <li> <a href="#"><img src="images/5.jpg" /></a>
+          <p class="mt5"><a href="#">写影评赢原版周边《少年派》</a></p>
+          <p>截止日期：12月07日<span>1591人关注</span></p>
+        </li>
+      </ul>
+    </div>
+    <span class="rightZone"></span> </div>
+</div>
+<script type="text/javascript">jQuery(".activityBox").slide({ mainCell:".contentInner ul", effect:"top",delayTime:400});</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

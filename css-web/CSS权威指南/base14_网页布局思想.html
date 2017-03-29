@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局思想</title>
+
+    <style>
+
+        /*****1清除格式*******/
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body, table, p, ul, ol, li, h1,
+        h2, h3, h4, h5, h6, dd, dl, dt, i, a {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /*****2设置页面属性body*******/
+        body {
+            font-size: 14px; /*字体大小*/
+            font-family: 宋体; /*字体*/
+            color: #000; /*文本颜色*/
+            background: #e2e2e2; /*背景/背景图片*/
+            line-height: 150%; /*行间距*/
+
+        }
+
+        /*****3把整个页面划分结构*******/
+        /*****4行内元素和块级元素
+            行内元素:输入完标签之后,不是自己占一行,行内的元素的宽度和高度由内容决定
+            span b i u strong a
+
+
+            块级元素:前后换行
+            div ul table ol li p dl dt dd h1..
+
+        *******/
+
+        .nav {
+            width: 700px;
+            height: 80px;
+                background-color: black;
+            margin:0 auto;
+
+        }
+        .nav a {
+            float: left;
+            text-align: center;
+            text-decoration: none;
+        }
+        .nav a:link,.nav a:visited {
+            height:80px;/*
+            border:1px solid #fff;*/
+            line-height: 80px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: #fff;
+        }
+        .nav a:hover,.nav a:active {
+            background: #09f;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="#">首页1</a><a href="#">首页2</a><a href="#">首页3</a><a href="#">首页4</a><a href="#">首页5</a><a href="#">首页5</a><a href="#">首页54444</a>
+</div>
+
+
+<style>
+    .maxbox {
+        width: 900px;
+        border: 1px solid gray;
+        margin: 10px auto;
+    }
+    .box_left {
+        width: 600px;
+        height: 550px;
+        border: 1px solid blue;
+        float:left;
+    }
+    .box_right {
+        width: 250px;
+        height: 550px;
+        border: 1px solid red;
+        margin: 10px;
+        float:right;
+    }
+    .box_clear {
+        clear: both;
+    }
+</style>
+<div class="maxbox">
+    <div class="box_left"></div>
+    <div class="box_right"></div>
+    <div class="box_clear"></div><!--使父元素高度正常计算-->
+</div>
+
+
+
+<style>
+    .maxbox2 {
+        width: 900px;
+        border: 1px solid gray;
+        margin: 10px auto;
+        overflow: hidden;/*让内容自动正常高度*/
+    }
+    .box_left2 {
+        width: 600px;
+        height: 550px;
+        border: 1px solid blue;
+        float:left;
+    }
+    .box_right2 {
+        width: 250px;
+        height: 550px;
+        border: 1px solid red;
+        margin: 10px;
+        float:right;
+    }
+
+</style>
+<div class="maxbox2">
+    <div class="box_left2">第二种得到正常高度的方法</div>
+    <div class="box_right2"></div>
+<!--使父元素高度正常计算-->
+</div>
+
+
+
+</body>
+</html>

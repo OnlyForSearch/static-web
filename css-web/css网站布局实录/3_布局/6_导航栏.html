@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style>
+
+        body {
+            padding-bottom: 150px;
+        }
+        div.container {
+            border: 2px solid #3D9EE9;
+        }
+
+        ul#nav {
+            height: 26px;
+            border-bottom: 2px solid #2788da;
+        }
+
+        #nav li {
+            float: left;
+            list-style: none;
+        }
+
+        #nav li a {
+            display: block;
+            text-decoration: none;
+            padding-top: 4px;
+            width: 97px;
+            height: 22px;
+            text-align: center;
+            background-color: #ececec;
+            margin-left: 2px;
+        }
+
+        #nav li a:hover {
+            background-color: #bbb;
+            color: #fff;
+        }
+
+        #nav li a.current {
+            background-color: #2788da;
+            color: #ffffff;
+        }
+
+        /*
+                .container_1 {
+                    background-color:#000;
+                }
+        */
+
+    </style>
+
+
+</head>
+<body>
+<div class="container"></div>
+
+<ul id="nav">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">文章</a></li>
+    <li><a href="#">参考</a></li>
+    <li><a class="current" href="#">Blog</a></li>
+    <li><a href="#">论坛</a></li>
+    <li><a href="#">联系</a></li>
+</ul>
+
+<div class="container_1">
+    <style>
+        #nav2 {
+            height: 26px;
+            border-bottom: 2px solid #fff;
+            list-style: none;
+        }
+
+        #nav2 li {
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #nav2 li a {
+
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding-top: 7px;
+            width: 97px;
+            height: 19px;
+            background: url("../../../uweb/uweb/uweb/2.17/images/0.1.jpg");
+            text-align: center;
+            margin-left: 2px;
+        }
+
+        #nav2 li a:hover {
+            color: #000;
+            background-image: url("../../../uweb/uweb/uweb/2.17/images/0.2.jpg");
+        }
+
+        #nav2 li a.current {
+            color: #000;
+            background-image: url("../../../uweb/uweb/uweb/2.17/images/0.3.jpg");
+        }
+
+    </style>
+    <ul id="nav2">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">文章</a></li>
+        <li><a href="#">参考</a></li>
+        <li><a class="current" href="#">Blog</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="#">联系</a></li>
+    </ul>
+</div>
+
+
+<style>
+    #category {
+        width: 100px;
+        border-right: 1px solid #c5c6c4;
+        border-bottom: 1px solid #c5c6c4;
+        border-left: 1px solid #c5c6c4;
+    }
+
+    #category {
+        width: 100px;
+        border-right: 1px solid #c5c6c4;
+        border-bottom: 1px solid #c5c6c4;
+        border-left: 1px solid #c5c6c4;
+    }
+
+    #category h1 {
+        margin: 0px;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top: 1px solid #c5c6c4;
+        background-color: #F4F4F4;
+    }
+
+    #category h2 {
+        margin: 0px;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style>
+
+<div id="category">
+
+    <h1>CSS</h1>
+    <h2>CSS入门</h2>
+    <h2>CSS进阶</h2>
+    <h2>CSS高级技巧</h2>
+    <h1>WebUI</h1>
+    <h2>理论知识</h2>
+    <h2>实战应用</h2>
+    <h2>高级技巧</h2>
+    <h1>DOM</h1>
+    <h2>DOM入门</h2>
+    <h2>DOM应用</h2>
+    <h2>DOM浏览器</h2>
+    <h1>XHTML</h1>
+    <h2>XHTML参考手册</h2>
+    <h2>XHTML 论坛</h2>
+</div>
+
+<style>/*CSS结构优化,减少代码*/
+#category2 {
+    width: 100px;
+    border: 1px solid #c5c6c4;
+    border-top-width: 0px;
+}
+
+#category2 h1, #category2 h2 {
+    margin: 0px;
+    padding: 4px;
+    font-size: 12px;
+
+}
+
+#category2 h1 {
+    border-top: 1px solid #c5c6c4;
+    background-color: #F4F4F4;
+}
+
+#category2 h2 {
+
+    font-weight: normal;
+}
+</style>
+<br>
+<hr>
+
+<div id="category2">
+
+    <h1>CSS</h1>
+    <h2>CSS入门</h2>
+    <h2>CSS进阶</h2>
+    <h2>CSS高级技巧</h2>
+    <h1>WebUI</h1>
+    <h2>理论知识</h2>
+    <h2>实战应用</h2>
+    <h2>高级技巧</h2>
+    <h1>DOM</h1>
+    <h2>DOM入门</h2>
+    <h2>DOM应用</h2>
+    <h2>DOM浏览器</h2>
+    <h1>XHTML</h1>
+    <h2>XHTML参考手册</h2>
+    <h2>XHTML 论坛</h2>
+</div>
+
+
+<style>
+    #nav4 ul,#nav4  {
+
+        padding: 0;
+        margin:0;
+        list-style: none;
+    }
+
+    #nav4 li {
+        float:left;
+        width: 160px;
+    }
+
+    #nav4 li ul {
+        display: none;
+        top: 20px;
+    }
+
+    li:hover ul, li.over ul {
+        display: block;
+    }
+
+</style>
+<ul id="nav4">
+    <li><a href="">文章</a>
+        <ul>
+            <li><a href="">教程1</a></li>
+            <li><a href="">教程2</a></li>
+            <li><a href="">教程3</a></li>
+            <li><a href="">教程4</a></li>
+        </ul>
+    </li>
+    <li><a href="">参考</a>
+        <ul>
+            <li><a href="">参考1</a></li>
+            <li><a href="">参考2</a></li>
+            <li><a href="">参考3</a></li>
+        </ul>
+    </li>
+    <li><a href="">Blog</a>
+        <ul>
+            <li><a href="">Blog1</a></li>
+            <li><a href="">Blog2</a></li>
+            <li><a href="">Blog3</a></li>
+            <li><a href="">Blog4</a></li>
+        </ul>
+    </li>
+
+
+</ul>
+
+
+
+
+</body>
+</html>

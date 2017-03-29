@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+	.hotspot{width:646px;height:301px;border:1px solid #ddd;overflow:hidden;position:relative}
+	.hotspot .pic{ position:relative;background-color:#F7F7F7}
+	.hotspot .pic img{ width:646px;height:301px; display:block;  }
+	.hotspot .pic li{ width:646px; overflow:hidden; float:left; }
+
+	.hotspot .txt{ height:30px;overflow:hidden;position:absolute;top:271px;left:0}
+	.hotspot .txt .bl{width:650px;margin:0 0 0 -1px}
+	.hotspot .btn{float:left;width:216px;height:30px;position:relative;overflow:hidden}
+	.hotspot .btn .bg{position:absolute;width:215px;height:30px;border-top:1px solid #666;border-left:1px solid #666;background:#000;opacity:.7;filter:alpha(opacity=70)}
+	.hotspot .btn .tt{width:200px;height:30px;overflow:hidden;position:absolute;z-index:2;padding:0 8px;font-size:14px;color:#fff;line-height:30px;*line-height:33px;cursor:pointer}
+	.hotspot .btn .last{width:214px}
+	.hotspot .btn:hover{text-decoration:none}
+	.hotspot .on .bg{opacity:.9;filter:alpha(opacity=90)}
+
+	.hotspot .btn{width:130px}
+	.hotspot .btn .bg,.hotspot5 .btn .last{width:131px}
+	.hotspot .btn .tt{width:120px}
+	.hotspot .on .bg{background:#5c1302}
+	
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="hotspot" id="hotspot" style="margin:0 auto">
+  <div class="pic">
+    <ul class="scroll">
+      <li><a href="#"><img src="images/1.jpg"></a></li>
+      <li><a href="#"><img src="images/2.jpg"></a></li>
+      <li><a href="#"><img src="images/3.jpg"></a></li>
+      <li><a href="#"><img src="images/4.jpg"></a></li>
+      <li><a href="#"><img src="images/5.jpg"></a></li>
+    </ul>
+  </div>
+  <div class="txt">
+    <div class="bl"> 
+    	<a rel="1" class="btn" href="#"> <span class="bg"></span> <span class="tt">《黑衣女人》</span> </a>
+        
+        <a rel="2" class="btn" href="#"> <span class="bg"></span> <span class="tt">《听风者》</span> </a>
+        
+        <a rel="3" class="btn current" href="#"> <span class="bg"></span> <span class="tt">《无间谍局》</span> </a>
+        
+        <a rel="4" class="btn" href="#"> <span class="bg"></span> <span class="tt">《我11》</span> </a>
+        
+        <a rel="5" class="btn" href="#"> <span class="bg last"></span> <span class="tt">《海豚湾》 </span> </a> 
+     </div>
+  </div>
+</div>
+<script type="text/javascript">
+	jQuery(".hotspot").slide({ titCell:".bl a", mainCell:".scroll", effect:"left", autoPlay:true,easing:"easeInOutCirc",delayTime:700});
+	</script> 
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

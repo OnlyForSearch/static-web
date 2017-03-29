@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  ng-app="phonecatApp" ng-controller="PhoneListCtrl">
+<head lang="en" >
+    <meta charset="UTF-8" >
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/app.css" />
+    <script src="../components/angular/angular.js" ></script >
+    <script src="../js/controllers" ></script >
+
+    <!--一个更好的解决方案是使用ngBind或者ngBindTemplate指令，它们在页面加载时对用户是不可见的-->
+    <title ng-bind-template="bind:{{query}}" >迭代器</title >
+<body  >
+<div class="container-fluid" >
+    <div class="row" >
+        <div class="col-md-2" >
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query" >
+    query:{{query}}
+        </div >
+        <div class="col-md-10" >
+            <!--Body content-->
+
+            <ul class="phones" >
+                <!--，用户在输入框中输入的数据名字称作query，会立刻作为列表
+                迭代器（phone in phones | filter:query`）其过滤器的输入-->
+                <li ng-repeat="phone in phones | filter:query" >
+                    <span >{{phone.name}}</span >
+
+                    <p >{{phone.snippet}}</p >
+                </li >
+            </ul >
+
+        </div >
+    </div >
+</div >
+
+</body >
+</html >

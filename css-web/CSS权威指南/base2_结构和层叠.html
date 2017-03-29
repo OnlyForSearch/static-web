@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>声明和特殊性</title>
+
+
+    <link rel="stylesheet" href="base.css">
+    <style type="text/css">
+
+
+        h1+p { color: black; font-style: italic; } /*specificity= 0,0,0,2*/
+
+        p {
+            color: gray;
+            background: white;
+            font-style: normal;
+        }/*0,0,0,1*/
+
+
+        *.aside {
+            color: black;
+            background: silver;
+        }/*0,0,1,0*/
+
+
+        /*通配符选择器特殊性*/
+        div p {
+            color: black;
+
+        }/*0,0,0,2*/
+
+        * {
+            color:gray;
+        }/*0,0,0,0*/
+
+
+        /*ID和属性选择器的特殊性*/
+
+        html > body table tr[id="totals"] td ul >li li {
+            color:maroon;
+        }/*0,0,0,7*/
+
+       li#answer{
+            color: navy;
+
+       }/* 0,1,0,1(winner)*/
+
+
+        #meadow {/*ID选择器 0,1,0,0*/
+            color: green;
+        }
+        *[id="meadow"] {
+            color: mintcream;/*属性选择器 0,0,1,0 */
+        }
+
+        /*内联的特殊性都是 1,0,0,0
+        <h1 style="color: green">The Meadow Party</h1>
+        */
+
+        /*重要性 :重要规则总是胜出*/
+    p.dark {
+        color: #333 !important;
+        background: white;
+    }
+        p.light {
+            color: yellow;
+            font:smaller Times, serif !important;
+        }
+
+/*继承:大多数框模型属性(包括边框,外边距,内边距,背景,和边框)都不能继承*/
+
+
+
+    </style>
+
+</head>
+<body>
+    <h>Greetings</h>
+    <p class="aside">
+        Ites fine way to start day,don't you think
+    </p>
+
+    <p>There are many ways to greet</p>
+    <h1>Salutations!</h1>
+    <p>There is noting finer than a hearty wel</p>
+    <p class="aside">
+        Although a thick and juicy
+    </p>
+
+</body>
+</html>

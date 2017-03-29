@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>uwebSlide 特效库整合</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style type="text/css">
+#content{ position:static; padding:32px 0 30px 0;    }
+</style>
+<!-- header S -->
+<div id="header">
+  <div class="headerBg"></div>
+  <span class="nav"> <a href="param.html">查看参数</a>|<a href="index.html">效果整合</a> </span>
+  <div class="title">
+    <h1 tite="SuperSlide" id="logo">uwebSlide</h1>
+    <em>v1.0</em><span class="author"> -- uweb特效库整合</span> </div>
+</div>
+<!-- header E --> 
+
+<!-- content S -->
+<div id="content" class="otherDemo">
+  <div class="authorWord">
+    <h3><a class="arrow arrowB"></a>作者的话</h3>
+    <div class="con">
+      <p style="font:24px '微软雅黑';">特别声明，以下内容均来源于网络，如有侵犯作者权益，请联系QQ：675972282删除相关内容</p>
+    </div>
+  </div>
+  <!-- authorWord E --> 
+  <script type="text/javascript">$(".authorWord h3").click(function(){ $(this).next().toggle() });</script> 
+ 
+ <div  class="demoBox ">
+    <div  class="hd">
+      <h3><span>links.</span>友情连接</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <a href="http://sjyzt.cn/index.aspx" target="_blank"><img _src="links/1/index.jpg" /> </a></div>
+          <h3>设计一站通</h3>
+        </li>
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+
+
+  <div id="switchTab" class="demoBox ">
+    <div name="effect0" id="effect0" class="hd">
+      <h3><span>0. </span>其他常用插件库</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/t1/index.jpg" /> </div>
+          <h3>仿淘宝图片放大</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/t2/index.jpg" /> </div>
+          <h3>图片盒子点击放大</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/t3/index.jpg" /> </div>
+          <h3>内部小窗滚动条</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/t4/index.jpg" /> </div>
+          <h3>内部小窗滚动条</h3>
+        </li>
+
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+ 
+  <!-- 1 switchTab S -->
+  <div id="switchTab" class="demoBox ">
+    <div name="effect1" id="effect1" class="hd">
+      <h3><span>1. </span>书签切换系列</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/1/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.1/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.2/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.3/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.4/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.5/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.6/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.7/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.8/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.9/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.10/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/1.11/index.jpg" /> </div>
+          <h3>标签切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/1.12/index.jpg" /> </div>
+          <h3>多重切换标签</h3>
+        </li>
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+  <!-- 1 switchTab E -->
+  
+  <div id="switchTab" class="demoBox ">
+    <div name="effect2" id="effect2" class="hd">
+      <h3><span>2. </span>焦点图</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/2.1/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.2/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.3/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.4/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.5/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.6/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.7/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.8/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.9/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.10/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.11/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.12/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.13/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.14/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.15/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.16/index.jpg" /> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.17/index.jpg" /> </div>
+          <h3>小图左右翻页焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.18/index.jpg" /> </div>
+          <h3>小图滑动框焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.19/index.jpg" /> </div>
+          <h3>全屏焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.20/index.jpg" /> </div>
+          <h3>全屏焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.21/index.jpg" /> </div>
+          <h3>全屏焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"><a href="uweb/2.23/index.html" target="_blank"> <img _src="uweb/2.22/index.jpg" />  </a></div>
+          <h3>可控自动切换全屏焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"><a href="uweb/2.23/index.html" target="_blank">  <img _src="uweb/2.23/index.jpg" /> </a> </div>
+          <h3>焦点图</h3>
+        </li>
+		<li>
+          <div class="pic"><img _src="uweb/2.24/index.jpg" /> </div>
+          <h3>带进度条</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/2.25/index.jpg" /> </div>
+          <h3>左右两侧部分显示</h3>
+        </li>
+		<li>
+          <div class="pic"><a href="uweb/2.26/index.html" target="_blank"><img _src="uweb/2.26/index.jpg" /></a> </div>
+          <h3>左右两侧部分显示</h3>
+        </li>
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+  
+  
+  <div id="switchTab" class="demoBox ">
+    <div name="effect3" id="effect3" class="hd">
+      <h3><span>3. </span>按钮切换</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/3/index.jpg" /> </div>
+          <h3>左右+内部焦点图</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.1/index.jpg" /> </div>
+          <h3>按钮切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.2/index.jpg" /> </div>
+          <h3>右上角按钮翻页</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.3/index.jpg" /> </div>
+          <h3>广告圆点翻页</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.4/index.jpg" /> </div>
+          <h3>点击上下翻页</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.5/index.jpg" /> </div>
+          <h3>点击左右翻页</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.6/index.jpg" /> </div>
+          <h3>两列左右点击切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.7/index.jpg" /> </div>
+          <h3>上下切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.8/index.jpg" /> </div>
+          <h3>重复调用按钮切换</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.9/index.jpg" /> </div>
+          <h3>图片滚动</h3>
+        </li>
+        <li>
+          <div class="pic"> <img _src="uweb/3.10/index.jpg" /> </div>
+          <h3>一列点击翻页</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/3.11/index.jpg" /> </div>
+          <h3>按钮切换上下</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/3.12/index.jpg" /> </div>
+          <h3>发展历程</h3>
+        </li>
+
+        
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+
+    <div id="switchTab" class="demoBox ">
+    <div name="effect4" id="effect4" class="hd">
+      <h3><span>4. </span>导航菜单</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/4.1/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.2/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.3/index.jpg" /> </div>
+          <h3>渐隐菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.4/index.jpg" /> </div>
+          <h3>带回弹动感菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.5/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.6/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.7/index.jpg" /> </div>
+          <h3>竖向淘宝菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.8/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/4.9/index.jpg" /> </div>
+          <h3>导航菜单</h3>
+        </li>
+
+        
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+  
+   <div id="switchTab" class="demoBox ">
+    <div name="effect5" id="effect5" class="hd">
+      <h3><span>5. </span>其他</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/5/index.jpg" /> </div>
+          <h3>天猫广告切换</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/5.1/index.jpg" /> </div>
+          <h3>自动向下滚动信息</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/5.2/index.jpg" /> </div>
+          <h3>竖向手风琴</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/5.3/index.jpg" /> </div>
+          <h3>两行自动无缝滚动</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/5.4/index.jpg" /> </div>
+          <h3>焦点信息</h3>
+        </li>  
+		<li>
+          <div class="pic"> <img _src="uweb/5.5/index.jpg" /> </div>
+          <h3>搜索框状态</h3>
+        </li>  
+		<li>
+          <div class="pic"> <img _src="uweb/5.6/index.jpg" /> </div>
+          <h3>横向手风琴</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/5.7/index.jpg" /> </div>
+          <h3>竖向手风琴</h3>
+        </li>
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+  
+      <div id="switchTab" class="demoBox ">
+    <div name="effect6" id="effect6" class="hd">
+      <h3><span>6. </span>原生js系列</h3>
+    </div>
+    <div class="bd">
+      <ul class="demoList">
+        <li>
+          <div class="pic"> <img _src="uweb/j1/index.jpg" /> </div>
+          <h3>360全景展示</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j2/index.jpg" /> </div>
+          <h3>关键字旋转球体</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j3/index.jpg" /> </div>
+          <h3>超酷时钟</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j4/index.jpg" /> </div>
+          <h3>动感图片</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j5/index.jpg" /> </div>
+          <h3>仿flash菜单</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j6/index.jpg" /> </div>
+          <h3>鼠标滑过淡出效果</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j7/index.jpg" /> </div>
+          <h3>3d旋转切换</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j8/index.jpg" /> </div>
+          <h3>动感广告</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j9/index.jpg" /> </div>
+          <h3>仿苹果导航</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j10/index.jpg" /> </div>
+          <h3>动感导航</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j11/index.jpg" /> </div>
+          <h3>左下角弹出框</h3>
+        </li>
+		<li>
+          <div class="pic"> <img _src="uweb/j12/index.jpg" /> </div>
+          <h3>滚轮键盘滚动焦点图</h3>
+        </li>
+
+
+        
+      </ul>
+    </div>
+    <!-- bd E --> 
+  </div>
+  
+</div>
+<!-- content E --> 
+
+<!-- 右侧导航 -->
+<div class="rightNav">
+	<a href="#content"><em>^</em>回到顶部</a>
+	<a href="#effect1"><em>1</em>书签切换</a>
+	<a href="#effect2"><em>2</em>焦点图</a>
+	<a href="#effect3"><em>3</em>按钮切换</a>
+	<a href="#effect4"><em>4</em>导航菜单</a>
+	<a href="#effect5"><em>5</em>其他</a>
+	<a href="#effect6"><em>6</em>原生js</a>
+	
+
+</div>
+
+
+<!-- 隐藏代码盒子 S -->
+<div id="displayBox">
+  <div class="hd"><a>X</a>
+    <h3></h3>
+  </div>
+  <div class="bd">
+    <iframe scrolling="yse" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script type="text/javascript" src="other/nav.js"></script> 
+<script type="text/javascript" src="other/other.js"></script>
+<div id="footer"> UWEB小胖整合 </div>
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.focusSwitch{ width:430px;  padding:20px; background:#eee;   }
+.focusSwitch ul{ overflow:hidden; zoom:1; margin-right:-2px;  }
+.focusSwitch li{ width:106px; height:106px; float:left; margin:0 2px 2px 0; display:inline; overflow:hidden; background:#000;   }
+.focusSwitch li img{ display:block; width:106px; height:106px; }
+.focusSwitch li.m{ width:322px; background:#666567; color:#fff;   }
+.focusSwitch li.m dd{ padding:10px; line-height:18px;   }
+.focusSwitch li.t{ background:#780414; text-align:center; color:#fff;   }
+.focusSwitch li.t p{ padding:10px; line-height:18px;  }
+.focusSwitch li.t h3{ font: bold 18px "微软雅黑"; color: #FFF8A7;  }
+.focusSwitch li.n img{ filter:alpha(opacity=40);opacity:0.4;  }
+.focusSwitch li.on img{ filter:alpha(opacity=100);opacity:1;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="focusSwitch" style="margin:0 auto">
+  <ul>
+    <li class="n"><a href="#"><img src="images/1.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/2.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/3.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/4.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/5.jpg" /></a></li>
+    <li class="m">
+      <dl>
+        <dd> <strong>胡　飞</strong><br>
+          杭州之江画室主要负责人，毕业于中国美术学院教师。绘画作品多次留校并出版。2005年主编《中国美术院校素描考试摹本解析》，《新课标基础美术技法学习教材——素描静物》。 </dd>
+        <dd> <strong>关　威</strong><br>
+          之江画室教学主管，毕业于中国美术学院版画系，现任教于中国美术学院职业技术学院,1997年以优异的成绩考入中国美术学院附中，2001年考入中国美术学院版画系。 </dd>
+        <dd> <strong>郑　平</strong><br>
+          1986年出生于浙江台州，之江画室骨干教师，办公室主任，09年毕业于中国美术学院美术教育系 </dd>
+        <dd> <strong>刘雪松</strong><br>
+          之江画室总务处主任，黑龙江哈尔滨人。曾就职于银行财务会计，银行副行长，北京大学分校总务主任，管理经验丰富。 </dd>
+        <dd> <strong>毛　佩</strong><br>
+          1980出生于浙江舟山.毕业于中国美术学院附中，作品多次被留校，素描组长。 </dd>
+        <dd> <strong>吴　正</strong><br>
+          现就读于中国美术学院油画系研究生第四工作室教师，色彩组长。 </dd>
+        <dd> <strong>王　坚</strong><br>
+          1987年出生于浙江台州，之江画室骨干教师，色彩组副组长。 </dd>
+        <dd> <strong>周　红</strong><br>
+          2005年考入中国美术学院雕塑系，现为杭州之江画室素描教师。素描组副组长。 </dd>
+        <dd> <strong>高跃春</strong><br>
+          1浙江金华人，毕业于中国美术学院，美术作品油画《风景》入编《中国书画艺术博览》 </dd>
+        <dd> <strong>梁拱照</strong><br>
+          现就读于杭州师范大学油画系研究生教师。 </dd>
+        <dd> <strong>单文洁</strong><br>
+          2008年以第三名的优异成绩考入中国美术学院影视广告系，2012年考入中国美术学院影视广告系研究生。 </dd>
+        <dd> <strong>潘远宁</strong><br>
+          之江画室骨干教师，毕业于中国美术学院版画系，1997年以优异的成绩考入中国美术学院附中，后毕业于中国美术学院版画系， </dd>
+      </dl>
+    </li>
+    <li class="n"><a href="#"><img src="images/6.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/7.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/8.jpg" /></a></li>
+    <li class="t">
+      <p>new developments
+      <h3>教师风采</h3>
+      </p>
+    </li>
+    <li class="n"><a href="#"><img src="images/9.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/10.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/11.jpg" /></a></li>
+    <li class="n"><a href="#"><img src="images/12.jpg" /></a></li>
+  </ul>
+</div>
+<script type="text/javascript">
+	jQuery(".focusSwitch").slide({ titCell:".n", mainCell:".m dl",autoPlay:true });
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

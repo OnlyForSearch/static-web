@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.navBar{ position:relative; z-index:1;  background:#F96105; color:#fff; height:40px; line-height:40px;   }
+.nav{ width:980px; margin:0 auto; font-family:"Microsoft YaHei",SimSun,SimHei;  }
+.nav .m{ float:left;  position:relative; border:1px solid #EA4800; border-top:0; border-bottom:0; margin-left:-1px;}
+.nav h3{ float:left;  font-size:100%; font-weight:normal; font-size:14px; height:40px; overflow:hidden;  }
+.nav h3 a{ display:block; color:#fff;  padding:0 20px; border-left:1px solid #FA6D06; vertical-align:top;  }
+.nav .on{ border:0;  }
+.nav .on h3 a{ background:#fff; color:#F96105; font-weight:bold; border-top:1px solid #FA6D06;  }
+.nav .sub{ display:none; /*默认隐藏*/ width:160px; padding:5px 10px 10px 10px;   position:absolute; left:0; top:40px; background:#fff; border:1px solid #F96105; border-top:0;   }
+.nav .sub li{ height:20px; line-height:20px; padding:4px 0;  float:left; width:80px;   }
+.nav .sub li a{ display:block; padding-left:6px; background:url(images/icon.png) 0 9px no-repeat; color:#999;   }
+.nav .sub li a:hover{ color:#FA6D06;    }
+.nav #m7 .sub{ width:320px; left:auto; right:-1px; }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="navBar">
+  <ul class="nav clearfix">
+    <li id="m1" class="m">
+      <h3><a target="_blank" href="#">网站首页</a></h3>
+    </li>
+    <li id="m2" class="m">
+      <h3><a target="_blank" href="#">如何使用</a></h3>
+      <ul class="sub">
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+        <li><a href="#">如何使用</a></li>
+      </ul>
+    </li>
+    <li id="m3" class="m">
+      <h3><a target="_blank" href="#">查看参数</a></h3>
+      <ul class="sub">
+        <li><a href="#">查看参数</a></li>
+        <li><a href="#">查看参数</a></li>
+        <li><a href="#">查看参数</a></li>
+        <li><a href="#">查看参数</a></li>
+      </ul>
+    </li>
+    <li id="m4" class="m">
+      <h3><a target="_blank" href="#">基础效果</a></h3>
+      <ul class="sub">
+        <li><a href="#">基础效果</a></li>
+        <li><a href="#">基础效果</a></li>
+        <li><a href="#">基础效果</a></li>
+        <li><a href="#">基础效果</a></li>
+      </ul>
+    </li>
+    <li id="m5" class="m">
+      <h3><a target="_blank" href="#">扩展效果</a></h3>
+      <ul class="sub">
+        <li><a href="#">扩展效果</a></li>
+        <li><a href="#">扩展效果</a></li>
+        <li><a href="#">扩展效果</a></li>
+        <li><a href="#">扩展效果</a></li>
+      </ul>
+    </li>
+    <li id="m6" class="m">
+      <h3><a target="_blank" href="#">SuperSlide</a></h3>
+    </li>
+    <li id="m7" class="m">
+      <h3><a target="_blank" href="#">大话主席</a></h3>
+      <ul class="sub">
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+        <li><a href="#">大话主席</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="content" style="height:200px"><!-- 内容 --></div>
+<script type="text/javascript">
+		jQuery(".nav").slide({ 
+				type:"menu", //效果类型
+				titCell:".m", // 鼠标触发对象
+				targetCell:".sub", // 效果对象，必须被titCell包含
+				delayTime:0, // 效果时间
+				triggerTime:0, //鼠标延迟触发时间
+				returnDefault:true  //返回默认状态
+			});
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

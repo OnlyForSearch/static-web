@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp" >
+<head lang="en" >
+    <meta charset="UTF-8" >
+    <title >AngularJS模板</title >
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.css" />
+    <script src="../components/angular/angular.js" ></script >
+    <script src="../js/controllers" ></script >
+</head >
+<!--PhoneListCtrl——控制器方法的名字（在JS文件controllers.js中）和
+<body>标签里面的ngController指令的值相匹配。-->
+<body ng-controller="PhoneListCtrl" >
+
+
+<!--<li>标签里面的ng-repeat="phone in phones"语句是一个AngularJS迭代器。
+这个迭代器告诉AngularJS用第一个<li>标签作为模板为列表中的每一部手机创建一
+个<li>元素。-->
+<li ng-repeat="phone in phones" >
+    {{phone.name}}
+    <p >{{phone.snippet}}</p >
+</li >
+<p>Total number of phones:{{phones.length}}</p>
+<p>新的数据模型属性，并且把它绑定到模板上{{hello}}</p>
+
+
+<hr />
+<p>迭代器创建一个简单的表</p>
+<table >
+    <tr >
+        <th >row number</th >
+    </tr >
+    <tr ng-repeat="i in [0,1,2,3,4,5,6,7]">
+        <td >{{i+1}}</td >
+    </tr >
+</table >
+</body >xx
+</html >

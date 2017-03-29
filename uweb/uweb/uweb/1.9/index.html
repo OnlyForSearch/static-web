@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+	.hasMoreTab{ width:350px; font-family:"Microsoft YaHei"; border:1px solid #C8D1D5; }
+	.hasMoreTab .hd{ line-height:24px; height:24px; border-bottom:1px solid #C8D1D5;  background:url(images/btn_bg.gif) repeat-x; position:relative; padding-right:10px;  }
+	.hasMoreTab .hd .more{ float:right; }
+	.hasMoreTab .hd ul{ z-index:5; position:absolute; height:26px;  overflow:hidden; zoom:1; }
+	.hasMoreTab .hd li{ float:left;  padding:0 10px; cursor:pointer; margin-left:-1px;  }
+	.hasMoreTab .hd li.on{ font-weight:bold; height:25px; line-height:25px; background:#fff; border:1px solid #C8D1D5; border-top:0;  border-bottom:1px solid #fff;  font-weight:bold; color:#c00;  }
+	.hasMoreTab .bd{  padding:10px; clear:both; position:relative;  }
+	.hasMoreTab .bd h2{ font-size:14px; }
+	.hasMoreTab .bd p{ color:#999;  }
+	.hasMoreTab .bd p a{ color:#c00;  }
+	.hasMoreTab .bd ul a{ color:#3E78B3;  }
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="hasMoreTab" style="margin:0 auto">
+  <div class="hd"> <span class="more"> <a href="#">更多1&gt;</a> <a href="#">更多2&gt;</a> <a href="#">更多3&gt;</a> </span>
+    <ul>
+      <li>公司公告</li>
+      <li>媒体关注</li>
+      <li>产品动态</li>
+    </ul>
+  </div>
+  <div class="bd">
+    <div class="conWrap">
+      <div class="con">
+        <h2>2012中秋、国庆节放假通知</h2>
+        <p>中秋、国庆双节临近，新网互联全体员工在此预祝各位亲爱的客户与<a href="#">[详细]</a></p>
+        <ul>
+          <li><a href="#">国内中英文域名注册系统升级维护通知</a></li>
+          <li><a href="#">有关2012年发票结余的通知</a></li>
+          <li><a href="#">中国域名拆分暨"英文/数字.中国"域名</a></li>
+        </ul>
+      </div>
+      <div class="con">
+        <h2>"英文/数字.中国"域名优先升级上线</h2>
+        <p>接中国互联网络信息中心（CNNIC）通知，自2012年10月29日起，CNN<a href="#">[详细]</a></p>
+        <ul>
+          <li><a href="#">中国旅游客户端引领未来旅游行业信息化</a></li>
+          <li><a href="#">云邮四种终端访问方式 突破传统收发邮件</a></li>
+          <li><a href="#">云邮防垃圾反病毒网关 极致保护企业邮件</a></li>
+        </ul>
+      </div>
+      <div class="con">
+        <h2>CNNIC关于"英文/数字.中国"域名优先</h2>
+        <p>接中国互联网络信息中心（CNNIC）通知，自2012年10月29日起，CNN<a href="#">[详细]</a></p>
+        <ul>
+          <li><a href="#">".CN"".中国"域名今起向自然人开放</a></li>
+          <li><a href="#">邮箱升级：[云邮]第二代企业邮箱 重装上</a></li>
+          <li><a href="#">关于尽快完成域名注册信息核对的通知</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">jQuery(".hasMoreTab").slide({ mainCell:".conWrap", targetCell:".more a", effect:"fold"});</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

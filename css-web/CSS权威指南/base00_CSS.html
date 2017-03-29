@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        /*可以外部样式表使用,需要使用其他外部样式表中的样式的时候,@import非常有用*/
+        @import url("sheet2.css");
+
+        /*@Import 用于指示web浏览器加载一个外部样式表,不许放在其他CSS规则之前*/
+        h2 {
+            color: gray;
+        }
+
+        /*老式浏览器会将style标记完全忽略,还会忽略声明,能理解CSS的浏览器仍能正常读取样式表*/
+        <!--
+        @import url("sheet2.css");
+        /*@Import 用于指示web浏览器加载一个外部样式表,不许放在其他CSS规则之前*/
+        h2 {
+            color: gray;
+        }
+
+        -->
+
+        /**/
+
+
+    </style>
+
+
+</head>
+<body>
+
+<h1>h1展示</h1>
+
+<h2>h2展示</h2>
+
+<h3><font color="gray">This is h2 text 这是inline 样式(内部自带有)</font></h3>
+
+</body>
+</html>

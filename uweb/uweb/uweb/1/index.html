@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换 滚动组合1</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+
+
+<body>
+<style type="text/css">
+
+/*——图片路径记得要修改——*/
+/*标签切换*/
+.slideTxtBox { width:981px; margin:0 auto; padding-top:40px; background:url(images/stbHr.gif) center bottom no-repeat; }
+.slideTxtBox .hd { height:41px; line-height:41px; }
+.slideTxtBox .hd .stbline { display:block; float:left; width:1px; height:41px; background:url(images/stbLine.gif) center no-repeat; }
+.slideTxtBox .hd ul { float:left; height:41px; }
+.slideTxtBox .hd ul li { float:left; cursor:pointer; line-height:41px; height:41px; filter:alpha(opacity=70); -moz-opacity:0.7; opacity:0.7; padding:0px 20px; }
+.slideTxtBox .hd ul li.on { filter:alpha(opacity=100); -moz-opacity:1; opacity:1; }
+/*标签内切换*/
+.cfocus { float:left; position:relative; width:981px; }
+.cfocus .bbox { width:960px; margin:0 auto; padding:20px 0px 40px 0px; }
+.cfocus .sPrev { position:absolute; z-index:999; display: block; width: 26px; height:33px; background:url(images/btnL1.gif) center no-repeat; top:90px; left:5px; }
+.cfocus .sNext { position:absolute; z-index:999; display: block; width: 26px; height:33px; background:url(images/btnR1.gif) center no-repeat; top:90px; right:5px; }
+.cfocus ul { float:left; }
+.cfocus li { width:300px; cursor:pointer; padding:0px 10px; }
+.cfocus li img { width:300px; height:158px; }
+
+</style>
+
+<!--标签切换 S-->
+<div class="slideTxtBox fixed">
+  <div class="hd">
+    <ul>
+      <li><span class="titF">衣柜</span><span class="Fwar mar1"></span></li>
+      <div class="stbline"></div>
+      <li><span class="titF">橱柜</span><span class="Fcup mar2"></span></li>
+    </ul>
+  </div>
+  <div class="bd fixed"> 
+    <!--焦点图切换 S-->
+    <div class="cfocus"> <a class="sPrev" href="javascript:void(0)"></a>
+      <div class="bbox fixed">
+        <ul class="fixed ull">
+          <li> <a href="#"> <img src="images/pic1.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic2.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic3.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic4.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic2.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic4.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic1.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic3.jpg" /> </a> </li>
+        </ul>
+      </div>
+      <a class="sNext" href="javascript:void(0)"></a> </div>
+    <!--焦点图切换 E--> 
+    
+    <!--焦点图切换 S-->
+    <div class="cfocus"> <a class="sPrev" href="javascript:void(0)"></a>
+      <div class="bbox fixed">
+        <ul class="fixed ull">
+          <li> <a href="#"> <img src="images/pic1.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic2.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic3.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic4.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic2.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic4.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic1.jpg" /> </a> </li>
+          <li> <a href="#"> <img src="images/pic3.jpg" /> </a> </li>
+        </ul>
+      </div>
+      <a class="sNext" href="javascript:void(0)"></a> </div>
+    <!--焦点图切换 E--> 
+    
+  </div>
+</div>
+<!--标签切换 E--> 
+
+<!--特效调用语句一定要写 S--> 
+<script type="text/javascript">jQuery(".slideTxtBox .cfocus").slide({ mainCell:".ull", titCell:".hdd",delayTime:100,vis:3,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext" });</script> 
+<script type="text/javascript">jQuery(".slideTxtBox").slide();</script> 
+<!--特效调用语句一定要写 E--> 
+
+
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/> <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>【 此框架 > 查看框架源代码(FF)】 <br/> 【不推荐使用ie浏览器】 </b>  </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

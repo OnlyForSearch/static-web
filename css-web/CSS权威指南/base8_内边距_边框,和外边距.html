@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内边距_边框,和外边距</title>
+</head>
+<body>
+
+<h1 STYLE="margin: 0.25em;background: silver">thIS is an H1 element</h1>
+<p>This is a paragragh  ,learn ipsum ,color sit amet,consectuer(为H1设置外边距) </p>
+
+
+<p style="background: silver">
+    This is a nomal usn flksdfldsjl;kf jdlsfsdfksldfj  s;dlfjsdkl fsdfkj sdf
+</p>
+<p style="background: silver;margin: 10px">
+    This is a nomal usn flksdfldsjl;kf jdlsfsdfksldfj  s;dlfjsdkl fsdfkj sdf(段落的对照)
+</p>
+
+
+<div style="width: 500px;background: aquamarine">
+    <p style="margin-top: 10%">
+        This is a nomal usn flksdfldsjl;kf jdlsfsdfksldfj  s;dlfjsdkl fsdfkj sdf(父元素width裕百分数)
+    </p>
+
+</div>
+
+<div style="border: 1px dotted gray;margin: 1em;">
+    <p style="margin: 1px;border: 1px dashed silver;margin: 0 -1em;">fd;skjfklsdfkldsfsdfsdfsdfsdfsda fsdakfs;adlfjsdklafjlskdajf;lksadjflas;dfjlsadjflksadjflksdajkfl;</p>
+    <p style="margin: 1px;border: 1px dashed silver;margin:-1em 0">fd;skjfklsdfkldsfsdfsdfsdfsdfsda fsdakfs;adlfjsdklafjlskdajf;lksadjflas;dfjlsadjflksadjflksdajkfl;(负边距的实际使用)</p>
+
+
+</div>
+
+
+<div style="background:silver;border: 1px solid;width: 200px">
+    <p style="margin:1em;background: white;margin: 1em -1px 1em 25%;">fd;skjfklsdfkldsfsdfsdfsdfsdfsda fsdakfs;adlfjsdklafjlskdajf;lksadjflas;dfjlsadjflksadjflksdajkfl;</p>
+    
+    <p style="margin:1em;background: #333333;color: white;margin: 1em  3em -3em -3em">fd;skjfklsdfkldsfsdfsdfsdfsdfsda fsdakfs;adlfjsdklafjlskdajf;lksadjflas;dfjlsadjflksadjflksdajkfl;(超出父元素)</p>
+</div>
+
+
+<p style="margin-top:60px;background: #ffff33">This paragraph contains
+    <strong  style="margin-left: 25px;background: silver">strongly emphasized text that has bean styled as indicated</strong>有左外边距剧的行内非替换元素
+</p>
+<p style="background: #ffff33">This paragraph contains
+    <strong  style="margin: 25px;background: silver">strongly emphasized text that has bean styled as indicated</strong>有25外边距的行内非替换元素
+</p>
+<p style="background: #ffff33;width: 400px">This paragraph contains
+    <strong  style="margin: 25px;background: silver">strongly emphasized text that has bean styled as indicated</strong>有25外边距的行内非替换元素跨两个文本行显示
+</p>
+
+<p style="background: #ffff33;width: 400px">This paragraph contains
+    <strong  style="margin: -25px;background: silver">strongly emphasized text that has bean styled as indicated</strong>有负外边距的行内非替换元素显示
+</p>
+
+
+<h1 style="border-style: solid solid solid none">去掉左边框</h1>
+<h1 style="border-style: solid;border-left-style: none">去掉左边框</h1>
+
+<p style="margin: 5px;border-style: none;border-width: 20px">
+    根本就没有边框
+</p>
+
+<h1 style="padding: 10px; background-color: silver">padding: 10px; background-color: silver</h1>
+
+<h1 style="background: gray;padding: 10px 0.25em 3ex 3cm">padding:10px o.25em 3ex 3cm</h1>
+<h2 style="background: silver;padding :0.5em 2em">padding :0.5em 2em</h2>
+
+<p style="margin: 1em 0; padding : 1em 0;background:gray;">margin: 1em 0; padding : 1em 0;background:gray;margin: 0</p>
+<p style="margin: 1em 0; padding : 1em 0;background:silver;">"margin: 1em 0; padding : 1em 0;background:silver;margin: 0"</p>
+<p style="margin: 1em 0; padding : 1em 0;background:yellowgreen;">margin: 1em 0; padding : 1em 0;background:yellowgreen;</p>
+<p style="margin: 1em 0; padding : 1em 0"></p>
+
+
+<p style="margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;">margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;(使用的内边距而不是外边距)</p><p style="margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;">margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;(使用的内边距而不是外边距)</p><p style="margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;">margin: 0;padding: 0.5em 0; border-bottom: 1px solid gray;border-left: 3px double black;(使用的内边距而不是外边距)</p>
+
+
+<div style="width: 200px;">
+    <p style="padding: 10%;background: silver">百分数计算的和内边距padding: 10%;background: silver padding: 10%;background: silver padding: 10%;background: silver(内边距,百分数和父元素的width)</p>
+</div>
+
+<div style="width: 100px;">
+    <p style="padding: 10%;background: silver">百分数计算的和内边距padding: 10%;background:  : 10%;background: silver padding: 10%;background: silver(内边距,百分数和父元素的width)</p>
+</div>
+
+    <p> This paragraph contains some ordinary <strong style="padding-left: 10px ;padding-right: 10px;background: silver">Strongly emphasized text</strong>This paragraph contains some ordinary(行内非替换元素的内边距) </p>
+<p> This paragraph contains some ordinary <strong style="padding-top: 0.5em;background: silver">Strongly emphasized text</strong>This paragraph contains some ordinary(行内非替换元素的更多内边距) </p>
+
+</body>
+</html>

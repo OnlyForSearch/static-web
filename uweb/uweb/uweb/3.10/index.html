@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.picScroll{ width:728px;  border:1px solid #ddd;  }
+.picScroll .hd{height:36px;line-height:35px;padding:0 15px; background:#f4f4f4; }
+.picScroll .hd h2{ font-family: "Microsoft YaHei"; font-size: 17px; color: #C80300; float: left; margin-right: 15px; }
+.picScroll .bd{ position:relative;  }
+.picScroll .prev,.picScroll .next{ position: absolute; top: 44px; left:-1px; display: block; width: 26px; height: 64px; background: url(images/slide_tigger.png) 0 -65px; z-index: 9; overflow: hidden; }
+.picScroll .next{ left:auto; right:-1px; background-position: -26px -65px; }
+.picScroll .prev:hover{ background-position:0 -130px; }
+.picScroll .next:hover{ background-position:-26px -130px; }
+.picScroll .prevStop{ background-position:0 -65px !important; }
+.picScroll .nextStop{ background-position:-26px -65px !important; }
+.picScroll .scrollWrap{ padding-left:24px  }
+.picScroll ul{ overflow:hidden; zoom:1; }
+.picScroll li{ width:151px; margin: 15px 25px 10px 0; position:relative; float:left; display:inline; }
+.picScroll li .pic {position:relative;display:block;overflow:hidden;margin-bottom:6px;}
+.picScroll li .pic img {display:block;background:#ddd;}
+.picScroll li p {height:15px;margin-top:5px;color:#999;line-height:15px;overflow:hidden;}
+.picScroll li .txt1 a{color:#333;}
+.picScroll li .movielist_tt {position:relative;height:16px;line-height:16px;padding-right:30px;overflow:hidden;position:relative;}
+.picScroll li .movielist_tt a {font-size:14px;}
+.picScroll li .score {color:#FF6600;font-family:Arial;position:absolute;top:0;right:10px;}
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+
+<div class="picScroll" style="margin:0 auto">
+  <div class="hd">
+    <h2>付费大片</h2>
+  </div>
+  <div class="bd"> <a href="javascript:void(0)" class="prev"></a> <a href="javascript:void(0)" class="next"></a>
+    <div class="scrollWrap">
+      <ul class="picList">
+        <li> <a href="#" class="pic"><img src="images/1.jpg"></a>
+          <p class="movielist_tt"> <a href="#">铜雀台</a> <span class="score">7.5</span></p>
+          <p class="txt1"><a href="#">历史</a>/<a href="#">剧情</a>/<a href="#">情色权谋</a></p>
+          <p>伊能静遭强暴戏堪称限制级</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/2.jpg"></a>
+          <p class="movielist_tt"> <a href="#">极速特警-死亡巴士</a> <span class="score">7.0</span></p>
+          <p class="txt1"><a href="#">动作</a>/<a href="#">罪案</a>/<a href="#">德国经典</a></p>
+          <p>令人热血沸腾的德国大片</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/3.jpg"></a>
+          <p class="movielist_tt"> <a href="#">寒战</a> <span class="score">8.4</span></p>
+          <p class="txt1"><a href="#">动作</a>/<a href="#">罪案</a>/<a href="#">最原味港片</a></p>
+          <p>香港另类"无匪"警匪片</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/4.jpg"></a>
+          <p class="movielist_tt"> <a href="#">白鹿原</a> <span class="score">7.1</span></p>
+          <p class="txt1"><a href="#">爱情</a>/<a href="#">剧情</a>/<a href="#">禁书改编</a></p>
+          <p>张雨绮让天下男人为之乱性</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/5.jpg"></a>
+          <p class="movielist_tt"> <a href="#">浮城谜事</a> <span class="score">7.5</span></p>
+          <p class="txt1"><a href="#">剧情</a>/<a href="#">爱情</a>/<a href="#">家庭伦理</a></p>
+          <p>贱男偷情小三欲望无休止</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/6.jpg"></a>
+          <p class="movielist_tt"> <a href="#">入侵隐私</a> <span class="score">6.7</span></p>
+          <p class="txt1"><a href="#">剧情</a>/<a href="#">惊悚</a>/<a href="#">入骨的恐怖</a></p>
+          <p>变态偷窥男迷奸女租客</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/7.jpg"></a>
+          <p class="movielist_tt"> <a href="#">男人如衣服</a> <span class="score">8.5</span></p>
+          <p class="txt1"><a href="#">喜剧</a>/<a href="#">香港</a>/<a href="#">林峰首部喜剧</a></p>
+          <p>2012让女人过瘾的爱情喜剧</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/8.jpg"></a>
+          <p class="movielist_tt"> <a href="#">危险关系</a> <span class="score">7.7</span></p>
+          <p class="txt1"><a href="#">爱情</a>/<a href="#">剧情</a>/<a href="#">禁书改编</a></p>
+          <p>一场性欲与爱情的对赌</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/9.jpg"></a>
+          <p class="movielist_tt"> <a href="#">幻影追凶</a> <span class="score">8.3</span></p>
+          <p class="txt1"><a href="#">恐怖</a>/<a href="#">惊悚</a>/<a href="#">变态杀人狂</a></p>
+          <p>米拉·乔沃维奇首部惊悚片</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/10.jpg"></a>
+          <p class="movielist_tt"> <a href="#">搞定岳父大人</a> <span class="score">8.4</span></p>
+          <p class="txt1"><a href="#">喜剧</a>/<a href="#">剧情</a>/<a href="#">徐铮见岳父</a></p>
+          <p>徐铮花瓶遮羞萌翻全场</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/11.jpg"></a>
+          <p class="movielist_tt"> <a href="#">潘多拉的宝剑</a> <span class="score">9.0</span></p>
+          <p class="txt1"><a href="#">喜剧</a>/<a href="#">爱情</a>/<a href="#">中国内地</a></p>
+          <p>欧弟首部电影艳福不浅</p>
+        </li>
+        <li> <a href="#" class="pic"><img src="images/12.jpg"></a>
+          <p class="movielist_tt"> <a href="#">匹夫</a> <span class="score">6.9</span></p>
+          <p class="txt1"><a href="#">战争</a>/<a href="#">剧情</a>/<a href="#">黄晓明</a></p>
+          <p>梁静换风格演绎风情妓女 </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+jQuery(".picScroll").slide({ mainCell:".picList", effect:"left",vis:4, pnLoop:false, scroll:4, autoPage:true});
+</script> 
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

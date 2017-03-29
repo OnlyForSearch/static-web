@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3-2-1</title>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+
+</head>
+<body>
+<table id="attachTable"
+       style="margin:0px;padding:0px;border-style:none;">
+</table>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+<script type="text/javascript">
+    //<![CDATA[
+
+    var xml='<?xml version="1.0"?> <root> <rowSet requestId="1"> <name> <a style="color:#0000FF;text-decoration:underline" onMouseOver="this.style.color=&quot;#FF0000&quot;" onMouseOut="this.style.color=&quot;#0000FF&quot;" href="/servlet/downloadservlet?action=1&amp;fullPath=D%3A%5Cup%5Ctemp_pro%5C1464750065146_2103583898.sql&amp;filename=%E6%B9%96%E5%8C%97%E7%BB%BC%E5%90%88%E6%9C%8D%E5%8A%A1%E6%94%AF%E6%92%91%E5%B9%B3%E5%8F%B0.sql" target="download" title="点击下载">湖北综合服务支撑平台.sql </a> </name> <size>2.05</size> <date>2016-06-01 11:01:05</date> <download_path>/downloadservlet?action=1&amp;filename=%E6%B9%96%E5%8C%97%E7%BB%BC%E5%90%88%E6%9C%8D%E5%8A%A1%E6%94%AF%E6%92%91%E5%B9%B3%E5%8F%B0.sql&amp;fullPath=D%3A%5Cup%5Ctemp_pro%5C1464750065146_2103583898.sql</download_path> <upMan>admin</upMan> <relativeName>\temp_pro\1464750065146_2103583898.sql</relativeName> <attache_name>湖北综合服务支撑平台.sql</attache_name> </rowSet> <rowSet requestId="2"> <name> <a style="color:#0000FF;text-decoration:underline" onMouseOver="this.style.color=&quot;#FF0000&quot;" onMouseOut="this.style.color=&quot;#0000FF&quot;" href="/servlet/downloadservlet?action=1&amp;fullPath=D%3A%5Cup%5Ctemp_pro%5C1464750078604_2121192409.ppt&amp;filename=05-%E8%B4%A8%E9%87%8F%E4%BD%93%E7%B3%BB-CQ%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD.ppt" target="download" title="点击下载">05-质量体系-CQ使用培训.ppt </a> </name> <size>4,655.5</size> <date>2016-06-01 11:01:18</date> <download_path>/downloadservlet?action=1&amp;filename=05-%E8%B4%A8%E9%87%8F%E4%BD%93%E7%B3%BB-CQ%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD.ppt&amp;fullPath=D%3A%5Cup%5Ctemp_pro%5C1464750078604_2121192409.ppt</download_path> <upMan>admin</upMan> <relativeName>\temp_pro\1464750078604_2121192409.ppt</relativeName> <attache_name>05-质量体系-CQ使用培训.ppt</attache_name> </rowSet> </root>'
+    /*updAttach(xml);
+    var requestId=1;
+    function updAttach(result) {
+
+        if (result != null) {
+
+            var attachXML = new ActiveXObject("Microsoft.XMLDOM");
+            attachXML.loadXML(xml);
+            var nodes = attachXML.selectNodes("/root");
+
+            for(var i=0;i<nodes.length;i++) {
+                var tableList = document.getElementById('attachTable');
+                var listTr = tableList.insertRow();
+                listTr.id = 'listTr' + requestId;
+                listTr.height = '24px';
+                listTr.align = 'center';
+                var listTd = listTr.insertCell();
+                var attachName = nodes[i].selectSingleNode("attache_name").text;
+                var downloadPath = nodes[i].selectSingleNode("download_path").text;
+                listTd.className = 'attachCss';
+                listTd.innerHTML = nodes[i].selectSingleNode("name").xml.replace("<name>", "").replace("</name>", "");
+                listTd.className = 'attachCss';
+                listTd = listTr.insertCell();
+
+                listTd.className = 'attachCss';
+                var deleteStr = '<div><span style="margin-left: 12px" onclick="deleteAttach(' + requestId + ')" style="color:#0000FF;width:auto;text-decoration:underline;margin:0 2px;cursor:hand;" onMouseOver="this.style.color=\'#FF0000\'" onMouseOut="this.style.color=\'#0000FF\'">删除</span> '
+                listTd.innerHTML = deleteStr;
+                if (tableList.rows.length > 4) {
+                    document.getElementById('attachDiv').style.heigth = '96px';
+                    document.getElementById('attachDiv').style.overflow = 'auto';
+                }
+            }
+
+            var selectSingleNodes = attachXML.selectNodes("//root//rowSet[@requestId]");
+//            attachXML.selectSingleNode("/root").appendChild(result);
+
+            for(var i=0;i< selectSingleNodes.length;i++) {
+                var attribute = selectSingleNodes[i].getAttribute("requestId");
+                if(attribute> requestId){
+                    requestId= attribute;
+                }
+            }
+
+            requestId = requestId + 1;
+        }
+    }
+
+
+*/
+    var attachXML = new ActiveXObject("Microsoft.XMLDOM");
+    attachXML.loadXML('<?xml version="1.0" encoding="utf-8"?><root></root>');
+
+    var attachXML2 = new ActiveXObject("Microsoft.XMLDOM");
+
+    var requestId =1;
+    function addAttach() {
+        attachXML2.loadXML(xml);
+        var nodes = attachXML2.selectNodes("//root/rowSet");
+        for(var i=0;i<nodes.length;i++) {
+            var result = nodes[i];
+            attachXML.selectSingleNode("/root").appendChild(result);
+
+            var tableList = document.getElementById('attachTable');
+            var listTr = tableList.insertRow();
+            var reqId = result.getAttribute("requestId");
+            listTr.id = 'listTr' + reqId;
+            listTr.height = '24px';
+            listTr.align = 'center';
+            var listTd = listTr.insertCell();
+            var attachName = result.selectSingleNode("attache_name").text;
+            var downloadPath = result.selectSingleNode("download_path").text;
+            listTd.className = 'attachCss';
+            listTd.innerHTML = result.selectSingleNode("name").xml.replace("<name>", "").replace("</name>", "");
+            listTd.className = 'attachCss';
+            listTd = listTr.insertCell();
+
+            listTd.className = 'attachCss';
+            var deleteStr = '<div><span style="margin-left: 12px" onclick="deleteAttach(' + reqId + ')" style="color:#0000FF;width:auto;text-decoration:underline;margin:0 2px;cursor:hand;" onMouseOver="this.style.color=\'#FF0000\'" onMouseOut="this.style.color=\'#0000FF\'">删除</span> '
+            listTd.innerHTML = deleteStr;
+            if (tableList.rows.length > 4) {
+                document.getElementById('attachDiv').style.heigth = '96px';
+                document.getElementById('attachDiv').style.overflow = 'auto';
+            }
+
+        }
+
+        var selectSingleNodes = attachXML.selectNodes("//root//rowSet[@requestId]");
+//            attachXML.selectSingleNode("/root").appendChild(result);
+
+        for(var i=0;i< selectSingleNodes.length;i++) {
+            var attribute = selectSingleNodes[i].getAttribute("requestId");
+            if(attribute> requestId){
+                requestId= attribute;
+            }
+        }
+
+        requestId = requestId + 1;
+
+    }
+
+     addAttach();
+    /*        $(function(){
+     var $li_1 = $("<li></li>");    //  创建第一个<li>元素
+     var $li_2 = $("<li></li>");    //  创建第二个<li>元素
+
+     var $parent = $("ul");		// 获取<ul>节点。<li>的父节点
+
+     $parent.append($li_1);	    // 添加到<ul>节点中，使之能在网页中显示
+     $parent.append($li_2);	    // 可以采取链式写法：$parent.append($li_1).append($li_2);
+
+
+     /!*      var $img = $("<img/>");
+     $img.attr("src", "u54.png");*!/
+
+     var attachXML = new ActiveXObject("Microsoft.XMLDOM");
+     attachXML.loadXML(xml);
+     var nodes = attachXML.selectNodes("/root/rowSet/name/a");
+     for (var i = 0; i < nodes.length; i++) {
+     var a = nodes[i];
+     console.log(a);
+
+     var href = a.getAttribute('href');
+     console.log(href);
+     var target = a.getAttribute('target');
+     console.log(target);
+     var text = a.text;
+     console.log(text);
+     var title = a.getAttribute('title');
+
+     console.log(title);
+
+     var $a = $("<a>213123</a>");
+     $a.attr({
+     "href": href,
+     "target": target,
+     "title": title
+
+     });
+     $a.text(text);
+     var $img = $("<img/>");
+     $img.attr("src", "u54.png");
+     $a.prepend($img);
+     var $li = $("<li></li>");
+     $li.append($a);
+     $("ul").append($li);
+     }
+
+
+     })*/;
+    //]]>
+</script>
+</body>
+</html>
+

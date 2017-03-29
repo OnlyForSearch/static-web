@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+.proInfoSlide{ width:780px;  margin:0 auto; padding-top:40px;}
+.proInfoSlide .bigImg {width:639px; float:left;}	
+.proInfoSlide .bigImg li { border:1px solid #e3d5bd;}
+.proInfoSlide .bigImg li img{ width:639px; height:503px; vertical-align:bottom;}
+.proInfoSlide .bigImg li p{ font:20px/38px '微软雅黑'; color:#63503a; text-align:center; border-top:1px solid #e3d5bd;}
+.proInfoSlide .smallScroll {position:relative;  float:right; height:544px; width:122px;}
+.proInfoSlide .smallScroll .sPrev{position:absolute; left:0px; top:0px; background:url(images/videoTBtn.gif) center no-repeat; width:122px; height:50px; z-index:2;}
+.proInfoSlide .smallScroll .sNext{position:absolute; right:0px; bottom:0px; background:url(images/videoBBtn.gif) center no-repeat; width:122px; height:50px; z-index:2;}
+.proInfoSlide .smallScroll .smallImg{ width:122px; margin:0 auto; padding-top:60px; height:425px; overflow:hidden; position:relative;}
+.proInfoSlide .smallScroll .smallImg li{ width:120px;  border:1px solid #e0d1b9; margin:4px 0px;}
+.proInfoSlide .smallScroll .smallImg li p{line-height:38px; border-top:1px solid #e3d5bd; text-align:center;}
+.proInfoSlide .smallScroll .smallImg  .on{ border-color:#ea8d52}
+.proInfoSlide .smallScroll .smallImg img{ width:120px; height:96px; vertical-align:bottom;}	
+
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+
+        <div class="proInfoSlide fixed">
+          <div style="float:left;width:639px;">
+            <ul class="bigImg">
+              <li> <a href="#"> <img src="images/videoPic1.jpg" />
+                <p>好太太晾衣架视频</p>
+                </a> </li>
+              <li><a href="#"><img src="images/videoPic2.jpg" />
+                <p>好太太晾衣架视频</p>
+                </a></li>
+              <li><a href="#"><img src="images/videoPic1.jpg" />
+                <p>好太太晾衣架视频</p>
+                </a></li>
+              <li><a href="#"><img src="images/videoPic2.jpg" />
+                <p>好太太晾衣架视频</p>
+                </a></li>
+            </ul>
+          </div>
+          <div class="smallScroll"> <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="smallImg">
+              <ul>
+                <li><a><img src="images/videoPic1.jpg" />
+                  <p>好太太晾衣架视频</p>
+                  </a></li>
+                <li><a><img src="images/videoPic2.jpg" />
+                  <p>好太太晾衣架视频</p>
+                  </a></li>
+                <li><a><img src="images/videoPic1.jpg" />
+                  <p>好太太晾衣架视频</p>
+                  </a></li>
+                <li><a><img src="images/videoPic2.jpg" />
+                  <p>好太太晾衣架视频</p>
+                  </a></li>
+              </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a> </div>
+        </div>
+        <script type="text/javascript">//大图切换
+jQuery(".proInfoSlide").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"top"});
+//小图左滚动切换
+jQuery(".proInfoSlide .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:3,effect:"top",autoPage:true,prevCell:".sPrev",nextCell:".sNext" });
+</script> 
+				
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

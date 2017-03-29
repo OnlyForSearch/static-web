@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动和定位)(固定定位)常见的布局机制-使用固定定位模拟帧</title>
+
+    <style>
+        body {
+            background: black;
+            color: silver;
+        }
+
+        div#header {
+            position: fixed;
+            top: 0;
+            bottom: 80%;
+            left: 20%;
+            right: 0;
+            background: gray;
+
+            margin-bottom:2px;
+            color: yellow;
+
+
+        }
+
+        div#sidebar {
+            position: fixed;
+            top:0;
+            bottom:0;
+            left: 0;
+            background: silver;
+            width:20%;
+            margin-right: 2px;
+            color: maroon;
+
+        }
+
+        div#main {
+            position: absolute;
+            top:20%;
+            bottom: 0;
+            left:20%;
+            right:0;
+            overflow: auto;/*滚动*/
+            /*overflow: scroll;!*滚动*!*/
+            background: white;
+            color: black;
+
+        }
+
+        /*永久性页脚*/
+        div#footer {
+         /*   position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            background: brown;*/
+
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+<div id="header">标题帧</div>
+<div id="sidebar">边栏帧</div>
+<div id="main"></div>
+<div id="footer"></div>
+
+</body>
+</html>

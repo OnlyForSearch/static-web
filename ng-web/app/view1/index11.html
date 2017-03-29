@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp" >
+<head lang="en" >
+    <meta charset="UTF-8" >
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/app.css" />
+
+    <script src="../components/angular/angular.js" ></script >
+    <script src="../components/angular/angular-route/angular-route.js" ></script >
+    <script src="../components/angular/angular-resource/angular-resource.js" ></script >
+    <script src="../js/app11.js" ></script >
+    <script src="../js/controllers11.js" ></script >
+    <script src="../js/services.js" ></script >
+    <!--*由于我们的模板代码写在app/js/filter.js文件中，所以我们需要在布
+    局模板中引入这个文件。-->
+    <script src="../js/filters9.js" ></script >
+    <title >：REST和定制服务</title >
+</head >
+<body  >
+
+
+<!--模板$route服务通常和ngView指令一起使用。ngView指令的角色是为当前路由
+把对应的视图模 板载入到布局模板中。-->
+<div ng-view></div>
+<!--注意，我们把index.html模板里面大部分代码移除，我们只放置了一个<div>容器，
+这个<div>具有ng-view属 性。我们删除掉的代码现在被放置在phone-list.html模板中-->
+
+</body >
+</html >

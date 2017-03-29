@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>标签切换</title>
+<link rel="stylesheet" type="text/css" href="../../css/porReset.css" />
+
+<!--记得引入JQ库文件和特效库文件 路径记得修改 S-->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.js"></script>
+<!--记得引入JQ库文件和特效库文件 路径记得修改 E-->
+
+</head>
+
+<body>
+<style type="text/css">
+
+/*—— CSS部分  图片路径记得要修改 S——*/
+
+		.sfqMenu{  border:1px solid #ddd; margin-top:5px;  }
+		.sfqMenu h3{ height:22px; line-height:22px; padding-left:10px;  border-top:1px solid #e3e3e3; background:#f4f4f4; cursor:pointer; font-size:12px; font-weight:normal;}	
+		.sfqMenu .sfqMenuImg{ display:none;}
+		.sfqMenu .sfqMenuImg img{ width:185px; height:101px; padding:0px; margin:0px;}
+
+/*—— CSS部分  图片路径记得要修改  E——*/
+</style>
+
+<!--  ————HTML部分———— S-->
+ 
+          <div class="sfqMenu" style="width:200px; margin:0 auto;">
+	
+            <div class="sfqMenuImg"><img src="images/otherPic1.gif" /></div>
+            <h3 class="on">书签切换系列</h3>
+
+            <div class="sfqMenuImg"><img src="images/otherPic1.gif" /></div>
+            <h3>书签切换系列</h3>
+
+            <div class="sfqMenuImg"><img src="images/otherPic1.gif" /></div>
+            <h3>书签切换系列</h3>
+          </div>
+		  
+<script type="text/javascript">
+jQuery(".sfqMenu").slide({titCell:"h3", targetCell:"div",defaultIndex:1,effect:"fold",delayTime:300});
+</script>
+
+<!--特效调用语句一定要写 E--> 
+<!--  ————HTML部分———— E--> 
+
+<!--无关提示 S-->
+<div id="oterText">请直接右键 <br/>
+  <b style="color:#F00;"> 【查看框架的源代码(chrome)】<br/>
+  【 此框架 > 查看框架源代码(FF)】 <br/>
+  【不推荐使用ie浏览器】 </b> </div>
+<!--无关提示 E-->
+<!-- qdkf.net/uwebFocus Baidu tongji analytics -->
+<!-- qdkf.net Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd65361985f82d0bf995e83119bba1bd4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d740db025096613f6f5eae2982f45e0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
