@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="zh" >
+<head >
+    <meta charset="UTF-8" >
+    <meta httpequiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title >管理控制平台</title >
+    <link rel="stylesheet" type="text/css"
+          href="dist/css/bootstrap.css" >
+    <!--<link href="console/styles/console1412.css">-->
+    <script src="jquery-1.11.3/jquery.js" ></script >
+    <script src="dist/js/bootstrap.js" ></script >
+    
+    <style >
+        body { font-size: 12px; }
+        
+        body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei" }
+        
+        a {
+            cursor: pointer;
+        }
+        
+        .icon-logo-new:before { content: "\e97f" }
+        
+        .viewFramework-topbar {
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background: #373d41;
+            z-index: 101;
+        }
+        
+        .console-component-topbar {
+            position: relative;
+            z-index: 100;
+            height: 50px;
+            background: #373d41;
+            font-size: 12px;
+            min-width: 990px;;
+        }
+        
+        .console-component-topbar .topbar-head {
+            background: #2a2f32;
+            height: 50px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .console-component-topbar .topbar-left {
+            float: left;
+        }
+        
+        .console-component-topbar .topbar-btn {
+            color: #fff;
+            font-size: 14px;
+            line-height: 50px;
+        }
+        
+        .console-component-topbar .topbar-logo {
+            display: block;
+            width: 50px;
+            margin-left: 1px;
+            font-size: 24px !important;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+            height: 100%;
+            margin-right: 1px;
+        }
+        
+        .console-component-topbar .topbar-logo {
+            background: #373d41;
+        }
+        
+        .console-component-topbar .topbar-logo span {
+            line-height: 50px;
+        }
+        
+        .console-component-topbar .topbar-home-link {
+            margin-right: 1px;
+            background: #373d41;
+            width: 129px;
+            text-align: center;
+        }
+        
+        /*产品和服务*/
+        .console-component-topbar .topbar-product {
+            position: relative;
+            z-index: 2;
+            background: #373d41;
+        }
+        
+        .console-component-topbar .topbar-product-btn {
+            padding: 0 20px;
+            display: inline-block;
+            height: 50px;
+            cursor: pointer;
+        }
+        
+        .console-component-topbar .topbar-product.open .topbar-product-btn {
+            background: #fff;
+            color: #333;
+        }
+        
+        .console-component-topbar .topbar-product-dropdown {
+            position: fixed;
+            top: 50px;
+            right: 0;
+            left: 0;
+            border: none;
+            margin: 0;
+            z-index: -1 !important;
+            display: none;
+        }
+        
+        .console-component-topbar .topbar-product-dropdown ul li > a {
+            color: #333;
+            display: inline-block;
+        }
+        
+        .console-component-topbar .topbar-show {
+            display: block !important;
+        }
+        
+        .console-component-topbar .topbar-product-container {
+            position: absolute;
+            min-height: 240px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            -o-transition: all 0.15s, 0.15s;
+            -moz-transition: all 0.15s, 0.15s;
+            -webkit-transition: all 0.15s, 0.15s;
+            transition: all 0.15s, 0.15s;
+            -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .console-component-topbar .topbar-product-history {
+            width: 180px;
+            height: 100%;
+            border-right: 1px solid #e3e3e3; /*f3f3f3*/
+            padding: 16px;
+        }
+        
+        .console-component-topbar .topbar-product-title {
+            font-size: 14px;
+            margin: 8px 8px 16px 10px;
+        }
+        
+        .console-component-topbar .topbar-product-history ul.topbar-product-history-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .console-component-topbar .topbar-product-history ul.topbar-product-history-list li {
+            height: 32px;
+            line-height: 32px;
+            padding-left: 10px;
+            background: #fff;
+            -o-transition: all 0.15s, 0s;
+            -moz-transition: all 0.15s, 0s;
+            -webkit-transition: all 0.15s, 0s;
+            transition: all 0.15s, 0s;
+        }
+        
+        .console-component-topbar .topbar-product-history ul.topbar-product-history-list li:hover {
+            background: #00c1de;
+        }
+        
+        .console-component-topbar .topbar-product-history ul.topbar-product-history-list a:hover {
+            color: #fff;
+        }
+        
+        .console-component-topbar .topbar-product-history ul.topbar-product-history-list li a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        /*nav*/
+        
+        .console-component-topbar .topbar-product-nav {
+            height: 100%;
+            width: 180px;
+            border-right: 1px solid #f1f1f1;
+            padding: 16px 0 16px 16px;
+        }
+        
+        .console-component-topbar .topbar-nav-buoy-wrap {
+            position: relative;
+        }
+        
+        .console-component-topbar .topbar-nav-buoy-wrap ul {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .console-component-topbar .topbar-product-dropdown ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .console-component-topbar .topbar-product-dropdown ul li > a {
+            color: #333;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .console-component-topbar .topbar-product-nav ul.topbar-product-nav-list li {
+            height: 32px;
+            line-height: 32px;
+            width: 164px;
+            padding-left: 16px;
+            -o-transition: all 0.1s, 0s;
+            -moz-transition: all 0.1s 0s;
+            -webkit-transition: all 0.1s 0s;
+            transition: all 0.1s 0s;
+        }
+        
+        .console-component-topbar .topbar-product-nav ul.topbar-product-nav-list li.active {
+            color: #fff;
+            background: #00c1de;
+        }
+        
+        .console-component-topbar .topbar-product-nav ul.topbar-product-nav-list li span {
+            cursor: default;
+        }
+        
+        /**************************************************/
+        
+        /*************************内容区*************************/
+        
+        .console-component-topbar .topbar-product-content {
+            position: relative;
+            margin-left: 361px;
+            z-index: 2;
+            background: #fff;
+        }
+        
+        .console-component-topbar .topbar-product-category {
+            padding: 16px;
+            overflow: hidden;
+        }
+        
+        .console-component-topbar .topbar-product-category .topbar-product-category-col {
+            width: 33%;
+        }
+        
+        .console-component-topbar .topbar-product-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .console-component-topbar .topbar-product-category ul.topbar-product-category-col {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .console-component-topbar .topbar-product-category ul.topbar-product-category-col li.active {
+            background: #00c1de;
+        }
+        
+        .console-component-topbar .topbar-product-category ul.topbar-product-category-col li.active .product-name,
+        .console-component-topbar .topbar-product-category ul.topbar-product-category-col li.active .product-description {
+            color: #fff;
+        }
+        
+        .console-component-topbar .topbar-product-category .product-item {
+            padding: 12px 16px;
+            -o-transition: all 0.1s, 0s;
+            -moz-transition: all 0.1s, 0s;
+            -webkit-transition: all 0.1s, 0s;
+            transition: all 0.1s, 0s;
+        }
+        
+        .console-component-topbar .topbar-product-category .product-name {
+            font-size: 13px;
+            padding-bottom: 2px;
+        }
+        
+        .console-component-topbar .topbar-product-category .product-description {
+            color: #999;
+            line-height: 16px;
+        }
+        
+        .topbar-product-category .topbar-product-nav.padding0 {
+            padding: 0;
+        }
+        
+        .console-component-topbar .topbar-product-category-warp .topbar-product-category {
+            padding-top: 0;
+        }
+        
+        .console-component-topbar .topbar-product-all-item {
+            margin-left: -4px;
+        }
+        
+        .topbar-product-all-item ul.topbar-product-all-list li {
+            height: 28px;
+            line-height: 28px;
+        }
+
+        .topbar-product-all-item ul.topbar-product-all-list li.topbar-product-all-char {
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .topbar-product-all-item ul.topbar-product-all-list li a {
+            width: 136px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            background: #f7f8fa;
+            padding: 0 8px;
+            margin-right: 10px;
+        }
+
+        .topbar-product-all-item ul.topbar-product-all-list li a:hover {
+            background: #00c1de;
+            color: #fff
+        }
+
+        /*************************内容区*************************/
+
+        /*************************关闭按钮*************************/
+        .console-component-topbar .topbar-product-close {
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 50px;
+            height: 20px;
+            margin-left: -25px;
+            line-height: 20px;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #666;
+            -o-transition: all 0.15s, 0.15s;
+            -moz-transition: all 0.15s, 0.15s;
+            -webkit-transition: all 0.15s, 0.15s;
+            transition: all 0.15s, 0.15s;
+        }
+
+        /*************************关闭按钮*************************/
+        /***********************右侧按钮***************************/
+        .console-component-topbar .topbar-info {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            background: #2a2f32;
+        }
+
+        .console-component-topbar .topbar-info-dropdown {
+            position: relative;
+        }
+
+        /***********************右侧按钮***************************/
+
+        /***********************搜索***************************/
+        .console-component-topbar .topbar-info .topbar-btn {
+            padding: 0 18px;
+            height: 50px;
+            display: block;
+            z-index: 2;
+            background: #373d41;
+            border-right: 1px solid #2a2f32;
+        }
+
+        .console-component-topbar .topbar-info .topbar-btn:hover {
+            background: #2a2f32;
+        }
+
+        .console-component-topbar .topbar-info-dropdown-memu {
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            float: left;
+            list-style: none;
+            background: #fff;
+            z-index: 1;
+            display: none;
+            font-size: 12px;
+            min-width: 100%;
+            margin: 0;
+            border: none;
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            -webkit-transition: opacity 0.15s, visibility 0s 0.15s;
+            transition: opacity 0.15s, visibility 0s 0.15s;
+            /* opacity: 0;*/
+        }
+
+        .console-component-topbar .topbar-search .topbar-search-dropdown {
+            height: 38px;
+            position: absolute;
+            bottom: -38px;
+            right: -1px;
+            left: auto;
+            border: 2px solid #2a2f32;
+            background: #fff;
+        }
+
+        .console-component-topbar .topbar-search .topbar-search-dropdown input {
+            display: block;
+            height: 34px;
+            padding: 4px 6px;
+            margin-right: 30px;
+            width: 250px;
+            border-width: 0;
+            outline: none;
+            line-height: 34px;
+            color: #546478;
+            font-size: 12px;
+        }
+
+        .console-component-topbar .topbar-search .topbar-search-dropdown .topbar-search-mark {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 34px;
+            width: 34px;
+            display: block;
+            line-height: 34px;
+            text-align: center;
+            color: #546478;
+        }
+
+        /***********************搜索***************************/
+        /***********************提示***************************/
+        .console-component-topbar .topbar-notice .topbar-btn {
+            padding: 0 16px;
+        }
+
+        .console-component-topbar .topbar-btn-notice-num {
+            font-size: 12px;
+            background: #f90;
+            color: #fff;
+            border-radius: 5px;
+            padding: 2px 5px;
+            /* line-height: 16px;*/
+            line-height: 16px;
+            text-align: center;
+            margin-top: 15px;
+            display: inline-block;
+            vertical-align: top;
+            /*   display: inline-block;
+               margin-top: 15px;*/
+            /*padding: 2px 5px;*/
+        }
+
+        /*面板*/
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel {
+            position: absolute;
+            top: 50px;
+            left: -220px;
+            width: 440px;
+            margin-left: 50%;
+            border-radius: 2px;
+            z-index: 15;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.175);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.175);
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-arrow {
+            position: absolute;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #eaedf1;
+            top: -6px;
+            left: 217px;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-head {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+            color: #333;
+            background: #eaedf1;
+            font-size: 14px !important;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-body {
+            height: 300px;
+            background: #fff;
+            font-size: 12px;
+            overflow-y: auto;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-body ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-body ul li {
+            height: 60px;
+            border-bottom: 1px solid #eaedf1;
+            line-height: 20px;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-body ul li a {
+            display: block;
+            height: 100%;
+            padding: 10px 10px;
+            background: #fff;
+            color: #333;
+        }
+
+        .inline-block {
+            display: inline-block !important;
+            vertical-align: middle;
+            zoom: 1;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-body ul li a .topbar-notice-link {
+            display: block;
+            max-width: 300px;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            color: #06c;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-class {
+            float: right;
+            padding: 8px 0;
+        }
+
+        .console-component-topbar .topbar-notice .topbar-notice-panel .topbar-notice-class .topbar-notice-class-name {
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            width: 66px;
+            background: #eaedf1;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        /***********************提示***************************/
+        /***********************费用***************************/
+
+        .console-component-topbar .topbar-info-item {
+            display: inline-block;
+        }
+
+        .console-component-topbar .topbar-info-dropdown-memu-list {
+            z-index: -4;
+            padding: 10px 0;
+            margin: -2px;
+        }
+
+        .console-component-topbar .topbar-info-dropdown-memu li a {
+            display: block;
+            padding: 0 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.428571429;
+            color: #333333;
+            white-space: nowrap;
+            min-width: 140px;
+            -webkit-transition: all 0.15s;
+            transition: all 0.15s;
+        }
+
+        .console-component-topbar .topbar-info .topbar-info-btn a {
+            height: 40px;
+            line-height: 39px;
+            padding: 0 18px;
+        }
+
+        .console-component-topbar .topbar-info .topbar-info-btn-gap {
+            height: 1px;
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            background: #eaeaea;
+        }
+
+        /***********************费用***************************/
+        /***********************只为追寻***************************/
+
+        .console-component-topbar .topbar-align-right {
+            right: 0;
+            left: auto;
+        }
+
+        .console-component-topbar .topbar-user .topbar-info-dropdown-memu .topbar-user-entrance-list {
+            width: 270px;
+            margin: 8px 0;
+            padding: 8px 15px;
+            overflow: hidden;
+        }
+
+        .console-component-topbar .topbar-user .topbar-info-dropdown-memu .topbar-user-entrance {
+            width: 80px;
+            height: 80px;
+            float: left;
+            text-align: center;
+            color: #333;
+            -webkit-transition: background 0.15s;
+            -moz-transition: background 0.15s;
+            -ms-transition: background 0.15s;
+            -o-transition: background 0.15s;
+            transition: background 0.15s;
+            border-radius: 2px;
+        }
+
+        .console-component-topbar .topbar-user .topbar-info-dropdown-memu .topbar-user-entrance-logo {
+            font-size: 20px;
+            margin: 8px auto 4px;
+            width: 40px;
+            height: 40px;
+            display: block;
+            vertical-align: middle;
+            line-height: 40px;
+            color: #788d9b;
+        }
+
+        .console-component-topbar .topbar-user .topbar-info-dropdown-memu .user-btn-list .user-btn-link {
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            -webkit-transition: all 0.15s;
+            transition: all 0.15s;
+            text-align: center;
+            color: #333;
+            border-top: 1px solid #f5f5f5;
+        }
+
+        /***********************只为追寻***************************/
+
+        .console-component-topbar .icon-bar-arrow-down {
+            display: inline-block;
+            width: 18px;
+            text-align: center;
+            vertical-align: middle;
+            transition: transform 0.2s, vertical-align 0.3s;
+            -o-transition: transform 0.2s, vertical-align 0.3s;
+            -ms-transition: transform 0.2s, vertical-align 0.3s;
+            -moz-transition: transform 0.2s, vertical-align 0.2s;
+            -webkit-transition: transform 0.2s, vertical-align 0.2s;
+        }
+        
+        .console-component-topbar a {
+            text-decoration: none;
+        }
+
+        .console-component-topbar .topbar-info a.topbar-btn:hover { background: #373d41 }
+
+        .console-component-topbar .topbar-wrap, .console-component-topbar .topbar-logo, .console-component-topbar .topbar-home, .console-component-topbar .topbar-home-link, .console-component-topbar .topbar-product, .console-component-topbar .topbar-info {
+            height: 100%;
+        }
+        
+        .console-component-topbar span, .console-component-topbar a, .console-component-topbar p, .console-component-topbar li {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.02em;
+        }
+        
+        [class^="icon-"] {
+            font-family: "aliyun-console-font" !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+        }
+
+        /********************viewFramework-topbar部分结束****************************/
+
+        .viewFramework-body {
+            /*  height: 100%;*/
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            background: #000;
+            z-index: 100;
+        }
+
+        .viewFramework-body .viewFramework-sidebar {
+            width: 180px;
+            display: block;
+        }
+
+        .viewFramework-sidebar {
+            position: fixed;
+            top: 50px;
+            bottom: 0px;
+            background: #293038;
+            z-index: 102px;
+            overflow-x: hidden;;
+        }
+
+        .console-component-sidebar {
+            width: 0px;
+            position: fixed;
+            top: 50px;
+            bottom: 0px;
+            background-color: #333744;
+            z-index: 102;
+        }
+
+        .console-component-sidebar.sidebar-content {
+            width: 180px;
+            height: 100%;
+            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .console-component-sidebar .sidebar-inner {
+            position: relative;
+        }
+
+        .console-component-sidebar .sidebar-fold {
+            height: 30px;
+            line-height: 30px;
+            background: #4A5064;
+            color: #aeb9c2;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .console-component-sidebar .sidebar-fold:hover {
+            background: #4a5064;
+            color: #fff;
+        }
+
+        .console-component-sidebar .sidebar-nav {
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .console-component-sidebar .sidebar-nav .sidebar-title {
+            height: 40px;
+            line-height: 40px;
+            background: #42485B;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .console-component-sidebar .sidebar-nav .sidebar-title:hover {
+            background: #00C1DE;
+        }
+
+        .console-component-sidebar .sidebar-nav-active .sidebar-title-icon {
+            /* vertical-align: top;*/
+            transform: rotate(90deg);;
+        }
+
+        .console-component-sidebar .sidebar-nav .sidebar-title-icon {
+            margin: 0 8px 0 20px;
+        }
+
+
+        .console-component-sidebar .sidebar-nav ul {
+            max-width: 200px;
+            width: 200px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+        }
+        .console-component-sidebar .sidebar-nav .nav-item {
+            position: relative;
+
+        }
+
+
+
+        .console-component-sidebar .sidebar-trans { -o-transition: all 0.12s ease, 0.12s ease; -ms-transition: all 0.12s ease, 0.12s ease; -moz-transition: all 0.12s ease, 0.12s ease; -webkit-transition: all 0.12s ease, 0.12s ease }
+
+        .viewFramework-sidebar-mini .viewFramework-sidebar .sidebar-fold,
+        .viewFramework-sidebar-mini .console-component-sidebar,
+        .viewFramework-sidebar-mini .sidebar-content {
+            width: 50px;
+        }
+
+        .viewFramework-sidebar-mini .viewFramework-sidebar {
+            width: 50px;
+            display: block;
+        }
+
+        /********************viewFramework-body部分结束****************************/
+
+    </style >
+</head >
+<script >
+    
+    $(document).ready(function () {
+        
+        
+        $('body').on("click", '.topbar-product-btn', function () {
+
+            var $topbarProduct = $(this).parent('.topbar-product');
+
+            var downSpan = $topbarProduct.find('span.icon-bar-arrow-down');
+            $topbarProduct.hasClass('open') ? downSpan.text('下') : downSpan.text('上');
+
+            $topbarProduct.toggleClass('open').find('.topbar-product-dropdown').toggleClass('topbar-show');
+
+            $("ul.topbar-product-nav-list li.active").click();
+        });
+        
+        var $navLi = $(" .topbar-product-container > .topbar-product-nav ul.topbar-product-nav-list li");
+        $navLi.hover(showProductCategory, function () {
+            
+        }).one('click', showProductCategory);
+        
+        function showProductCategory() {
+            
+            var $currentLi = $(this);
+            $currentLi.siblings('li').removeClass('active').end().addClass('active');
+            console.log($navLi.index(this));
+            var $currentCategory = $('.topbar-product-content > .topbar-product-category').eq($navLi.index(this)).show();
+            $currentCategory.siblings().hide();
+            
+            
+        }
+        
+        
+        $("ul.topbar-product-category-col  li").hover(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
+        });
+        var $level2Li = $('.topbar-product-nav-level2 li');
+        $level2Li.hover(function () {
+            var $currentLi = $(this);
+            $currentLi.addClass("active");
+            console.log($level2Li.index(this));
+            $currentLi.parents('.topbar-product-nav-level2').siblings('.topbar-product-category-warp').find('.topbar-product-category').eq($level2Li.index(this)).show().siblings().hide();
+        }, function () {
+            $(this).removeClass("active");
+        });
+
+        $('.topbar-product-close').on('click', function () {
+            $(".topbar-product-btn").click();
+        });
+
+
+        //按钮
+        $(".topbar-info-dropdown").hover(function () {
+            $(this).find(".topbar-info-dropdown-memu").show();
+        }, function () {
+            $(this).find(".topbar-info-dropdown-memu").hide();
+        });
+        
+    });
+    /********************viewFramework-topbar部分结束****************************/
+
+
+    $(document).ready(function () {
+
+
+        $('.sidebar-fold').on('click', function () {
+
+            $(this).parents('.viewFramework-body').toggleClass("viewFramework-sidebar-mini");
+        });
+
+        $('.sidebar-nav').on('click', function () {
+
+            var activeClass = 'sidebar-nav-active';
+            var $this = $(this);
+            $this.toggleClass(activeClass);
+            $this.siblings().removeClass(activeClass);
+        });
+
+    });
+    /********************viewFramework-body部分结束****************************/
+
+</script >
+
+<body >
+
+
+<div class="viewFramework-topbar" >
+    <div class="console-component-topbar" >
+        
+        <div class="topbar-head topbar-left" >
+            <a class="topbar-btn topbar-logo topbar-left" target="_blank" href="#" ><span class="icon-logo-new" ></span ></a >
+            <a class="topbar-home-link topbar-left topbar-btn" href="#" >
+                <span >管理控制台</span >
+            
+            </a >
+        </div >
+        
+        <div class="topbar-product topbar-left" >
+            <div class="topbar-btn topbar-product-btn" >
+                <span >产品和服务</span >
+                <span class="icon-bar-arrow-down" >下</span >
+            
+            </div >
+            <div class="topbar-product-dropdown" >
+                <div class="topbar-product-container" >
+                    <!--最近访问的-->
+                    <div class="topbar-product-history topbar-left" >
+                        <div class="topbar-product-title" >
+                            最近访问
+                        </div >
+                        <ul class="topbar-product-history-list" >
+                            <li ><a href="" >云服务器 ECS1</a ></li >
+                            <li ><a href="" >云服务器 ECS2</a ></li >
+                            <li ><a href="" >云服务器 ECS3</a ></li >
+                            <!--   <li ><a href="" >云服务器 ECS4</a ></li >
+                               <li ><a href="" >云服务器 CS5</a ></li >-->
+                        </ul >
+                    
+                    
+                    </div >
+                    
+                    <div class="topbar-product-nav topbar-left" >
+                        <div class=" topbar-nav-buoy-wrap" >
+                            <ul class="topbar-product-nav-list" >
+                                <li class="active" ><span >全部</span ></li >
+                                <li ><span >云计算基础服务</span ></li >
+                                <li ><span >大数据（数加）</span ></li >
+                                <li ><span >安全（云盾）</span ></li >
+                                <li ><span >域名与网站（万网）</span ></li >
+                                <li ><span >云市场</span ></li >
+                            </ul >
+                        
+                        
+                        </div >
+                    
+                    </div >
+                    
+                    <div class="topbar-product-content" >
+                        
+                        <div class="topbar-product-category" >
+                            <div class="topbar-product-all-item topbar-left" >
+                                <ul class="topbar-product-all-list topbar-left " ng-repeat="col in data.productList" >
+
+                                    <li class=" topbar-product-all-char" >
+
+                                        <span >A</span >
+
+                                    </li >
+                                    <li >
+                                        <a target="_self" >安全管家</a >
+                                    
+                                    </li >
+                                    <li >
+                                        <a target="_self" >API网关</a >
+
+                                    </li >
+                                    <li class=" topbar-product-all-char" >
+
+                                        <span >B</span >
+
+                                    </li >
+                                    <li >
+                                        <a class="topbar-transition  ng-binding" target="_self"
+                                        >堡垒机</a >
+                                    
+                                    
+                                    </li >
+                                    <li >
+                                        <a class="topbar-transition  ng-binding" target="_self" >标准建站</a >
+
+                                    </li >
+                                    <li >
+                                        <a target="_self" >表格存储</a >
+
+
+                                    </li >
+                                    <li class=" topbar-product-all-char" >
+
+
+                                        <span >D</span >
+
+                                    </li >
+                                    <li >
+                                        <a
+                                                class="topbar-transition  ng-binding" target="_self"
+                                                data-spm-anchor-id="5176.2020520001.1001.13" >大数据计算服务</a >
+                                    
+                                    
+                                    </li >
+                                    <li >
+                                        <a class="topbar-transition  ng-binding" target="_self" >大数据开发套件</a >
+                                    
+                                    
+                                    </li >
+                                    <li >
+                                        <a class="topbar-transition  ng-binding"
+                                           target="_self" >短信服务</a >
+                                    
+                                    
+                                    </li >
+                                    <li >
+                                        <a
+                                                class="topbar-transition  ng-binding" target="_self"
+                                        >对象存储 OSS</a >
+                                    
+                                    </li >
+                                    <li >
+                                        <a class="topbar-transition  ng-binding"
+                                           target="_self" >DataV数据可视化</a >
+                                    
+                                    
+                                    </li >
+                                    <li >
+                                        <a
+                                                class="topbar-transition  ng-binding" target="_self" href="#"
+                                        >DDoS防护</a >
+                                    
+                                    </li >
+                                </ul >
+                                
+                                <ul class="topbar-product-all-list topbar-left" >
+                                    <li class=" topbar-product-all-char" >
+                                        
+                                        <span >F</span >
+                                    
+                                    </li >
+
+                                    <li >
+                                        <a target="_self" >安全管家</a >
+
+                                    </li >
+                                    <li >
+                                        <a target="_self" >API网关</a >
+
+                                    </li >
+                                </ul >
+                                <ul class="topbar-product-all-list topbar-left" >
+                                    <li class=" topbar-product-all-char" >
+
+                                        <span >D</span >
+
+                                    </li >
+
+                                    <li >
+                                        <a target="_self" >安全管家</a >
+
+                                    </li >
+                                    <li >
+                                        <a target="_self" >API网关</a >
+
+                                    </li >
+                                </ul >
+
+                            
+                            </div >
+                        
+                        </div >
+                        <div class="topbar-product-category" >
+                            
+                            <div style="overflow: hidden;" >
+                                <div class="topbar-product-nav padding0 topbar-left topbar-product-nav-level2" >
+                                    <div class="topbar-nav-buoy-wrap" >
+                                        <ul class="topbar-product-nav-list" >
+                                            <li ><span >弹性计算</span ></li >
+                                            <li ><span >数据库</span ></li >
+                                            <li ><span >网络</span ></li >
+                                            <li ><span >分析</span ></li >
+                                            <li ><span >云通信</span ></li >
+                                            <li ><span >监控与管理</span ></li >
+                                        
+                                        </ul >
+                                    
+                                    
+                                    </div >
+                                </div >
+                                
+                                <div class="topbar-product-category-warp" >
+                                    
+                                    <div class="topbar-product-category" >1</div >
+                                    <div class="topbar-product-category" >2</div >
+                                    <div class="topbar-product-category" >3</div >
+                                    <div class="topbar-product-category" >4</div >
+                                    <div class="topbar-product-category" >5</div >
+                                    <div class="topbar-product-category" >
+                                        <ul class="topbar-product-category-col topbar-left " ng-repeat="subCol in subItem.products track by $index" >
+                                            
+                                            <li >
+                                                <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                                   href="#" data-spm-anchor-id="5176.2020520001.1001.142" >
+                                                    <div class="product-name ng-binding" >云监控</div >
+                                                    <div class="product-description ng-binding" >指标监控与报警服务</div >
+                                                </a >
+                                            </li >
+                                            
+                                            <li >
+                                                <a ng-href="https://ram.console.aliyun.com" target="_self" class="product-item topbar-transition"
+                                                   href="https://ram.console.aliyun.com" data-spm-anchor-id="5176.2020520001.1001.143" >
+                                                    <div class="product-name ng-binding" >访问控制</div >
+                                                    <div class="product-description ng-binding" >管理多因素认证、子账号与授权、角色与 STS 令牌</div >
+                                                </a >
+                                            </li >
+                                            
+                                            <li >
+                                                <a ng-href="https://ros.console.aliyun.com" target="_self" class="product-item topbar-transition"
+                                                   href="https://ros.console.aliyun.com" data-spm-anchor-id="5176.2020520001.1001.144" >
+                                                    <div class="product-name ng-binding" >资源编排</div >
+                                                    <div class="product-description ng-binding" >批量创建、管理、配置云计算资源</div >
+                                                </a >
+                                            </li >
+                                            
+                                            <li >
+                                                <a ng-href="https://actiontrail.console.aliyun.com" target="_self" class="product-item topbar-transition"
+                                                   href="https://actiontrail.console.aliyun.com" data-spm-anchor-id="5176.2020520001.1001.145" >
+                                                    <div class="product-name ng-binding" >操作审计</div >
+                                                    <div class="product-description ng-binding" >详细记录控制台和 API 操作</div >
+                                                </a >
+                                            </li >
+                                            
+                                            <li >
+                                                <a target="_self" class="product-item topbar-transition"
+                                                   href="https://kms.console.aliyun.com" data-spm-anchor-id="5176.2020520001.1001.146" >
+                                                    <div class="product-name ng-binding" >密钥管理服务</div >
+                                                    <div class="product-description ng-binding" >安全、易用、低成本的密钥管理服务</div >
+                                                </a >
+                                            </li >
+                                        </ul >
+                                    
+                                    
+                                    </div >
+                                
+                                </div >
+                            </div >
+                        
+                        </div >
+                        <div class="topbar-product-category" >
+                            <div >
+                                
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://workbench.shuju.aliyun.com/console" target="_self" class="product-item topbar-transition"
+                                           href="https://workbench.shuju.aliyun.com/console" >
+                                            <div class="product-name ng-binding" >大数据开发套件</div >
+                                            <div class="product-description ng-binding" >可视化开发界面、离线任务调度运维</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://das.base.shuju.aliyun.com/console.htm" target="_self" class="product-item topbar-transition"
+                                           href="https://das.base.shuju.aliyun.com/console.htm" >
+                                            <div class="product-name ng-binding" >Quick BI</div >
+                                            <div class="product-description ng-binding" >极致简单、零SQL报表多维分析</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://data.aliyun.com/console/learn" target="_self" class="product-item topbar-transition"
+                                           href="https://data.aliyun.com/console/learn" >
+                                            <div class="product-name ng-binding" >机器学习</div >
+                                            <div class="product-description ng-binding" >集合了阿里集团大量优质算法</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://dtboost.aliyun.com/re" target="_self" class="product-item topbar-transition" href="https://dtboost.aliyun.com/re" >
+                                            <div class="product-name ng-binding" >推荐引擎</div >
+                                            <div class="product-description ng-binding" >实时在线推荐，首月仅需1元！</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://prophet.data.aliyun.com" target="_self" class="product-item topbar-transition" href="https://prophet.data.aliyun.com" >
+                                            <div class="product-name ng-binding" >公众趋势分析</div >
+                                            <div class="product-description ng-binding" >公众情感分析、舆情感知</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://datav.aliyun.com" target="_self" class="product-item topbar-transition" href="https://datav.aliyun.com" >
+                                            <div class="product-name ng-binding" >DataV数据可视化</div >
+                                            <div class="product-description ng-binding" >创造属于您的双11指挥大屏！￥0.99 元使用3个月</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://ads.console.aliyun.com" target="_self" class="product-item topbar-transition" href="https://ads.console.aliyun.com" >
+                                            <div class="product-name ng-binding" >分析型数据库</div >
+                                            <div class="product-description ng-binding" >海量数据实时高并发在线分析服务</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://workbench.shuju.aliyun.com/console" target="_self" class="product-item topbar-transition"
+                                           href="https://workbench.shuju.aliyun.com/console" >
+                                            <div class="product-name ng-binding" >大数据计算服务</div >
+                                            <div class="product-description ng-binding" >针对TB/PB级数据的分布式处理服务</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://data.aliyun.com/promotion/nls-welcome#/tts" target="_self" class="product-item topbar-transition"
+                                           href="https://data.aliyun.com/promotion/nls-welcome#/tts" >
+                                            <div class="product-name ng-binding" >智能语音交互</div >
+                                            <div class="product-description ng-binding" >给你“能听、会说、懂你”的智能人机交互体验</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://stream.console.aliyun.com" target="_self" class="product-item topbar-transition"
+                                           href="https://stream.console.aliyun.com" >
+                                            <div class="product-name ng-binding" >流计算</div >
+                                            <div class="product-description ng-binding" >提供给用户在云上进行流式数据实时化分析工具</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://dtboost.console.aliyun.com/center/pages/portal/analysis" target="_self" class="product-item topbar-transition"
+                                           href="https://dtboost.console.aliyun.com/center/pages/portal/analysis" >
+                                            <div class="product-name ng-binding" >画像分析</div >
+                                            <div class="product-description ng-binding" >整合多数据源，基于标签构建大数据画像类分析应用</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://ei.data.aliyun.com/console" target="_self" class="product-item topbar-transition"
+                                           href="https://ei.data.aliyun.com/console" >
+                                            <div class="product-name ng-binding" >企业图谱</div >
+                                            <div class="product-description ng-binding" >提供企业多维度信息查询，深度挖掘企业与企业、企业与个人关系链路</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://openad.data.aliyun.com/console" target="_self" class="product-item topbar-transition"
+                                           href="https://openad.data.aliyun.com/console" >
+                                            <div class="product-name ng-binding" >营销引擎</div >
+                                            <div class="product-description ng-binding" >极速搭建高水准的DSP系统</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                            </div >
+                        
+                        
+                        </div >
+                        
+                        <div class="topbar-product-category" >
+                            
+                            <div >
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=sas" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=sas" >
+                                            <div class="product-name ng-binding" >态势感知</div >
+                                            <div class="product-description ng-binding" >通过机器学习和数据建模分析，发现潜在入侵和高隐蔽性攻击威胁</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >服务器安全（安骑士）</div >
+                                            <div class="product-description ng-binding" >集服务器安全检测、加固、防御于一体，保障服务器安全</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >DDoS防护</div >
+                                            <div class="product-description ng-binding" >防御大流量DDoS、CC攻击，按天付费，单线路超过300G防御能力</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >Web应用防火墙</div >
+                                            <div class="product-description ng-binding" >网站安全必备防护产品，防SQL注入、防篡改、防CC、防刷、防爬</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >先知（安全情报）</div >
+                                            <div class="product-description ng-binding" >全球顶尖安全专家参与测试，按效果付费的私密安全众测</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item topbar-transition"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >安全管家</div >
+                                            <div class="product-description ng-binding" >为云上用户建立并持续优化云安全防御体系，保障用户信息安全</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=hsm" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=hsm" >
+                                            <div class="product-name ng-binding" >加密服务</div >
+                                            <div class="product-description ng-binding" >帮助您在云上敏感数据存储按“国密”要求加密</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=cts" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=cts" >
+                                            <div class="product-name ng-binding" >绿网</div >
+                                            <div class="product-description ng-binding" >智能内容识别服务，快速识别违规风险，如色情、暴恐、垃圾广告等</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=afs" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=afs" >
+                                            <div class="product-name ng-binding" >数据风控</div >
+                                            <div class="product-description ng-binding" >专业对抗垃圾注册、恶意登陆、活动作弊、论坛灌水等数据风控</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=cas" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=cas" >
+                                            <div class="product-name ng-binding" >证书服务</div >
+                                            <div class="product-description ng-binding" >云上签发Symantec、WoSign、CFCA SSL数字证书，实现HTTPS化</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=jaq" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=jaq" >
+                                            <div class="product-name ng-binding" >移动安全</div >
+                                            <div class="product-description ng-binding" >为移动APP提供漏洞扫描、恶意代码检测、应用加固等服务</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=sppc" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=sppc" >
+                                            <div class="product-name ng-binding" >合作伙伴产品中心</div >
+                                            <div class="product-description ng-binding" >阿里云安全合作伙伴SAAS产品统一管理平台</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                <ul class="topbar-product-category-col topbar-left " >
+                                    
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=dbaudit" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=dbaudit" >
+                                            <div class="product-name ng-binding" >数据库审计</div >
+                                            <div class="product-description ng-binding" >数据库审计，符合数据库合规审计</div >
+                                        </a >
+                                    </li >
+                                    <li >
+                                        <a ng-href="https://yundun.console.aliyun.com/?p=bastion" target="_self" class="product-item topbar-transition"
+                                           href="https://yundun.console.aliyun.com/?p=bastion" >
+                                            <div class="product-name ng-binding" >堡垒机</div >
+                                            <div class="product-description ng-binding" >提供对Windows、Linux服务器远程运维行为进行权限控制、安全审计功能</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                            </div >
+                        
+                        
+                        </div >
+                        
+                        <div class="topbar-product-category" >
+                            <div >
+                                
+                                <ul class="topbar-product-category-col topbar-left" >
+                                    <!--基本-->
+                                    <li >
+                                        <a ng-href="https://netcn.console.aliyun.com/core/domain/list" target="_self" class="product-item topbar-transition"
+                                           href="https://netcn.console.aliyun.com/core/domain/list" >
+                                            <div class="product-name ng-binding" >域名</div >
+                                            <div class="product-description ng-binding" ></div >
+                                        </a >
+                                    </li >
+                                    <!--基本-->
+                                    
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >云解析 DNS</div >
+                                            <div class="product-description ng-binding" ></div >
+                                        </a >
+                                    
+                                    </li >
+                                    
+                                    
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >云解析 DNS2</div >
+                                            <div class="product-description ng-binding" ></div >
+                                        </a ></li >
+                                    
+                                    
+                                    <li >
+                                        <a ng-href="#" target="_self" class="product-item"
+                                           href="#" >
+                                            <div class="product-name ng-binding" >云解析 DNS3</div >
+                                            <div class="product-description ng-binding" ></div >
+                                        </a >
+                                    </li >
+                                
+                                
+                                </ul >
+                            
+                            </div >
+                        </div >
+                        
+                        <!--基本模板-->
+                        <div class="topbar-product-category" >
+                            <div >
+                                <ul class="topbar-product-category-col topbar-left" >
+                                    <li >
+                                        <a target="_self" class="product-item topbar-transition" href="#" >
+                                            <div class="product-name ng-binding" >云市场</div >
+                                            <div class="product-description ng-binding" >提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                
+                                <ul class="topbar-product-category-col topbar-left" >
+                                    <li >
+                                        <a target="_self" class="product-item topbar-transition" href="#" >
+                                            <div class="product-name ng-binding" >云市场</div >
+                                            <div class="product-description ng-binding" >提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                
+                                <ul class="topbar-product-category-col topbar-left" >
+                                    <li >
+                                        <a target="_self" class="product-item topbar-transition" href="#" >
+                                            <div class="product-name ng-binding" >云市场</div >
+                                            <div class="product-description ng-binding" >提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                                
+                                <ul class="topbar-product-category-col topbar-left" >
+                                    <li >
+                                        <a target="_self" class="product-item topbar-transition" href="#" >
+                                            <div class="product-name ng-binding" >云市场</div >
+                                            <div class="product-description ng-binding" >提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务提供基础软件、企业应用、建站、安全、数据及API等海量产品及服务</div >
+                                        </a >
+                                    </li >
+                                </ul >
+                            
+                            </div >
+                        </div >
+                        <!--基本模板-->
+
+
+                    </div >
+
+                    <div class="topbar-product-close" >
+                        <span class="" >关闭</span >
+                    </div >
+                </div >
+            
+            </div >
+        
+        
+        </div >
+
+        <div class="topbar-info pull-right " >
+
+
+            <div class="topbar-search topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="glyphicon glyphicon-search" ></span >
+                    <span >搜索</span >
+                </a >
+                <div class="topbar-search-dropdown  topbar-info-dropdown-memu" >
+                    <input class="topbar-search-ask ng-pristine ng-valid" type="text" name="input" autocomplete="off" placeholder="搜索" >
+                    <a href="#" class="topbar-search-mark" >
+                        <span class="glyphicon glyphicon-zoom-in" ></span >
+                    </a >
+                </div >
+            </div >
+
+            <div class="topbar-notice topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="glyphicon glyphicon-bell" ></span >
+                    <span class="topbar-btn-notice-num" >27</span >
+                </a >
+                <div class="topbar-notice-panel topbar-info-dropdown-memu" >
+
+                    <div class="topbar-notice-arrow" ></div >
+
+                    <div class="topbar-notice-head" >
+                        <span >站内消息通知</span >
+                        <a href="#" class="pull-right" style="font-size: 13px" >消息接收管理</a >
+
+                    </div >
+
+                    <div class="topbar-notice-body" >
+                        <ul >
+                            <li >
+                                <a href="#" >
+                                <span class="inline-block" >
+                                    <span class="topbar-notice-link" >独享虚拟主机经济版,仅需298元/年，低至0.8元/天！</span >
+                                    <span class="topbar-notice-time" >2017-05-08 10:31</span >
+                                </span >
+                                    <span class="topbar-notice-class" >
+                                    <span class="topbar-notice-class-name" >优惠活动</span >
+                                </span >
+                                </a >
+                            </li >
+
+                            <li >
+                                <a href="#" >
+                                <span class="inline-block" >
+                                    <span class="topbar-notice-link" >【阿里云】企业邮箱老用,大促升级低至5折，速抢 </span >
+                                    <span class="topbar-notice-time" >2017-03-29 11:29</span >
+                                </span >
+                                    <span class="topbar-notice-class" >
+                                    <span class="topbar-notice-class-name" >域名和网站</span >
+                                </span >
+                                </a >
+                            </li >
+                            <li >
+                                <a href="#" >
+                                <span class="inline-block" >
+                                    <span class="topbar-notice-link" >独享虚拟主机经济版,仅需298元/年，低至0.8元/天！</span >
+                                    <span class="topbar-notice-time" >2017-05-08 10:31</span >
+                                </span >
+                                    <span class="topbar-notice-class" >
+                                    <span class="topbar-notice-class-name" >优惠活动</span >
+                                </span >
+                                </a >
+                            </li >
+
+                            <li >
+                                <a href="#" >
+                                <span class="inline-block" >
+                                    <span class="topbar-notice-link" >【阿里云】企业邮箱老用,大促升级低至5折，速抢 </span >
+                                    <span class="topbar-notice-time" >2017-03-29 11:29</span >
+                                </span >
+                                    <span class="topbar-notice-class" >
+                                    <span class="topbar-notice-class-name" >域名和网站</span >
+                                </span >
+                                </a >
+                            </li >
+
+                            <li >
+                                <a href="#" >
+                                <span class="inline-block" >
+                                    <span class="topbar-notice-link" >【阿里云】企业邮箱老用,大促升级低至5折，速抢 </span >
+                                    <span class="topbar-notice-time" >2017-03-29 11:29</span >
+                                </span >
+                                    <span class="topbar-notice-class" >
+                                    <span class="topbar-notice-class-name" >域名和网站</span >
+                                </span >
+                                </a >
+                            </li >
+
+                        </ul >
+                    </div >
+                </div >
+            </div >
+
+            <div class="topbar-info-item topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="" ></span >
+                    <span class="" >费用</span >
+                </a >
+                <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list" >
+                    <li class="topbar-info-btn " >
+                        
+                        <a href="#" target="_blank" >
+                            <span class="ng-binding" >充值</span >
+                        </a >
+                    </li >
+                    <li class="topbar-info-btn " >
+                        
+                        <a href="#" target="_blank" >
+                            <span class="ng-binding" >订单</span >
+                        </a >
+                    </li >
+                    <li class="topbar-info-btn " >
+                        
+                        <a href="#" target="_blank" >
+                            <span class="ng-binding" >发票</span >
+                        </a >
+                    </li >
+                    <li class="topbar-info-btn " >
+                        
+                        <a href="#" target="_blank"
+                        >
+                            <span class="ng-binding" >消费记录</span >
+                        </a >
+                    </li >
+                    <li class="topbar-info-btn " >
+                        
+                        <a href="#" target="_blank" >
+                            <span class="ng-binding" >续费管理</span >
+                        </a >
+                    </li >
+                    <li class="topbar-info-btn " >
+                        <span class="topbar-info-btn-gap " ></span >
+                        <a href="#" target="_blank"
+                        >
+                            <span class="ng-binding" >进入费用中心</span >
+                        </a >
+                    </li >
+                </ul >
+            </div >
+
+            <div class="topbar-notice topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="" ></span >
+                    <span class="" >工单</span >
+                </a >
+
+                <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list" >
+                    <li class="topbar-info-btn" ><a href="#" target="_blank" >
+                        <span >我的工单</span >
+                    </a ></li >
+                    <li class="topbar-info-btn" ><a href="#" target="_blank" >
+                        <span >提交工单</span >
+                    </a ></li >
+
+
+                </ul >
+                <!--<div class="topbar-notice-panel topbar-info-dropdown-memu" >
+
+                    sdfsdfsdfsdfsdfsd
+                </div >-->
+            </div >
+
+            <div class="topbar-notice topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="" ></span >
+                    <span class="" >备案</span >
+                </a >
+
+                <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list" >
+                    <li class="topbar-info-btn" ><a href="#" ><span >备案服务号申请</span ></a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >备案服务号管理</a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >备案专区</a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >ICP备案系统</a ></li >
+
+
+                </ul >
+            </div >
+
+            <div class="topbar-notice topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="" ></span >
+                    <span class="" >支持</span >
+                </a >
+                <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list" >
+                    <li class="topbar-info-btn" ><a href="#" ><span >帮助与文档</span ></a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >提交建议</a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >论坛</a ></li >
+                    <li class="topbar-info-btn" ><a href="#" ><span ></span >博客</a ></li >
+
+
+                </ul >
+            </div >
+
+            <div class="topbar-user topbar-info-dropdown pull-left" >
+                <div class="topbar-info-dropdown topbar-info-item" >
+                    <a href="#" class="topbar-info-dropdown-toggle topbar-btn " >
+                        <span class="" ></span >
+                        <span class="" title="只为追寻" >只为追寻</span >
+                    </a >
+                    <div class="topbar-align-right topbar-info-dropdown-memu" >
+                        <div class="topbar-user-entrance-list" >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-list" ></span >
+                                <span >基本资料</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-certificate" ></span >
+                                <span >实名认证</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-knight" ></span >
+                                <span >安全设置</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-console" ></span >
+                                <span >安全管控</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-user" ></span >
+                                <span >访问控制</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-user" ></span >
+                                <span >基本资料</span >
+
+                            </a >
+                            <a href="#" class="topbar-user-entrance" >
+
+                                <span class="topbar-user-entrance-logo  glyphicon glyphicon-align-center" ></span >
+                                <span >会员中心</span >
+
+                            </a >
+
+                        </div >
+
+                        <div class="user-btn-list" >
+
+                            <a class="user-btn-link" >
+                                <span >退出管理控制台</span >
+                            </a >
+                        </div >
+                    </div >
+                </div >
+
+
+            </div >
+
+            <div class="topbar-notice topbar-info-dropdown pull-left" >
+                <a href="#" class="topbar-btn " >
+                    <span class="" ></span >
+                    <span class="" >简体中文</span >
+                </a >
+                <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list" >
+                    <li class="topbar-info-btn ng-scope" >
+                        <a ><span >English</span ></a >
+                    </li >
+                </ul >
+            </div >
+
+
+        </div >
+
+    
+    </div >
+
+
+</div >
+
+
+<div class="viewFramework-body" >
+
+    <!--左侧操作列表-->
+    <div class="viewFramework-sidebar" >
+
+        <div class="sidebar-content console-component-sidebar" >
+            <div class="sidebar-inner" >
+
+
+                <div class="sidebar-fold" >
+                    <span class="glyphicon glyphicon-backward" ></span >
+                </div >
+
+                <div class="sidebar-nav " >
+                    <div class="sidebar-title sidebar-trans" >
+                        <div class="sidebar-title-inner" >
+                            <span class="sidebar-title-icon  glyphicon glyphicon-triangle-right" >  </span >
+                            <span >云计算基础服务 </span >
+                        </div >
+
+                    </div >
+                    <ul >
+                        <li class="nav-item"></li >
+                        <li class="nav-item">1</li >
+                        <li class="nav-item">2</li >
+                        <li class="nav-item">3</li >
+                        <li class="nav-item">4</li >
+                        <li class="nav-item">5</li >
+                    </ul >
+                </div >
+
+                <div class="sidebar-nav " >
+                    <div class="sidebar-title sidebar-trans" >
+                        <div class="sidebar-title-inner" >
+                            <span class="sidebar-title-icon  glyphicon glyphicon-triangle-right" >  </span >
+                            <span >大数据(加) </span >
+                        </div >
+                    </div >
+
+                </div >
+
+                <div class="sidebar-nav " >
+                    <div class="sidebar-title sidebar-trans" >
+                        <div class="sidebar-title-inner" >
+                            <span class="sidebar-title-icon  glyphicon glyphicon-triangle-right" >  </span >
+                            <span >安全(云盾) </span >
+                        </div >
+                    </div >
+
+                </div >
+
+                <div class="sidebar-nav " >
+                    <div class="sidebar-title sidebar-trans" >
+                        <div class="sidebar-title-inner" >
+                            <span class="sidebar-title-icon  glyphicon glyphicon-triangle-right" >  </span >
+                            <span >域名和网站(万网) </span >
+                        </div >
+                    </div >
+
+                </div >
+
+                <div class="sidebar-nav " >
+                    <div class="sidebar-title sidebar-trans" >
+                        <div class="sidebar-title-inner" >
+                            <span class="sidebar-title-icon  glyphicon glyphicon-triangle-right" >  </span >
+                            <span >云市场 </span >
+                        </div >
+                    </div >
+
+                </div >
+
+
+            </div >
+
+        </div >
+
+    </div >
+
+</div >
+
+
+</body >
+</html >

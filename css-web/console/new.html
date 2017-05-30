@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+
+<html lang="zh" >
+<head >
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="data-spm" content="5176" />
+    <meta name="referrer" content="origin" >
+    <meta name="aplus-rate-ahot" content="0.5" />
+    <meta name="aplus-rate-ahot-res" content="0.5" />
+    <title ng-bind="'home.common.lb.title' | translate" ></title >
+    <link rel="shortcut icon" href="//www.aliyun.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css"
+          href="//g.alicdn.com/aliyun/console/1.4.62/styles/bootstrap/bootstrap.css" >
+    <link rel="stylesheet" type="text/css"
+          href="//g.alicdn.com/aliyun/console/1.4.62/styles/angular-growl.min.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.62/styles/console1412.css" >
+    <link rel="stylesheet" type="text/css"
+          href="//g.alicdn.com/aliyun/home/1.10.69/styles/home/home.console.css" >
+    <!--[if lt IE 8]>
+    <script src="//g.alicdn.com/aliyun/console/1.4.62/scripts/browser-not-supported.js" ></script >
+    <![endif]-->
+    <!--[if IE 8]>
+    <script src="//g.alicdn.com/aliyun/console/1.4.62/scripts/browser-not-supported-ie8.js" ></script >
+    <![endif]-->
+    <script >
+        if (!window.console) {
+            console = {
+                log: function (info) {
+                    return false
+                }
+            }
+        }
+        var ALIYUN_HOME_CONSOLE_CONFIG = {
+            secToken: "LTU2cJFgKeb82c46USgR6B",
+            locale: "zh",
+            isSubAccount: false,
+            isStsAccount: false,
+            isNetcnPartner: false,
+            isIntlUser: false,
+            isFinanceUser: false,
+            isOfficialUser: true,
+            isNewHome: true
+        }
+    </script >
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//g.alicdn.com/aliyun/console/1.4.62/vendor/html5shiv/dist/html5shiv.js" ></script >
+    <script src="//g.alicdn.com/aliyun/console/1.4.62/vendor/respond/dest/respond.min.js" ></script >
+    <link href="//g.alicdn.com/aliyun/console/1.4.62/vendor/respond/cross-domain/respond-proxy.html"
+          id="respond-proxy" rel="respond-proxy" />
+    <link href="/static/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <script src="/static/js/respond.proxy.js" ></script >
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/g/datavis/g2/2.0.2/index.js" ></script >
+
+    <script src="//g.alicdn.com/aliyun/home/1.10.69/scripts/home/nls/messages_en.js" ></script >
+    <script src="//g.alicdn.com/aliyun/home/1.10.69/scripts/home/nls/messages.js" ></script >
+    <script data-main="//g.alicdn.com/aliyun/home/1.10.69/scripts/home/main"
+            src="//g.alicdn.com/aliyun/console/1.4.62/vendor/requirejs/require.js" ></script >
+    <script src="//g.alicdn.com/aliyun/home/1.10.69/scripts/home/homeConsole.js" ></script >
+    <script >
+        require(['home/bootstrap'], function (bootstrap) {
+        })
+    </script >
+</head >
+<body data-spm="2020520001" >
+<script type="text/javascript" >
+    (function (d) {
+        var t = d.createElement("script");
+        t.type = "text/javascript";
+        t.async = true;
+        t.id = "tb-beacon-aplus";
+        t.setAttribute("exparams", "category=&userid=&aplus&yunid=%22%25E5%258F%25AA%25E4%25B8%25BA%25E8%25BF%25BD%25E5%25AF%25BB321%22&yunpk=1386952661786916");
+        t.src = ("https:" == d.location.protocol ? "https://s" : "http://a") + ".tbcdn.cn/s/aplus_v2.js";
+        d.getElementsByTagName("head")[0].appendChild(t);
+    })(document);
+</script >
+
+<div view-framework >
+    <div ui-view ></div >
+</div >
+<div data-ng-controller="aliyunCommonController" ></div >
+<div growl ></div >
+</body >
+</html >
