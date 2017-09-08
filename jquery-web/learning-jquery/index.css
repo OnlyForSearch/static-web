@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    font-size: 1.2em;
+    margin: 10px 2em;
+}
+#chapters {
+    float: left;
+    width: 20%;
+    padding-right: 5%;
+}
+.loadContainer {
+    float: left;
+    width: 75%;
+    min-height: 750px;
+}

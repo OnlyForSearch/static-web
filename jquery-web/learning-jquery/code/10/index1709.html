@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!--suppress BadExpressionStatementJS -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Photo Library</title>
+
+    <link rel="stylesheet" href="10.css" type="text/css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="10-ie.css" type="text/css" />
+    <![endif]-->
+    <script src="jquery.js"></script>
+    <script >(function ($) {
+        $(document).on('mouseenter mouseleave', 'div.photo', function (event) {
+            var $details = $(this).find('.details');
+            if (event.type == 'mouseenter') {
+                $details.fadeTo('fast', 0.7);
+            } else {
+                $details.fadeOut('fast');
+            }
+        });
+
+        $(document).on('nextPage', function (event, scrollToVisible) {
+            var url = $('#more-photos').attr('href');
+            if (url) {
+                $.get(url, function (data) {
+                    var $data = $(data).appendTo('#gallery');
+                    if (scrollToVisible) {
+                        var newTop = $data.offset().top;
+                        $(window).scrollTop(newTop);
+                    }
+                    checkScrollPosition();
+                });
+            }
+        });
+
+        var pageNum = 1;
+        $(document).on('nextPage', function () {
+            pageNum++;
+            if (pageNum < 20) {
+                $('#more-photos').attr('href', 'pages/' + pageNum + '.html');
+            }
+            else {
+                $('#more-photos').remove();
+            }
+        });
+
+        function checkScrollPosition() {
+            var distance = $(window).scrollTop() + $(window).height();
+            if ($('#container').height() <= distance) {
+                $(document).trigger('nextPage');
+            }
+        }
+
+        $(document).ready(function () {
+            $('#more-photos').click(function (event) {
+                event.preventDefault();
+                $(this).trigger('nextPage', [true]);
+            });
+
+            var scrolled = false;
+            $(window).scroll(function () {
+                scrolled = true;
+            });
+          /*这个轮询式的方案会调用JavaScript的setInterval()函数，每
+           250毫秒检查一次scrolled变量的状态。不管什么时候发生滚动事件， scrolled都会被设置
+           为true，以确保在下一次轮询时调用checkScrollPosition()*/
+            setInterval(function () {
+                if (scrolled) {
+                    checkScrollPosition();
+                    scrolled = false;
+                }
+            }, 250);
+            checkScrollPosition();
+        });
+    })(jQuery);
+  
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Photo Gallery</h1>
+
+      <div id="gallery">
+        <div class="photo">
+          <img src="photos/skyemonroe.jpg">
+          <div class="details">
+            <div class="description">The Cuillin Mountains, Isle of Skye, Scotland.</div>
+            <div class="date">12/24/2000</div>
+            <div class="photographer">Alasdair Dougall</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/dscn1328.jpg">
+          <div class="details">
+            <div class="description">Mt. Ruapehu in summer</div>
+            <div class="date">01/13/2005</div>
+            <div class="photographer">Andrew McMillan</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/024.JPG">
+          <div class="details">
+            <div class="description">midday sun</div>
+            <div class="date">04/26/2011</div>
+            <div class="photographer">Jaycee Barratt</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/dsc20040321_191051_23.jpg">
+          <div class="details">
+            <div class="description">Dark sunset sky tones</div>
+            <div class="date">03/21/2004</div>
+            <div class="photographer">Leon Brooks</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/portland_178.jpg">
+          <div class="details">
+            <div class="description">Mt. Shasta, Weed, CA</div>
+            <div class="date">06/16/2004</div>
+            <div class="photographer">Brian Lopez</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/michelle_229.jpg">
+          <div class="details">
+            <div class="description">Mountain with tree cover on foothills</div>
+            <div class="date">09/28/2004</div>
+            <div class="photographer">Brian Lopez</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/100_0207.JPG">
+          <div class="details">
+            <div class="description">Poas Volcano, Caldera and Poor Man's Umbrella</div>
+            <div class="date">01/02/2004</div>
+            <div class="photographer">Nat Edwards</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/DSC01281.JPG">
+          <div class="details">
+            <div class="description">Mt Compas, South Australia</div>
+            <div class="date">01/01/2007</div>
+            <div class="photographer">Rod Conlon</div>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="photos/m4.jpg">
+          <div class="details">
+            <div class="description">Waterfall on the outskirts of Highlands N.C.</div>
+            <div class="date">11/21/2008</div>
+            <div class="photographer">Neal Floyd</div>
+          </div>
+        </div>
+      </div>
+      <a id="more-photos" href="pages/1.html">More Photos</a>
+    </div>
+  </body>
+</html>
