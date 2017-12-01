@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh" >
+<head >
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="aplus-rate-ahot" content="0.5" />
+    <meta name="aplus-rate-ahot-res" content="0.5" />
+    <meta name="data-spm" content="5176" />
+    <link rel="shortcut icon" href="//g.alicdn.com/aliyun/console/1.4.67/styles/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/bootstrap/bootstrap.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/angular-growl.min.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/select2.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/angular-timeline.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/angular-timeline-bootstrap.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/styles/console1412.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/console/1.4.67/vendor/nvd3/build/nv.d3.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/ecs2/2.22.40/styles/ecs.console.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/buy-dominator/0.0.14/styles/base/dominator.base.css" >
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/aliyun/buy-ecs2/0.4.4/styles/ecsbuy/ecsbuy.console.css" >
+    <!--[if lt IE 9]>
+    <script src="//g.alicdn.com/aliyun/console/1.4.67/scripts/browser-not-supported.js" ></script >
+    <![endif]-->
+    <script >
+        if (!window.console) {
+            console = {
+                log: function (info) {
+                    return false
+                }
+            }
+        }
+        var ALIYUN_ECS_CONSOLE_CONFIG = {
+            SEC_TOKEN: "PdNs7HKLxSURJkz2zdWd2",
+            RC_TOKEN: 'Y3d232262d25f9ac3ad77bafc55feb368',
+            urlConfig: {
+                "ECS2VPC_Link": "http://home.console.aliyun.com/redirect.htm?productId=vpc&path=region/:regionNo/vpc/:vpcID",
+                "ECS2VPC_VSWITCH_Link": "http://home.console.aliyun.com/redirect.htm?productId=vpc&path=region/:regionNo/vpc/:vpcID/vswitch/:vsID",
+                "ECS_ATTACH_DISK": "https://help.aliyun.com/document_detail/25446.html",
+                "ECS_CONNECT_SERVER_LINUX": "http://help.aliyun.com/view/11108189_13435364.html",
+                "ECS_CONNECT_SERVER_OSX": "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac",
+                "ECS_CONNECT_SERVER_PUTTY": "http://www.putty.org",
+                "ECS_CONNECT_SERVER_WINDOWS": "http://help.aliyun.com/view/13435490.html",
+                "ECS_FIREWALL_HELP": "http://help.aliyun.com/view/13435521.html",
+                "ECS_HELP_SAFE_SOLUTION": "http://help.aliyun.com/view/13444170.html",
+                "NEW_ECS2VPC_LINK": "http://home.console.aliyun.com/redirect.htm?productId=vpc&path=region/{regionNo}/vpc/{vpcId}&regionId={regionId}",
+                "NEW_ECS2VPC_VSWITCH_Link": "http://home.console.aliyun.com/redirect.htm?productId=vpc&path=region/{regionNo}/vpc/{vpcId}/vswitch/{vswitchId}&regionId={regionId}",
+                "accountSecurityUrl": "https://account.console.aliyun.com/#/secure",
+                "bandwidthDDosTips": "https://www.aliyun.com/product/ddos",
+                "bandwidthMoreTips": "https://help.aliyun.com/knowledge_detail/40032.html",
+                "bbsUrl": "http://bbs.aliyun.com/thread/207.html",
+                "bindPublicIpTips": "https://help.aliyun.com/document_detail/27714.html",
+                "buyIpUrl": "https://common-buy.aliyun.com/?commodityCode=eip#/buy",
+                "buyNoteTips": "https://help.aliyun.com/knowledge_detail/40652.html",
+                "certifiedNoticeUrl": "https://help.aliyun.com/noticelist/articleid/13374199.html",
+                "certifiedUrl": "https://help.aliyun.com/knowledge_detail/10643431.html",
+                "chargeTypePostpayTips": "https://help.aliyun.com/knowledge_detail/40653.html",
+                "chooseRegionTips": "https://help.aliyun.com/knowledge_detail/40654.html",
+                "chooseSecurityGroupTipsLink": "https://help.aliyun.com/knowledge_detail/40570.html",
+                "clouddiskCategoryIntroduce": "https://help.aliyun.com/document_detail/25382.html",
+                "cmsAlert": "http://cms.console.aliyun.com/#/cloud/ecs/",
+                "cmsMoreData": "https://cms.console.aliyun.com/index.htm?custom_trace=ecs_console#/hostDetail/chart/",
+                "consoleUserGuideUrl": "https://yq.aliyun.com/articles/72772?spm=0.0.0.0.NGIiE2&commentId=9341&msgid=155470#comment-9341",
+                "consumedListUrl": "https://expense.console.aliyun.com/#/consumption/list/resource/afterpay?parentProductCode=ECS",
+                "convertOperationIntro": "https://help.aliyun.com/knowledge_detail/49884.html",
+                "createDiskUrl": "http://buy.aliyun.com/",
+                "createEcsUrl": "https://ecs-buy.aliyun.com/#/prepay",
+                "createKeyPair": "https://ecs.console.aliyun.com/#/keyPair/region/{0}/create?createType=default",
+                "createOssInstance": "https://common-buy.aliyun.com/?commodityCode=ossbag&regionId={regionId}#/buy",
+                "createOssInstancePrePaid": "https://common-buy.aliyun.com/?commodityCode=ossbag#/buy?request={\"region\":\"{regionId}\", \"ossbag_type\":\"storage\", \"ossbag_spec\":\"1024\", \"ord_time\":\"6:Month\"}",
+                "createSecurityGroup": "https://ecs.console.aliyun.com/#/securityGroup/region/{0}",
+                "diskDetail": "https://ecs.console.aliyun.com/#/diskdetail/{0}/detail?regionId={1}",
+                "diskList": "http://ecs.console.aliyun.com/#/disk/region/",
+                "ecsChangeOsLink": "http://buy.aliyun.com/cp/vm/change_os?inst_id=",
+                "ecsConsole": "https://ecs.console.aliyun.com",
+                "ecsDetail": "https://ecs.console.aliyun.com/#/server/{0}/detail?regionId={1}",
+                "ecsInstanceList": "http://ecs.console.aliyun.com/#/server/",
+                "ecsRenewBatchInstance": "http://buy.aliyun.com/renew/batchRenew?commodity_code=ecs&",
+                "expenseConsoleUrl": "https://expense.console.aliyun.com/#/order/detail/yunmarket/",
+                "expenseOrderList": "https://expense.console.aliyun.com/#/order/list/",
+                "expenseOutline": "https://expense.console.aliyun.com/#/consumption/outline",
+                "getOssUrl": "http://help.aliyun.com/knowledge_detail/5974651.html",
+                "helpLinkTutorial": "https://help.aliyun.com/document_detail/25429.html",
+                "helpLinkTutorial2": "https://help.aliyun.com/document_detail/25429.html",
+                "helpUrl": "http://help.aliyun.com/hot_and_nav.htm?categoryId=8314827",
+                "helpUrlConnectClient": "http://help.aliyun.com/view/11108189_13574044.html",
+                "helpUrlCopyNew": "http://help.aliyun.com/view/11108189_13731052.html",
+                "helpUrlMore": "https://workorder.console.aliyun.com/console.htm#/ticket/scene?productId=12",
+                "helpUrlOperationForbiddenTasks": "http://help.aliyun.com/view/13489820.html",
+                "helpUrlPerformanceUnusual": "http://help.aliyun.com/list/11108233.html",
+                "helpUrlSecurityGroupRule": "https://help.aliyun.com/document_detail/25475.html",
+                "highRiskWindows0415AlibabaCloud": "https://bbs.aliyun.com/read/312815.html",
+                "highRiskWindows0415MicroSoft": "https://blogs.technet.microsoft.com/msrc/2017/04/14/protecting-customers-and-evaluating-risk/",
+                "homeLink": "https://ecs.console.aliyun.com",
+                "imageOrderTermUrl": "https://market.aliyun.com/product/protocol.htm?code=",
+                "importImageNoticeUrl": "https://help.aliyun.com/knowledge_detail/48226.html",
+                "ipConsole": "https://ip.console.aliyun.com",
+                "keypairHelper": "https://help.aliyun.com/document_detail/51792.html",
+                "login": "https://account.aliyun.com/login/login.htm",
+                "marketIframe": "https://market.aliyun.com/imagechoose?",
+                "modifyEipBandwidth": "https://common-buy.aliyun.com/eip/{0}/upgrade/{1}#/upgrade",
+                "newCmsAlert": "http://cms.console.aliyun.com/#/cloud/ecs/{regionId}/{instanceId}/alarm",
+                "newCmsMoreData": "https://cms.console.aliyun.com/index.htm?custom_trace=ecs_console#/hostDetail/chart/instanceId={instanceId}&system=&regionId={regionId}&aliyunhost=true",
+                "offlineImageWindows2003": "http://help.aliyun.com/knowledge_detail.htm?knowledgeId=6541028&categoryId=8314835",
+                "openOss": "https://oss.console.aliyun.com/index",
+                "orderTermUrl": "https://help.aliyun.com/knowledge_detail/40680.html",
+                "publicImageTips": "https://help.aliyun.com/knowledge_detail/40651.html",
+                "ramOss": "https://ram.console.aliyun.com/#/role/authorize?request=%7B%22Requests%22%3A%20%7B%22request1%22%3A%20%7B%22RoleName%22%3A%20%22AliyunECSImageImportDefaultRole%22%2C%20%22TemplateId%22%3A%20%22ECSImportRole%22%7D%2C%20%22request2%22%3A%20%7B%22RoleName%22%3A%20%22AliyunECSImageExportDefaultRole%22%2C%20%22TemplateId%22%3A%20%22ECSExportRole%22%7D%7D%2C%20%22ReturnUrl%22%3A%20%22https%3A//ecs.console.aliyun.com/%22%2C%20%22Service%22%3A%20%22ECS%22%7D",
+                "recharge": "https://expense.console.aliyun.com/#/account/recharge/alipay",
+                "rechargeLink": "https://expense.console.aliyun.com/#/account/recharge/alipay",
+                "regionMaintiningUrl": "https://help.aliyun.com/noticelist/articleid/20299370.html",
+                "renewEcsMgtUrl": "http://buy.aliyun.com/renew/ecs",
+                "renewEcsUrl": "http://buy.aliyun.com/cp/vm/renew",
+                "resizeDiskUrlAfter": "https://ecs-buy.aliyun.com/#/cloudDiskExpand",
+                "resizeDiskUrlPrepaid": "https://buy.aliyun.com/cp/vm/diskExpand#/diskExpand",
+                "restart": "http://order.aliyun.com/order/restart",
+                "securityGroupTips": "https://help.aliyun.com/document_detail/25475.html",
+                "sessionTimeoutLink": "https://account.aliyun.com/login/login.htm?oauth_callback=",
+                "slbConsole": "https://slb.console.aliyun.com",
+                "snapshotBusinessOss": "https://help.aliyun.com/document_detail/31821.html",
+                "snapshotBusinessOssWhy": "https://help.aliyun.com/noticelist/articleid/20383577.html",
+                "snapshotBusinessSLA": "http://help.aliyun-inc.com/dochelp/previewDocument.html?&docNodeId=25365&website=cn&language=zh&listId=40679&nodeId=47545",
+                "snapshotBusinessStatus": "https://help.aliyun.com/knowledge_detail/55763.html",
+                "snapshotPriceDetail": "https://www.aliyun.com/price/product/#/disk/detail",
+                "transitionUrl": "https://help.aliyun.com/document_detail/52220.html",
+                "upgradeEcsUrl": "http://buy.aliyun.com/cp/vm/upgrade",
+                "userAuthentication": "https://account.console.aliyun.com/#/auth/home",
+                "volumeCategoryIntroduce": "https://help.aliyun.com/knowledge_detail/53820.html",
+                "volumeDetail": "https://ecs.console.aliyun.com/#/volumeDetail/{0}/detail?regionId={1}",
+                "vpcConsole": "https://vpc.console.aliyun.com",
+                "vpcConsoleListUrl": "https://vpc.console.aliyun.com/#/vpc/{0}/list",
+                "vswitchDetail": "https://vpc.console.aliyun.com/#/vpc/{0}/detail/{1}/switch",
+                "vswitchDetailForSearch": "https://vpc.console.aliyun.com/#/vpc/{0}/detail/{1}/switch?switchId={2}",
+                "workOrderUrl": "https://workorder.console.aliyun.com/#/ticket/add?productId=12",
+                "workorderUrl": "https://workorder.console.aliyun.com/console.htm#/ticket/add?productId=12",
+                "yundunAnQiShiUrl": "http://yundun.console.aliyun.com/?a=1#/anQishi/tro",
+                "yundunBruteForceUrl": "http://yundun.console.aliyun.com/?type=as#/anQishi/tro",
+                "yundunDDosUrl": "http://yundun.console.aliyun.com/#/detail/detectddos?type=ecs&instanceId=",
+                "yundunPortalUrl": "http://yundun.console.aliyun.com",
+                "yundunRemoteLoginUrl": "http://yundun.console.aliyun.com/?type=as#/anQishi/tro",
+                "yundunSecurityCheckUrl": "http://yundun.console.aliyun.com/?a=1#/secureCheck/report/",
+                "yundunUpgrade": "http://yundun.console.aliyun.com/newBuy?p=safeecs#/safe/update",
+                "yundunUpgradeIframe": "https://yundun.console.aliyun.com/?p=safe",
+                "yundunWafUrl": "http://yundun.console.aliyun.com/?type=as#/anQishi/tro"
+            },
+            aceWorkerUrl: '//g.alicdn.com/aliyun/console/1.4.67/vendor/ace-builds/src-min-noconflict/',
+            experienceNew: true,
+            loginLink: "",
+            isChildAccount: false,
+            isRoleAccount: false,
+            isCertified: true,
+            regionListConfig: [{
+                "id": "28",
+                "name": "华北 1",
+                "regionId": "cn-qingdao",
+                "regionNo": "cn-qingdao-cm5-a01"
+            }, {
+                "id": "25",
+                "name": "华北 2",
+                "regionId": "cn-beijing",
+                "regionNo": "cn-beijing-btc-a01"
+            }, {
+                "id": "2516",
+                "name": "华北 3",
+                "regionId": "cn-zhangjiakou",
+                "regionNo": "cn-zhangjiakou-na62-a01"
+            }, {
+                "id": "23",
+                "name": "华东 1",
+                "regionId": "cn-hangzhou",
+                "regionNo": "cn-hangzhou-dg-a01"
+            }, {
+                "id": "657",
+                "name": "华东 2",
+                "regionId": "cn-shanghai",
+                "regionNo": "cn-shanghai-eu13-a01"
+            }, {
+                "id": "294",
+                "name": "华南 1",
+                "regionId": "cn-shenzhen",
+                "regionNo": "cn-shenzhen-st3-a01"
+            }, {
+                "id": "162",
+                "name": "香港",
+                "regionId": "cn-hongkong",
+                "regionNo": "cn-hongkong-am4-c04"
+            }, {
+                "id": "1982",
+                "name": "亚太东北 1 (东京)",
+                "regionId": "ap-northeast-1",
+                "regionNo": "ap-northeast-jp59-a01"
+            }, {
+                "id": "937",
+                "name": "亚太东南 1 (新加坡)",
+                "regionId": "ap-southeast-1",
+                "regionNo": "ap-southeast-os30-a01"
+            }, {
+                "id": "2153",
+                "name": "亚太东南 2 (悉尼)",
+                "regionId": "ap-southeast-2",
+                "regionNo": "ap-southeast-au49-a01"
+            }, {
+                "id": "1282",
+                "name": "美国东部 1 (弗吉尼亚)",
+                "regionId": "us-east-1",
+                "regionNo": "us-east-us44-a01"
+            }, {
+                "id": "437",
+                "name": "美国西部 1 (硅谷)",
+                "regionId": "us-west-1",
+                "regionNo": "us-west-ot7-a01"
+            }, {
+                "id": "2139",
+                "name": "中东东部 1 (迪拜)",
+                "regionId": "me-east-1",
+                "regionNo": "me-east-db47-a01"
+            }, {
+                "id": "2052",
+                "name": "欧洲中部 1 (法兰克福)",
+                "regionId": "eu-central-1",
+                "regionNo": "eu-central-de46-a01"
+            }],
+            zoneMapConfig: {},
+            instanceTypeFamiliesConfig: {},
+            blockList: ["ecsChangeOsBySimple", "ecsPageFeature", "ecsFuncLego", "ecsFuncHomeRecommendation"],
+            regionSetting: {
+                "ecs": {
+                    "domain": "ecs.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "ecs",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "ecs-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "ecs-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "ecs-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "ecs-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "ecs-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "ecs-buy": {
+                    "domain": "ecs-buy.aliyun.com",
+                    "domainPostfix": ".aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "ecs-buy",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "ecs-buy-ap-northeast-1.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "ecs-buy-ap-southeast-2.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "ecs-buy-cn-zhangjiakou.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "ecs-buy-eu-central-1.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "ecs-buy-me-east-1.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "ess": {
+                    "domain": "essnew.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "ess",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "ess-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "ess-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "isOpen": false
+                        },
+                        "eu-central-1": {
+                            "domain": "ess-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "ess-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "ip": {
+                    "domain": "ip.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "ip",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "ip-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "ip-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "ip-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "ip-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "ip-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "kms": {
+                    "domain": "kms.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "kms",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "kms-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "kms-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "domain": "kms-center.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "kms-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "kms-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "kms-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "kvstore": {
+                    "domain": "kvstore.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "kvstore",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "kvstore-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "kvstore-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "eu-central-1": {
+                            "domain": "kvstore-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "kvstore-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "ots": {
+                    "domain": "ots.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "ots",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "ots-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "ots-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "isOpen": false
+                        },
+                        "eu-central-1": {
+                            "domain": "ots-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "ots-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "rdsnew": {
+                    "domain": "rdsnew.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "rdsnew",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "rds-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "rds-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "rds-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "rds-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "rds-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "slb": {
+                    "domain": "slbnew.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "slb",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "slb-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "slb-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "slb-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "slb-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "slb-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "vpc": {
+                    "domain": "vpc.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "vpc",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "vpc-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "vpc-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "vpc-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "vpc-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "vpc-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                },
+                "yundun": {
+                    "domain": "yundun.console.aliyun.com",
+                    "domainPostfix": ".console.aliyun.com",
+                    "isRegionalization": true,
+                    "productId": "yundun",
+                    "regions": {
+                        "ap-northeast-1": {
+                            "domain": "yundun-ap-northeast-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "ap-southeast-1": {
+                            "isOpen": false
+                        },
+                        "ap-southeast-2": {
+                            "domain": "yundun-ap-southeast-2.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "center": {
+                            "isOpen": false
+                        },
+                        "cn-zhangjiakou": {
+                            "domain": "yundun-cn-zhangjiakou.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "eu-central-1": {
+                            "domain": "yundun-eu-central-1.console.aliyun.com",
+                            "isOpen": true
+                        },
+                        "me-east-1": {
+                            "domain": "yundun-me-east-1.console.aliyun.com",
+                            "isOpen": true
+                        }
+                    }
+                }
+            },
+            viewFrameworkConfig: {},
+            umidToken: "Y3d232262d25f9ac3ad77bafc55feb368",
+            showViewFrameworkTopbar: true,
+            portalId: "SINOPEC",
+            isOfficialSite: true,
+            isFinancialSite: false,
+            VPC_GROUP_SHOW: true,
+            SHOW_YUNDUN_SUMMARY: true,
+            IMAGE_COPY_WHITE_LIST: false,
+            IMAGE_IMPORT_WHITE_LIST: false,
+            IMAGE_EXPORT_WHITE_LIST: false,
+            SAN_WHITE_LIST: false,
+            SHOW_BATCH_ACTION: false,
+            SNAPSHOT_CHAIN_WHITE_LIST: false,
+            ECS_SHOW_IZ_ZONE: true,
+            VPC_WHITE_LIST: true,
+            ECS_AUTOSNAPSHOT_DISK: false,
+            SHOW_SECURITY_GROUP: true,
+            PROMOTION_THRESHOLD: false,
+            ECS_DISABLE_SNAPSHOT: true,
+            ECS_SHOW_DISK_RESIZE: true,
+            isSinopecUser: false,
+            isFinancialUser: false,
+            isJSTUser: false,
+            OFFLINE_IMAGE: ["Windows Server 2003"],
+            CAN_BATCH_CHANGE_INSTANCE: false,
+            SHOW_POSTPAY_CONVERT_TO_PREPAY: false,
+            SHOW_PREPAY_RELEASE: false,
+            DOMAIN_CHANNEL: "aliyun",
+            userPreference: [],
+            locale: 'zh',
+            isChineseUser: true,
+            env: 'production'
+        }
+    </script >
+    <script >
+        if (!window.UA_Opt) {
+            var UA_Opt = new Object;
+            UA_Opt.SendMethod = 8;
+            UA_Opt.LogVal = "ecs_uadata";
+            window[UA_Opt.LogVal] = "";
+            UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+            UA_Opt.MaxMCLog = 10;
+            UA_Opt.MaxKSLog = 10;
+            UA_Opt.MaxMPLog = 10;
+            UA_Opt.MaxTCLog = 10;
+            UA_Opt.MaxFocusLog = 10;
+            UA_Opt.Flag = 621710;
+        }
+        function getUA() {
+            var tmp_ua = window[UA_Opt.LogVal];
+            UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+            if (UA_Opt.reload != undefined) {
+                UA_Opt.reload();
+            }
+            return tmp_ua;
+        }
+    </script >
+    <script type="text/javascript" charset="utf-8" src="https://s.tbcdn.cn/g/security/umscript/2.0.2/um.js" ></script >
+    <script type="text/javascript" >
+
+        var container = document.getElementById('_umfp');
+        if (um && container) {
+            um.init({
+                timeout: 3000,
+                timestamp: '0500544351595940544D617E',
+                token: 'Y3d232262d25f9ac3ad77bafc55feb368',
+                serviceUrl: 'https://ynuf.alipay.com/service/um.json',
+                appName: 'ecs_protal',
+                containers: {flash: container, dcp: container}
+            });
+        }
+    
+    </script >
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//g.alicdn.com/aliyun/console/1.4.67/vendor/html5shiv/dist/html5shiv.js" ></script >
+    <script src="//g.alicdn.com/aliyun/console/1.4.67/vendor/respond/dest/respond.min.js" ></script >
+    <link href="//g.alicdn.com/aliyun/console/1.4.67/vendor/respond/cross-domain/respond-proxy.html"
+          id="respond-proxy" rel="respond-proxy" />
+    <link href="/static/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <script src="/static/js/respond.proxy.js" ></script >
+    <![endif]-->
+    <script src="//g.alicdn.com/aliyun/buy-ecs2/0.4.4/scripts/ecsbuy/base/nls/messages.js" ></script >
+    <script src="//g.alicdn.com/aliyun/ecs2/2.22.40/scripts/nls/messages.js" ></script >
+    <script src="//g.alicdn.com/aliyun/console/1.4.67/vendor/requirejs/require.js" ></script >
+    <script src="//g.alicdn.com/aliyun/ecs2/2.22.40/scripts/ecsConsole.js" ></script >
+    <script type="text/javascript" src="//g.alicdn.com/aliyun/ecs2/2.22.40/locale/ng-locale/angular-locale_zh-cn.js" ></script >
+    <script type="text/javascript" src="//g.alicdn.com/aliyun/ecs2/2.22.40/locale/select2/select2_locale_zh.js" ></script >
+    <script src="//g.alicdn.com/aliyun/buy-ecs2/0.4.4/scripts/ecsbuy/ecsbuy.console.js" ></script >
+    <script src="//g.alicdn.com/aliyun/buy-kernel/0.7.14/scripts/aliyun.buy.console.mini.js" ></script >
+    <script src="//g.alicdn.com/aliyun/buy-ecs/0.13.4/scripts/ecs.modules.all.js" ></script >
+    <script >
+        require(['bootstrap'], function (b) {
+        });
+    </script >
+    <title >云服务器管理控制台</title >
+</head >
+<body data-spm="2020520101" >
+<script type="text/javascript" >
+
+    (function (d) {
+        var t = d.createElement("script");
+        t.type = "text/javascript";
+        t.async = true;
+        t.id = "tb-beacon-aplus";
+        t.setAttribute("exparams", "category=&userid=&aplus&yunid=%22%25E5%258F%25AA%25E4%25B8%25BA%25E8%25BF%25BD%25E5%25AF%25BB321%22&yunpk=1386952661786916");
+        t.src = "//g.alicdn.com/alilog/mlog/aplus_v2.js"
+        d.getElementsByTagName("head")[0].appendChild(t);
+    })(document);
+
+</script >
+<div view-framework >
+    <div ui-view class="console-container" ng-animate="{enter:'fade-enter'}" ></div >
+    <div data-ng-controller="aliyunCommonController" ></div >
+    <div ng-controller="validateAuthInfoController" ></div >
+</div >
+<div growl ></div >
+<div ng-if="gModuleSetting.ecsFuncCloudDr" aliyun-console-drcloud-link source="ecs" ></div >
+<script src="https://uaction.alicdn.com/js/uab.js" type="text/javascript" ></script >
+<script >
+    (function () {
+        if (typeof (window.acjs) == 'undefined') {
+            var _script = document.createElement('script');
+            _script.src = '//acjs.aliyun.com/js/uab.js';
+            document.body.appendChild(_script);
+        }
+    })();
+</script >
+<div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden" >
+    <img src="https://ynuf.alipay.com/service/clear.png?xt=Y3d232262d25f9ac3ad77bafc55feb368&xa=ecs_protal" />
+</div >
+</body >
+</html >

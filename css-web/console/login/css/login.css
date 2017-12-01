@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    color: #333
+}
+
+body {
+    font-family: "PingFangSC", "helvetica neue", "hiragino sans gb", "arial", "microsoft yahei ui", "microsoft yahei", "simsun", "sans-serif";
+}
+
+body {
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.login-2017 {
+    background-color: #1f2325;
+    background-size: cover;
+    background-image: url("../images/TB1ittHRFXXXXcSXFXXXXXXXXXX-2880-1280.jpg");
+}
+
+.login-2017 .login-2017-topbar {
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-2017-topbar .login-2017-topbar-logo img {
+    position: absolute;
+    height: 24px;
+    top: 14px;
+    left: 20px;
+}
+
+ul.login-2017-link {
+    float: right;
+    padding-left: 10px;
+}
+
+ul.login-2017-link li a {
+    /*display: block;*/
+    color: #fff;
+    padding: 0px 20px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+ul.login-2017-link li:hover a {
+    color: #00c1de;
+}
+
+/*****/
+.login-2017-site-switch {
+    float: right;
+}
+
+.login-2017-site-switch .login-2017-site-switch-box {
+    position: relative;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    cursor: default;
+    font-size: 14px;
+    padding: 0 12px 0 35px;
+}
+
+.login-2017-site-switch-box img {
+    position: absolute;
+    left: 14px;
+    top: 22px;
+    width: 16px;
+}
+
+.login-2017-site-switch-box ul {
+    position: absolute;
+    display: block;
+    width: 140px;
+    background: #272B2F;
+    top: 59px;;
+    left: 0;
+}
+
+.login-2017-site-switch-box ul {
+    display: none;
+}
+
+.login-2017-site-switch-box ul li {
+    height: 38px;
+    line-height: 38px;
+    padding-left: 12px;
+}
+
+.login-2017-site-switch-box ul li:hover {
+    background: #202529;
+}
+
+.login-2017-site-switch-box ul li a {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login-2017-site-switch-box ul li a:hover {
+    color: #00C1DE;
+}
+
+/***************login-2017-body*********/
+.login-2017-body {
+    padding: 74px 0 118px;
+    text-align: center;
+}
+
+.login-2017-body .login-2017-body-box {
+    position: relative;
+    width: 990px;
+    height: 388px;
+    margin: auto;
+    /*background: #ec971f;*/
+}
+
+.login-2017-body-box .login-2017-body-text-box {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-2017-body-text-box h1 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 19px;
+}
+
+.login-2017-body-text-box ul li {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.47px;
+    line-height: 30px;
+}
+
+.login-2017-body .login-2017-body-box iframe {
+    background: #fff;
+    display: block;
+}
+
+.login-2017-body .login-2017-body-box iframe {
+    width: 380px;
+    position: absolute;
+    padding-top: 22px;
+    border: none;
+    right: 0;
+}

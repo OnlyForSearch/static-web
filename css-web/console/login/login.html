@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <meta charset="utf-8" >
+    <meta name="robots" content="noodp, noydir" >
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="-1" >
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta content=" 云服务器、云主机、弹性计算、云存储、开放存储、OSS、ACE、数据库、mysql、RDS、SQLSERVER、开发者、负载均衡、防攻击、防DDOS攻击、云监控、云浏览器、云地图、云邮箱、phpwind、阿里云、云产品、云计算、多线带宽、BGP、服务器环境配置、渲染云、云手机、云盾、应用托管、云引擎、解决方案 "
+          name="keywords" >
+    <meta content=" 阿里云，数据分享第一平台，云计算第一平台，云产品解决方案，享多线独享带宽，开发者合作平台，站长云集平台 " name="description" >
+    <title >登录</title >
+    
+    <link rel="stylesheet" type="text/css"
+          href="../dist/css/bootstrap.css" >
+    <!--<link href="console/styles/console1412.css">-->
+    <script src="../jquery-1.11.3/jquery.js" ></script >
+    <script src="../dist/js/bootstrap.js" ></script >
+    <!--<link href="css/login.css" rel="stylesheet" />-->
+    <style >
+        html {
+            background-color: #373d41 !important;
+            height: 100%;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            color: #333
+        }
+        
+        body {
+            font-family: "PingFangSC", "helvetica neue", "hiragino sans gb", "arial", "microsoft yahei ui", "microsoft yahei", "simsun", "sans-serif";
+        }
+        
+        body {
+        }
+        
+        ul, ol {
+            list-style: none;
+        }
+        
+        .login-2017 {
+            background-color: #1f2325;
+            background-size: cover;
+            background-image: url("../images/TB1ittHRFXXXXcSXFXXXXXXXXXX-2880-1280.jpg");
+        }
+        
+        .login-2017 .login-2017-topbar {
+            position: relative;
+            height: 60px;
+            border-bottom: 1px solid #e3e3e3;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .login-2017-topbar .login-2017-topbar-logo img {
+            position: absolute;
+            height: 24px;
+            top: 14px;
+            left: 20px;
+        }
+        
+        ul.login-2017-link {
+            float: right;
+            padding-left: 10px;
+        }
+        
+        ul.login-2017-link li a {
+            /*display: block;*/
+            color: #fff;
+            padding: 0px 20px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        ul.login-2017-link li:hover a {
+            color: #00c1de;
+        }
+        
+        /*****/
+        .login-2017-site-switch {
+            float: right;
+        }
+        
+        .login-2017-site-switch .login-2017-site-switch-box {
+            position: relative;
+            color: #fff;
+            height: 60px;
+            line-height: 60px;
+            cursor: default;
+            font-size: 14px;
+            padding: 0 12px 0 35px;
+        }
+        
+        .login-2017-site-switch-box img {
+            position: absolute;
+            left: 14px;
+            top: 22px;
+            width: 16px;
+        }
+        
+        .login-2017-site-switch-box ul {
+            position: absolute;
+            display: block;
+            width: 140px;
+            background: #272B2F;
+            top: 59px;;
+            left: 0;
+        }
+        
+        .login-2017-site-switch-box ul {
+            display: none;
+        }
+        
+        .login-2017-site-switch-box ul li {
+            height: 38px;
+            line-height: 38px;
+            padding-left: 12px;
+        }
+        
+        .login-2017-site-switch-box ul li:hover {
+            background: #202529;
+        }
+        
+        .login-2017-site-switch-box ul li a {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .login-2017-site-switch-box ul li a:hover {
+            color: #00C1DE;
+        }
+        
+        /***************login-2017-body*********/
+        .login-2017-body {
+            padding: 74px 0 118px;
+            text-align: center;
+        }
+        
+        .login-2017-body .login-2017-body-box {
+            position: relative;
+            width: 990px;
+            height: 388px;
+            margin: auto;
+            /*background: #ec971f;*/
+        }
+        
+        .login-2017-body-box .login-2017-body-text-box {
+            position: absolute;
+            top: 90px;
+            left: 0;
+            text-align: left;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .login-2017-body-text-box h1 {
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 36px;
+            margin-bottom: 19px;
+        }
+        
+        .login-2017-body-text-box ul li {
+            font-size: 14px;
+            color: #fff;
+            letter-spacing: 0.47px;
+            line-height: 30px;
+        }
+        
+        .login-2017-body .login-2017-body-box iframe {
+            background: #fff;
+            display: block;
+        }
+        
+        .login-2017-body .login-2017-body-box iframe {
+            width: 380px;
+            position: absolute;
+            padding-top: 22px;
+            border: none;
+            right: 0;
+        }
+        
+        /***页脚footer**/
+        .aliyun-common-footer-2017 .module-wrap * {
+            box-sizing: border-box;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time {
+            background: #31373b;
+        }
+        
+        .y-row {
+            min-width: 1000px;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            zoom: 1;
+        }
+        
+        @media (min-width: 768px) {
+            
+            .y-row {
+                width: 100%;
+                min-width: inherit !important;
+            }
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content {
+            height: 120px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content li {
+            width: 25%;
+            float: left;
+            text-align: left;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content li a {
+            display: inline-block;
+            padding-left: 60px;
+            height: 120px;
+            line-height: 120px;
+            text-decoration: none;
+            color: #666;
+            position: relative;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content li a img {
+            position: absolute;
+            left: 0;
+            width: 50px;
+            top: 34px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content li a img.white {
+            display: block;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content li a img.black {
+            display: none;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content .all-main-time-what {
+            font-size: 16px;
+            color: #fff;
+            line-height: 120px;
+            transition: color 0.3s;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-main-time
+        .all-main-time-content .all-main-time-what:hover {
+            color: #28d0e9 !important;
+        }
+        
+        .all-main-time-content {
+            margin-bottom: 0;
+        }
+        
+        /*********************************************/
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 {
+            background-color: #373d41;
+            padding: 20px !important;
+            box-sizing: border-box;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright {
+            color: #73777a;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .big {
+            display: inline-block;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .big a {
+            font-size: 16px;
+            color: #9b9ea0;
+            margin-right: 35px;
+            transition: color .3s;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .big a:hover {
+            color: #28d0e9;
+            text-decoration: none;
+        }
+        
+        /***搜索**/
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .footer-search {
+            display: inline-block;
+            float: right;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .footer-search input {
+            background-color: hsla(0, 0%, 100%, .1);
+            border: 1px solid #bbbdbf;
+            height: 30px;
+            padding: 0 30px 0 7px;
+            width: 178px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .footer-search button {
+            width: 30px;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            height: 30px;
+            background-color: hsla(0, 0%, 100%, .1);
+            border: 0;
+            cursor: pointer;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .copyright .footer-search button i {
+            color: #b3b3b3;
+            font-size: 16px;
+        }
+        
+        /************************/
+        .aliyun-common-footer-2017 .y-right {
+            display: inline;
+            float: right !important;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice {
+            background-color: hsla(0, 0%, 100%, .1);
+            box-sizing: content-box !important;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #bbbdbf;
+            padding: 0 10px 0 35px;
+            line-height: 30px;
+            position: relative;
+            cursor: pointer;
+            color: #bbbdbf;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice img {
+            width: 22px;
+            left: 6px;
+            position: absolute;
+            top: 5px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice .icon-down3 {
+            right: 6px;
+            position: absolute;
+            top: 7px;
+            display: block;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice .icon-up3 {
+            right: 6px;
+            position: absolute;
+            top: 7px;
+            display: none;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice:hover .icon-down3 {
+            display: none;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice:hover .icon-up3 {
+            display: block;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice > ul {
+            display: none;
+            background-color: hsla(0, 0%, 100%, .1);
+            width: 145px;
+            left: -1px;
+            position: absolute;
+            top: 30px;
+            color: #bbbdbf;
+            border: 1px solid #bbbdbf
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice > ul li {
+            position: relative;
+            padding: 0 10px 0 35px
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .select-choice:hover > ul {
+            display: block;
+        }
+        
+        /**************************/
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .link-wrap {
+            padding-top: 32px;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .link-wrap .link-item {
+            display: inline-block;
+            font-size: 14px;
+            color: #73777a;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: color .3s;
+        }
+        
+        .aliyun-common-footer-2017 .module-wrap .all-copyright-100 .link-wrap .link-item:hover {
+            color: #28d0e9 !important;
+            text-decoration: none;
+        }
+        
+        /*************/
+        .aliyun-common-footer-2017 .module-wrap .ali-copyright-100 .copyright {
+            color: #73777a;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        /**********************************/
+        .aliyun-common-footer-2017 .all-copyright-100 .xin {
+            margin-top: 10px;
+            display: block;
+        }
+        
+        /***********************/
+        .float-tool {
+            position: fixed;
+            _position: absolute;
+            bottom: 33%;
+            right: .1%;
+            z-index: 250;
+            margin-bottom: -90px;
+        }
+        
+        .float-tool {
+            position: fixed;
+            width: 44px;
+            right: 20px;
+            bottom: 20px;
+            z-index: 250;
+            margin-bottom: 0;
+        }
+        
+        .aliyun-common-xiaoyun-2017 {
+            position: relative;
+        }
+        
+        .aliyun-common-xiaoyun-2017 {
+            position: relative
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: auto;
+            min-width: 0
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap #J_gotoTop {
+            width: 44px;
+            height: 44px;
+            margin-top: 8px;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15)
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-help-entry {
+            position: relative
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-help-entry.active .xiaoyun-panel {
+            visibility: visible !important;
+            opacity: 1;
+            bottom: 59px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-help-entry.active .panel-content {
+            opacity: 1
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel {
+            box-sizing: border-box;
+            width: 320px;
+            min-height: 50px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+            position: absolute;
+            z-index: 4;
+            bottom: 49px;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-close img {
+            width: 14px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content {
+            min-height: 24px;
+            padding-left: 0;
+            opacity: 0;
+            transition: all .3s;
+            transition-delay: .1s
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content li {
+            list-style: none;
+            margin-bottom: 20px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content li:last-of-type {
+            margin-bottom: 0
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-icon img {
+            width: 100%
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main a {
+            text-decoration: none;
+            color: #5f6367;
+            font-size: 14px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main .content-desc, .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main .content-title {
+            line-height: 24px;
+            transition: all .2s ease
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main .content-title {
+            color: #373d41
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main .content-desc {
+            color: #9b9ea0;
+            font-size: 12px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-panel .panel-content .content-main a:hover .content-title {
+            color: #00c1de
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .advance-image {
+            box-sizing: border-box;
+            background: #fff;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+            position: absolute;
+            bottom: 59px;
+            right: 0;
+            width: 320px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .advance-image .advance-image-close {
+            position: absolute;
+            z-index: 2;
+            top: 20px;
+            right: 20px;
+            cursor: pointer
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .advance-image .advance-image-close img {
+            width: 14px
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .advance-image .advance-image-content {
+            display: block;
+            line-height: 0;
+            z-index: 0;
+            width: 100%
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .advance-image .advance-image-content img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-entry-button {
+            width: 44px;
+            height: 44px;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15)
+        }
+        
+        .aliyun-common-xiaoyun-2017 .module-wrap .xiaoyun-entry-button .button-background {
+            width: 100%
+        }
+    
+    
+    </style >
+    
+    <script >
+
+        $(document).ready(function () {
+            $(".login-2017-site-switch-box").hover(function () {
+                var $this = $(this);
+                $this.children("ul").show();
+                $this.children("i.glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+            }, function () {
+                var $this = $(this);
+                $this.children("ul").hide();
+                $this.children("i.glyphicon").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+
+            });
+            /*
+             $(".float-tool").hover(function () {
+             
+             $(".xiaoyun-help-entry").addClass("active");
+             },function () {
+             $(".xiaoyun-help-entry").removeClass("active")
+             });
+             */
+            var $boxContainer = $(".xiaoyun-help-entry"),
+                $xiaoyunPanel = $(".xiaoyun-panel"),
+                $content = $boxContainer.find(".panel-content");
+            $boxContainer.css({visibility: "visible"});
+            var n;
+            $boxContainer.on("mouseenter", function (e) {
+                var i = $(e.target);
+                (          i.hasClass("xiaoyun-entry-button")
+                || i.parent().hasClass("xiaoyun-entry-button")
+                || i.hasClass("xiaoyun-panel")) && (n && clearTimeout(n),
+                    $boxContainer.addClass("active"))
+            }).on("mouseleave", function (e) {
+                n = setTimeout(function () {
+                    $boxContainer.removeClass("active")
+                }, 250)
+            });
+            $boxContainer.on("click", ".panel-close", function () {
+                $boxContainer.removeClass("active")
+            })
+            
+            
+            /*回到顶部按钮*/
+            var t = $(document);
+            $(window).scroll(function () {
+                return t.scrollTop() > 100 ? $("#J_gotoTop").show() : $("#J_gotoTop").hide()
+//                return t.scrollTop() > 500 ? $("#J_gotoTop").show() : $("#J_gotoTop").hide()
+            });
+            $("body").on("click", "#J_gotoTop", function () {
+                $(window).scrollTop(0)
+            });
+
+
+        });
+    
+    </script >
+
+</head >
+<body >
+<script type="text/javascript" >
+
+    (function (d) {
+        var t = d.createElement("script");
+        t.type = "text/javascript";
+        t.async = true;
+        t.id = "tb-beacon-aplus";
+        t.setAttribute("exparams", "category=&userid=&aplus&yunid=&yunpk=");
+        t.src = ("https:" == d.location.protocol ? "https://s" : "http://a") + ".tbcdn.cn/s/aplus_v2.js";
+        d.getElementsByTagName("head")[0].appendChild(t);
+    })(document);
+</script >
+
+<div class="login-2017" >
+    <div class="login-2017-topbar" >
+        <a class="login-2017-topbar-logo" >
+            <img src="../images/TB16hl5LpXXXXXRXVXXXXXXXXXX-198-46.png" alt="" >
+            <img src="../images/TB1BQh7LpXXXXcJXFXXXXXXXXXX-198-46.gif" alt="" >
+        
+        </a >
+        
+        <ul class="login-2017-link" >
+            <li >
+                <a href="#" >首页</a >
+            </li >
+        </ul >
+        <div class="login-2017-site-switch" >
+            <div class="login-2017-site-switch-box" >
+                <img src="../images/TB18R7RRpXXXXabapXXXXXXXXXX-32-32.png" alt="" >
+                中国站
+                <i class="glyphicon glyphicon-chevron-down" ></i >
+                <!--<i class="glyphicon glyphicon-chevron-up" ></i >-->
+                <ul >
+                    <li choice="INTL" ><a href="#" target="_self" >International</a ></li >
+                    <li choice="JP" ><a href="#" target="_self" >日本サイト</a ></li >
+                </ul >
+            </div >
+        
+        </div >
+    
+    </div >
+    <div class="login-2017-body" >
+        <div class="login-2017-body-box" >
+            <a class="login-2017-body-text-box" href="" >
+                <h1 >低门槛上云捷径</h1 >
+                <ul >
+                    
+                    <li > 系列III云服务器，默认VPC网络</li >
+                    
+                    <li > 计算性能更强，网络延迟更低</li >
+                    
+                    <li > 0.73元/日起，降低网站/应用搭建成本</li >
+                
+                </ul >
+            </a >
+            
+            <div id="alibaba-login-iframe" class="iframe-show iframe-loaded" >
+                <div id="alibaba-login-iframe-loading" ></div >
+                <iframe id="alibaba-login-box"
+                        src="mini_login.html"
+                        width="330" height="392" frameborder="none" scrolling="no" style="border: none; visibility: visible;" ></iframe >
+            </div >
+        </div >
+    </div >
+
+
+</div >
+
+
+<div class="aliyun-common-footer-2017" >
+    <div class="module-wrap" >
+        <div class="all-main-time" >
+            <ul class="y-row all-main-time-content" >
+                <li >
+                    <a href="" >
+                        <span >
+                            <img class="white" src="../images/TB1t1u8LXXXXXXpaXXXXXXXXXXX-100-100.png" alt="" >
+                            <img class="black" src="../images/TB1Sj6bLXXXXXXPXVXXXXXXXXXX-100-100.png" alt="" >
+                        </span >
+                        <span class="all-main-time-what" >100倍故障时长赔偿</span >
+                    </a >
+                </li >
+                <li >
+                    <a href="" >
+                        <span >
+                            <img class="white" src="../images/TB1t1u8LXXXXXXpaXXXXXXXXXXX-100-100.png" alt="" >
+                            <img class="black" src="../images/TB1Sj6bLXXXXXXPXVXXXXXXXXXX-100-100.png" alt="" >
+                        </span >
+                        <span class="all-main-time-what" >100倍故障时长赔偿</span >
+                    </a >
+                </li >
+                <li >
+                    <a href="" >
+                        <span >
+                            <img class="white" src="../images/TB1t1u8LXXXXXXpaXXXXXXXXXXX-100-100.png" alt="" >
+                            <img class="black" src="../images/TB1Sj6bLXXXXXXPXVXXXXXXXXXX-100-100.png" alt="" >
+                        </span >
+                        <span class="all-main-time-what" >100倍故障时长赔偿</span >
+                    </a >
+                </li >
+                <li >
+                    <a href="" >
+                        <span >
+                            <img class="white" src="../images/TB1t1u8LXXXXXXpaXXXXXXXXXXX-100-100.png" alt="" >
+                            <img class="black" src="../images/TB1Sj6bLXXXXXXPXVXXXXXXXXXX-100-100.png" alt="" >
+                        </span >
+                        <span class="all-main-time-what" >100倍故障时长赔偿</span >
+                    </a >
+                </li >
+            
+            </ul >
+        </div >
+        
+        
+        <div class="all-copyright-100" >
+            <div class="y-row copyright" >
+                <p class="big" >
+                    <a href="" >关于我们</a >
+                    <a href="" >关于我们</a >
+                    <a href="" >关于我们</a >
+                    <a href="" >关于我们</a >
+                </p >
+                <div class="footer-search" >
+                    <form class="frm-search" >
+                        <input type="text" name="k" >
+                        <button class="btn-search" type="submit" ><i class="glyphicon glyphicon-search" ></i ></button >
+                    
+                    </form >
+                
+                </div >
+                <div class="select-choice y-right" >
+                    <img src="../images/TB1y5NmKFXXXXckXFXXXXXXXXXX-32-32.png" >中国站
+                    <i class="glyphicon glyphicon-menu-down icon-down3" ></i >
+                    <i class="glyphicon glyphicon-menu-up icon-up3" ></i >
+                    <ul >
+                        <li ><img src="../images/TB1AmBvKFXXXXazXpXXXXXXXXXX-32-32.png" alt="" > International</li >
+                    </ul >
+                </div >
+                
+                <p class="link-wrap" >
+                    
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                    <a class="link-item" target="_blank" >阿里巴巴集团</a >
+                
+                
+                </p >
+                
+                
+                <p class="copyright" >
+                    © 2009-2017 Aliyun.com 版权所有 ICP证：浙B2-20080101
+                </p >
+                
+                <a class="link-item xin" style="display: inline-block;" href="//verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=aliyun.xin" target="_blank"
+                   data-spm-click="gostr=/aliyun;locaid=xin" >
+                    <img class="white" src="//img.alicdn.com/tps/TB1.fDdNpXXXXajXpXXXXXXXXXX-96-42.png" style="margin-top: 4px;height: 21px;" >
+                </a >
+                
+                <a target="_blank" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" >
+                    <img style="width: 20px;" src="//img.alicdn.com/tfs/TB1SPm8QpXXXXXPXXXXXXXXXXXX-40-40.png" >
+                </a >
+                
+                
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010002000099"
+                   style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" >
+                    <img style="float: left; width: 20px;" src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" ><span
+                        style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;" >浙公网安备 33010002000099号</span >
+                </a >
+            
+            </div >
+        
+        </div >
+        
+        <div class="float-tool" >
+            <div class="aliyun-common-xiaoyun-2017" >
+                <div class="module-wrap" >
+                    
+                    <div class="xiaoyun-help-entry active" style="visibility: visible;" >
+                        <!--主操作面板-->
+                        <div class="xiaoyun-panel" style="visibility: hidden;" >
+                            <div class="panel-close" >
+                                <img src="../images/TB16TmMRpXXXXclXXXXXXXXXXXX-28-28.png" alt="" >
+                            </div >
+                            <ul class="panel-content" >
+                                
+                                <li >
+                                    <div class="content-icon" >
+                                        <img src="../images/TB1..XLRFXXXXXwaXXXXXXXXXXX-48-50.png" alt="" >
+                                    </div >
+                                    <div class="content-main" >
+                                        <a target="_blank" href="#"
+                                           data-spm-anchor-id="5176.3047821.762944.1" >
+                                            <div >
+                                                <div class="content-title" >
+                                                    售前咨询电话
+                                                </div >
+                                                <div class="content-desc" >
+                                                    <span style="color: #FF8A00;" >95187转1</span >
+                                                </div >
+                                            </div >
+                                        </a >
+                                    </div >
+                                </li >
+                                <li >
+                                    <div class="content-icon" >
+                                        <img src="../images/TB1lJtARFXXXXapapXXXXXXXXXX-48-50.png" alt="" >
+                                    </div >
+                                    <div class="content-main" >
+                                        <a target="_blank" href="#" data-spm-anchor-id="5176.3047821.762944.2" >
+                                            <div >
+                                                <div class="content-title" >
+                                                    云博士
+                                                </div >
+                                                <div class="content-desc" >
+                                                    智能回答秒级响应，24小时在线
+                                                </div >
+                                            </div >
+                                        </a >
+                                    </div >
+                                </li >
+                                <li >
+                                    <div class="content-icon" >
+                                        <img src="../images/TB1GZydRFXXXXcIXXXXXXXXXXXX-48-50.png" alt="" >
+                                    </div >
+                                    <div class="content-main" >
+                                        <a target="_blank" href="#" data-spm-anchor-id="5176.3047821.762944.3" >
+                                            <div >
+                                                <div class="content-title" >
+                                                    建议反馈
+                                                </div >
+                                                <div class="content-desc" >
+                                                    阿里云不是完美的，我们渴望您的建议
+                                                </div >
+                                            </div >
+                                        </a >
+                                    </div >
+                                </li >
+                            </ul >
+                        </div >
+                        <!--入口按钮-->
+                        <div class="xiaoyun-entry-button" >
+                            <img class="button-background" src="../images/TB1S31XRpXXXXbKaXXXXXXXXXXX-88-88.png" alt="" >
+                        </div >
+                    </div >
+                    
+                    
+                    <div id="J_gotoTop" style="cursor: pointer; display: block;" >
+                        <img style="width: 44px;" src="//img.alicdn.com/tfs/TB1ODyVRpXXXXcaXFXXXXXXXXXX-88-88.png"
+                             hover="//img.alicdn.com/tps/TB1hzkTLXXXXXXNXXXXXXXXXXXX-80-80.png" >
+                    </div >
+                </div >
+            </div >
+        
+        </div >
+    
+    </div >
+
+</div >
+
+
+</body >
+</html >
